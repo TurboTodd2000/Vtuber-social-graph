@@ -272,6 +272,7 @@ const edges = new vis.DataSet([
 		to: 0,
 		type: "group",
 		color: { color: "blue" },
+		dashes: true
 	},
 
 	{
