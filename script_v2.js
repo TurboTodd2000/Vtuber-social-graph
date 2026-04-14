@@ -99,11 +99,18 @@ DATA GOES HERE
 
 
 var interestNode = {
-			//INTEREST NODE
-		//
-		["Topic", "group", "size", "shape"], 
-		["next interest"],
+	//INTEREST NODE
+	["Topic", "group", "size", "shape"], 
 }
+
+
+
+
+var groupeNodes = {
+	//GROUP NODE
+	//label, type, group, node color, label color, size, shape
+	["Vshojo", "group", "indie", "node color", "label text color", "size", "shape"], 
+};
 
 
 
@@ -111,20 +118,15 @@ var interestNode = {
 var groupeNodes{
 
 	[
-		//GROUP NODE
-		//"group name", viewID, node color var, label color var, size var, shape var
-		["Vshojo", 0, "node color", "label text color", "size", "shape"], 
-
-
 		//TALENT node
-		//name, viewID, [informal groups], [interests], [URLs]
-		["Ironmouse", 1, ["Vein Gang"], [1, 2, 3], ["youtube", "twitch"]],
-		["next person"],
-		[]
+		//name, type, group, [informal groups id], [interests], [URLs] - color is set by group node
+		["Ironmouse", "talent", "indie", [1], [1, 2, 3], ["youtube", "twitch"]],
+		["next person"]
 	],
 	[
 		//next group
 	],
+	
 };
 
 
