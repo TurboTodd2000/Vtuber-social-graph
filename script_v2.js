@@ -95,38 +95,37 @@ DATA GOES HERE
 
 
 
-//array for node/edge gen
+//arrays for node/edge gen
 
-{
-	[
-		//INTEREST NODE
+
+var interestNode = {
+			//INTEREST NODE
 		//
-		{["Topic", "group", "size", "shape"]}
-	],
-	[
-		//GROUP NODE
-		//"group name", view id, node color var, label color var, size var, shape var
-		{["Vshojo", "node color", "label text color", "size", "shape"],  }, 
-
-
-		//TALENT node
-		//name, [formal groups], [informal groups], [interests]
-		{"Ironmouse", [1], ["Vein Gang"], [3000, 3001, 3002]},
-	]
+		["Topic", "group", "size", "shape"], 
+		["next interest"],
 }
 
 
 
 
+var groupeNodes{
+
+	[
+		//GROUP NODE
+		//"group name", viewID, node color var, label color var, size var, shape var
+		["Vshojo", 0, "node color", "label text color", "size", "shape"], 
 
 
-
-
-
-
-
-
-
+		//TALENT node
+		//name, viewID, [informal groups], [interests], [URLs]
+		["Ironmouse", 1, ["Vein Gang"], [1, 2, 3], ["youtube", "twitch"]],
+		["next person"],
+		[]
+	],
+	[
+		//next group
+	],
+};
 
 
 
@@ -145,6 +144,19 @@ CREATE NODEES/EDGES
 
 
 
+nodes = new vis.DataSet([]);
+
+edges = new vis.DataSet([]);
+
+
+
+//loop to make ndoes and edges
+
+
+
+
+
+
 
 
 
@@ -155,3 +167,9 @@ CREATE NODEES/EDGES
 FILTER GOES HERE
 -----------------------------------------------
 */
+
+
+
+
+
+

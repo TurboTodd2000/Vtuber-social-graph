@@ -1,6 +1,4 @@
-// this sets what elements are providing which filter inputs
-const nodeFilterSelector = document.getElementById("nodeFilterSelect");
-const edgeFilters = document.getElementsByName("edgesFilter");
+
 
 
 
@@ -47,60 +45,75 @@ function startNetwork(data) {
  */
 const nodes = new vis.DataSet([
 // vshojo
-	{ id: 0, label: "ex-Vshjo", group: "Vshojo", GroupNode: 1, size: 30, shape: "dot" },
-	{ id: 1, label: "Ironmouse", group: "Vshojo" },
-	{ id: 2, label: "Michi Mochievee", group: "Vshojo" },
-	{ id: 3, label: "Geega", group: "Vshojo" },
-	{ id: 4, label: "Zentraya", group: "Vshojo" },
-	{ id: 5, label: "Silvervale", group: "Vshojo" },
-	{ id: 6, label: "K9Kuro", group: "Vshojo" },
-	{ id: 7, label: "Apricot (froot)", group: "Vshojo" },
-	{ id: 8, label: "Haruka Karibu", group: "Vshojo" },
-	{ id: 9, label: "AmaLee", group: "Vshojo" },
-	{ id: 10, label: "Henya the Genius", group: "Vshojo" },
-	{ id: 11, label: "Matara Kan", group: "Vshojo" },
-	{ id: 12, label: "Projket Melody", group: "Vshojo" },
-	{ id: 13, label: "Hajime", group: "Vshojo" },
-	{ id: 14, label: "nyanners", group: "Vshojo" },
-	{ id: 15, label: "Kson", group: "Vshojo" },
-	{ id: 16, label: "Veibae", group: "Vshojo" },
+	{ id: 0, label: "ex-Vshjo", group: "Vshojo", type: "group", size: 30, shape: "dot" },
+
 
       // dentsu.exe
-	{ id: 100, label: "dentsu.exe", group: "dentsu", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 100, label: "dentsu.exe", group: "dentsu", type: "group", size: 30, shape: "dot" },
 	{ id: 101, label: "Mint Fantome", group: "dentsu" },
 	{ id: 102, label: "Victoria Roma", group: "dentsu" },
 	{ id: 103, label: "Phoebe Chan", group: "dentsu" },
 
     // NOVA
-	{ id: 200, label: "Nova", group: "NOVA", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 200, label: "Nova", group: "NOVA", type: "group", size: 30, shape: "dot" },
 	{ id: 201, label: "Akatsuki Hotaru", group: "NOVA" },
 	{ id: 202, label: "Hestia Happiness", group: "NOVA" },
 	{ id: 203, label: "Yutori Peke", group: "NOVA" },
 	{ id: 204, label: "Okamoto Nagi", group: "NOVA" },
 
     // Beastiez
-	{ id: 300, label: "Beastiez", group: "Beastiez", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 300, label: "Beastiez", group: "Beastiez", type: "group", size: 30, shape: "dot" },
 	{ id: 301, label: "Tori Oriane", group: "Beastiez" },
 	{ id: 302, label: "PiaPiUFO", group: "Beastiez" },
 	{ id: 303, label: "Beribug", group: "Beastiez" },
 	{ id: 304, label: "Kairyu Crocodile", group: "Beastiez" },
 
       // Vichi Bon
-	{ id: 400, label: "VchiBan", group: "Vichi Bon", GroupNode: 1, size: 30, shape: "dot" },
-	{ id: 401, label: "Buffpup", group: "Vichi Bon", GroupNode: 1 },
-	{ id: 402, label: "Ai Candii", group: "Vichi Bon", GroupNode: 1 },
-	{ id: 403, label: "Rosedoodle", group: "Vichi Bon", GroupNode: 1 },
-	{ id: 404, label: "ShiaBun", group: "Vichi Bon", GroupNode: 1 },
+	{ id: 400, label: "VchiBan", group: "Vichi Bon", type: "group", size: 30, shape: "dot" },
+	{ id: 401, label: "Buffpup", group: "Vichi Bon" },
+	{ id: 402, label: "Ai Candii", group: "Vichi Bon" },
+	{ id: 403, label: "Rosedoodle", group: "Vichi Bon" },
+	{ id: 404, label: "ShiaBun", group: "Vichi Bon" },
 
 
       // neuroverse
-	{ id: 600, label: "Neuroverse", group: "Neuroverse", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", size: 30, shape: "dot" },
 	{ id: 601, label: "Vedal", group: "Neuroverse" },
 	{ id: 602, label: "Neurosama", group: "Neuroverse" },
 	{ id: 603, label: "Evil Neuro", group: "Neuroverse" },
 
 
       // indie
+
+
+
+
+	{ id: 800, label: "Indies", group: "Indies", type: "group", size: 30, shape: "dot" },
+
+
+
+	{ id: 1, label: "Ironmouse", group: "Indies" },
+
+
+
+	{ id: 2, label: "Michi Mochievee", group: "Indies" },
+	{ id: 3, label: "Geega", group: "Indies" },
+	{ id: 4, label: "Zentraya", group: "Indies" },
+	{ id: 5, label: "Silvervale", group: "Indies" },
+	{ id: 6, label: "K9Kuro", group: "Indies" },
+	{ id: 7, label: "Apricot (froot)", group: "Indies" },
+	{ id: 8, label: "Haruka Karibu", group: "Indies" },
+	{ id: 9, label: "AmaLee", group: "Indies" },
+	{ id: 10, label: "Henya the Genius", group: "Indies" },
+	{ id: 11, label: "Matara Kan", group: "Indies" },
+	{ id: 12, label: "Projket Melody", group: "Indies" },
+	{ id: 13, label: "Hajime", group: "Indies" },
+	{ id: 14, label: "nyanners", group: "Indies" },
+	{ id: 15, label: "Kson", group: "Indies" },
+	{ id: 16, label: "Veibae", group: "Indies" },
+
+
+
 	{ id: 501, label: "chrchie", group: "Indies" },
 	{ id: 502, label: "Minikomew", group: "Indies" },
 	{ id: 503, label: "Shoomimi", group: "Indies" },
@@ -113,7 +126,6 @@ const nodes = new vis.DataSet([
 	{ id: 704, label: "Camila", group: "Indies" },
 	{ id: 705, label: "tonkienator", group: "Indies" },
 
-	{ id: 800, label: "Indies", group: "Indies", GroupNode: 1, size: 30, shape: "dot" },
 	{ id: 801, label: "Bajiru", group: "Indies" },
 	{ id: 802, label: "dooby3D", group: "Indies" },
 	{ id: 803, label: "FroggyLoch", group: "Indies" },
@@ -134,9 +146,14 @@ const nodes = new vis.DataSet([
 	{ id: 819, label: "pumpkinpotion", group: "Indies" },
 	{ id: 820, label: "missshadowlovely", group: "Indies" },
 	{ id: 821, label: "Cyyu", group: "Indies" },
+
+
+
+
+
 	
     // fleshtubers
-	{ id: 900, label: "Fleshtubers", group: "Fleshtubers", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 900, label: "Fleshtubers", group: "Fleshtubers", type: "group", size: 30, shape: "dot" },
 	{ id: 901, label: "Marcomeatball", group: "Fleshtubers" },
 	{ id: 902, label: "Lesange", group: "Fleshtubers" },
 	{ id: 903, label: "CDawgVA", group: "Fleshtubers" },
@@ -144,12 +161,12 @@ const nodes = new vis.DataSet([
 
 
       // INDO girlypops
-	{ id: 1000, label: "Indo Girlypops", group: "Indo Girlypops", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 1000, label: "Indo Girlypops", group: "Indo Girlypops", type: "group", size: 30, shape: "dot" },
 	{ id: 1001, label: "RaeLaviere", interest: "Gaming", group: "Indo Girlypops" },
 
 
     // Hololive folks
-	{ id: 2000, label: "Hololive", group: "Hololive", GroupNode: 1, size: 30, shape: "dot" },
+	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", size: 30, shape: "dot" },
 	{ id: 2001, label: "Mori Calliope", group: "Hololive" },
 	{ id: 2002, label: "Nerissa Ravencroft", group: "Hololive" },
 	{ id: 2003, label: "Elizabeth Rose Bloodflame", group: "Hololive" },
@@ -181,12 +198,12 @@ const nodes = new vis.DataSet([
 
 
     // interest groups
-	{ id: 3000, label: "Yapping",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },
-	{ id: 3001, label: "Gaming",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },
-	{ id: 3002, label: "Music",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },
-	{ id: 3003, label: "IRL",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },
-	{ id: 3004, label: "Art",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },
-	{ id: 3005, label: "STEM",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },	
+	{ id: 3000, label: "Yapping",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3001, label: "Gaming",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3002, label: "Music",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3003, label: "IRL",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3004, label: "Art",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3005, label: "STEM",  group: "interests", type: "interests", size: 30, shape: "dot" },	
 
 
 
@@ -202,120 +219,19 @@ const edges = new vis.DataSet([
 
 // vshojo
 
-	{
-		from: 0,
-		to: 800,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 1,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 2,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 3,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 4,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 5,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 6,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 7,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 8,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 9,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 10,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 11,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 12,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 13,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 14,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 15,
-		relation: "group",
-		color: { color: "blue" },
-	},
-	{
-		from: 0,
-		to: 16,
-		relation: "group",
-		color: { color: "blue" },
-	},
+	
 
   //dentsu
 	{
 		from: 100,
 		to: 800,
-		relation: "group",
+		type: "group",
 		color: { color: "yellow" },
 	},
 	{
 		from: 100,
 		to: 0,
-		relation: "group",
+		type: "group",
 		color: { color: "yellow" },
 		dashes: true
 	},
@@ -323,19 +239,19 @@ const edges = new vis.DataSet([
 	{
 		from: 100,
 		to: 101,
-		relation: "group",
+		type: "group",
 		color: { color: "yellow" },
 	},
 	{
 		from: 100,
 		to: 102,
-		relation: "group",
+		type: "group",
 		color: { color: "yellow" },
 	},
 	{
 		from: 100,
 		to: 103,
-		relation: "group",
+		type: "group",
 		color: { color: "yellow" },
 	},
 
@@ -343,38 +259,38 @@ const edges = new vis.DataSet([
 	{
 		from: 200,
 		to: 800,
-		relation: "group",
+		type: "group",
 		color: { color: "red" },
 	},
 	{
 		from: 200,
 		to: 0,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 200,
 		to: 201,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 200,
 		to: 202,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 200,
 		to: 203,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 200,
 		to: 204,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
@@ -383,38 +299,38 @@ const edges = new vis.DataSet([
 	{
 		from: 300,
 		to: 800,
-		relation: "group",
+		type: "group",
 		color: { color: "red" },
 	},
 	{
 		from: 300,
 		to: 0,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 300,
 		to: 301,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 300,
 		to: 302,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 300,
 		to: 303,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 300,
 		to: 304,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
@@ -423,59 +339,59 @@ const edges = new vis.DataSet([
 	{
 		from: 2000,
 		to: 2001,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 2000,
 		to: 2002,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},             
 	{
 		from: 2000,
 		to: 2003,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},             
 	{
 		from: 2000,
 		to: 2004,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},            
 	{
 		from: 2000,
 		to: 2005,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 2000,
 		to: 2006,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	
 	{
 		from: 2000,
 		to: 2007,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	
 	{
 		from: 2000,
 		to: 2008,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
-		{
+	{
 		from: 2000,
 		to: 2009,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	
@@ -487,31 +403,31 @@ const edges = new vis.DataSet([
 	{
 		from: 400,
 		to: 800,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 401,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 402,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 403,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 404,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},  
 
@@ -520,26 +436,26 @@ const edges = new vis.DataSet([
 	{
 		from: 600,
 		to: 800,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 600,
 		to: 601,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 600,
 		to: 602,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 600,
 		to: 603,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
@@ -553,28 +469,54 @@ const edges = new vis.DataSet([
 	{
 		from: 1000,
 		to: 1001,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 1000,
 		to: 2,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 1000,
 		to: 2004,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 1000,
 		to: 2005,
-		relation: "group",
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	}, 
+
+	{
+		from: 1000,
+		to: 2006,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	}, 	{
+		from: 1000,
+		to: 2007,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	}, 	{
+		from: 1000,
+		to: 2008,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	}, 	{
+		from: 1000,
+		to: 2009,
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
@@ -585,42 +527,42 @@ const edges = new vis.DataSet([
 	{
 		from: 600,
 		to: 501,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 502,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 504,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 505,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 701,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 704,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
@@ -634,28 +576,28 @@ const edges = new vis.DataSet([
 	{
 		from: 4000,
 		to: 1,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 4000,
 		to: 903,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 4000,
 		to: 813,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 4000,
 		to: 14,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	}, 
@@ -666,25 +608,25 @@ const edges = new vis.DataSet([
 	{
 		from: 900,
 		to: 901,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 902,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 903,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 904,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
@@ -693,116 +635,116 @@ const edges = new vis.DataSet([
 	{
 		from: 800,
 		to: 801,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 802,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 803,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 804,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 805,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 806,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 807,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 808,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 809,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 810,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 811,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 812,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 813,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 814,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 501,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 502,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 503,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 504,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 505,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
@@ -810,127 +752,227 @@ const edges = new vis.DataSet([
 	{
 		from: 800,
 		to: 701,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 702,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 703,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 704,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 705,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 815,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 816,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 817,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 818,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 819,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 820,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 821,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 	},
 
 
 
+	{
+		from: 800,
+		to: 1,
+		type: "group",
+		color: { color: "blue" },
+	},
+
+
+
+
+	{
+		from: 800,
+		to: 2,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 3,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 4,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 5,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 6,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 7,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 8,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 9,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 10,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 11,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 12,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 13,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 14,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 15,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 800,
+		to: 16,
+		type: "group",
+		color: { color: "blue" },
+	},
 
 
 // balding
 	{
 		from: 500,
 		to: 501,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 500,
 		to: 502,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 503,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 504,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 505,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 801,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
@@ -943,35 +985,35 @@ const edges = new vis.DataSet([
 	{
 		from: 700,
 		to: 701,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 702,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 703,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 704,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 705,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},
@@ -982,28 +1024,28 @@ const edges = new vis.DataSet([
 	{
 		from: 5000,
 		to: 9,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 5000,
 		to: 820,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 5000,
 		to: 817,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 5000,
 		to: 821,
-		relation: "group",
+		type: "group",
 		color: { color: "blue" },
 		dashes: true
 	},	
@@ -1011,7 +1053,120 @@ const edges = new vis.DataSet([
 
 
 
+//ex Vshjo
 
+	{
+		from: 0,
+		to: 1,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 2,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 3,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 4,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 5,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 6,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 7,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 8,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 9,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 10,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 11,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 12,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 13,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 14,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 15,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
+	{
+		from: 0,
+		to: 16,
+		type: "group",
+		color: { color: "blue" },
+		dashes: true
+	},
 
 
 
@@ -1026,19 +1181,19 @@ const edges = new vis.DataSet([
 	{
 		from: 2,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 2,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 2,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1046,19 +1201,19 @@ const edges = new vis.DataSet([
 	{
 		from: 1,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 1,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 1,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1066,13 +1221,13 @@ const edges = new vis.DataSet([
 	{
 		from: 3,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 3,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1080,13 +1235,13 @@ const edges = new vis.DataSet([
 	{
 		from: 4,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 4,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1097,13 +1252,13 @@ const edges = new vis.DataSet([
 	{
 		from: 6,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 6,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1111,19 +1266,19 @@ const edges = new vis.DataSet([
 	{
 		from: 7,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 7,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 7,
 		to: 3003,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1131,7 +1286,7 @@ const edges = new vis.DataSet([
 	{
 		from: 8,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1139,13 +1294,13 @@ const edges = new vis.DataSet([
 	{
 		from: 9,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 9,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1153,13 +1308,13 @@ const edges = new vis.DataSet([
 	{
 		from: 10,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 10,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1168,21 +1323,21 @@ const edges = new vis.DataSet([
 	{
 		from: 11,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 11,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 11,
 		to: 3003,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1190,13 +1345,13 @@ const edges = new vis.DataSet([
 	{
 		from: 12,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 12,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1204,7 +1359,7 @@ const edges = new vis.DataSet([
 	{
 		from: 13,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1212,13 +1367,13 @@ const edges = new vis.DataSet([
 	{
 		from: 14,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 14,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1226,19 +1381,19 @@ const edges = new vis.DataSet([
 	{
 		from: 15,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 15,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 15,
 		to: 3003,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1251,13 +1406,13 @@ const edges = new vis.DataSet([
 	{
 		from: 101,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 101,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1266,7 +1421,7 @@ const edges = new vis.DataSet([
 	{
 		from: 102,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1274,7 +1429,7 @@ const edges = new vis.DataSet([
 	{
 		from: 103,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1283,13 +1438,13 @@ const edges = new vis.DataSet([
 	{
 		from: 201,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 201,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1298,7 +1453,7 @@ const edges = new vis.DataSet([
 	{
 		from: 202,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1306,13 +1461,13 @@ const edges = new vis.DataSet([
 	{
 		from: 203,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 203,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1320,13 +1475,13 @@ const edges = new vis.DataSet([
 	{
 		from: 204,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 204,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1337,7 +1492,7 @@ const edges = new vis.DataSet([
 	{
 		from: 301,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1346,13 +1501,13 @@ const edges = new vis.DataSet([
 	{
 		from: 302,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 302,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1361,13 +1516,13 @@ const edges = new vis.DataSet([
 	{
 		from: 303,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 303,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1376,7 +1531,7 @@ const edges = new vis.DataSet([
 	{
 		from: 304,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1387,7 +1542,7 @@ const edges = new vis.DataSet([
 	{
 		from: 401,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1396,7 +1551,7 @@ const edges = new vis.DataSet([
 	{
 		from: 402,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1405,13 +1560,13 @@ const edges = new vis.DataSet([
 	{
 		from: 403,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 403,
 		to: 3004,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1420,13 +1575,13 @@ const edges = new vis.DataSet([
 	{
 		from: 404,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 404,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1436,13 +1591,13 @@ const edges = new vis.DataSet([
 	{
 		from: 601,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 601,
 		to: 3005,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1451,14 +1606,14 @@ const edges = new vis.DataSet([
 	{
 		from: 501,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
 	{
 		from: 501,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1468,7 +1623,7 @@ const edges = new vis.DataSet([
 	{
 		from: 502,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1477,13 +1632,13 @@ const edges = new vis.DataSet([
 	{
 		from: 503,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 503,
 		to: 3005,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1491,13 +1646,13 @@ const edges = new vis.DataSet([
 	{
 		from: 504,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
-		{
+	{
 		from: 504,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1506,25 +1661,25 @@ const edges = new vis.DataSet([
 	{
 		from: 505,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 505,
 		to: 3005,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 505,
 		to: 3004,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 505,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1535,19 +1690,19 @@ const edges = new vis.DataSet([
 	{
 		from: 701,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 701,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 701,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1556,13 +1711,13 @@ const edges = new vis.DataSet([
 	{
 		from: 702,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 702,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1571,13 +1726,13 @@ const edges = new vis.DataSet([
 	{
 		from: 703,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 703,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1586,19 +1741,19 @@ const edges = new vis.DataSet([
 	{
 		from: 704,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 704,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 704,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1607,13 +1762,13 @@ const edges = new vis.DataSet([
 	{
 		from: 705,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 705,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1622,7 +1777,7 @@ const edges = new vis.DataSet([
 	{
 		from: 801,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1630,7 +1785,7 @@ const edges = new vis.DataSet([
 	{
 		from: 802,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1638,25 +1793,25 @@ const edges = new vis.DataSet([
 	{
 		from: 803,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 803,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 803,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 803,
 		to: 3004,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1664,7 +1819,7 @@ const edges = new vis.DataSet([
 	{
 		from: 804,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1676,13 +1831,13 @@ const edges = new vis.DataSet([
 	{
 		from: 807,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 807,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1692,13 +1847,13 @@ const edges = new vis.DataSet([
 	{
 		from: 809,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 809,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1706,7 +1861,7 @@ const edges = new vis.DataSet([
 	{
 		from: 810,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1720,19 +1875,19 @@ const edges = new vis.DataSet([
 	{
 		from: 815,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 815,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 815,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1740,19 +1895,19 @@ const edges = new vis.DataSet([
 	{
 		from: 816,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 816,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 816,
 		to: 3003,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1762,13 +1917,13 @@ const edges = new vis.DataSet([
 	{
 		from: 817,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 817,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1776,13 +1931,13 @@ const edges = new vis.DataSet([
 	{
 		from: 818,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 818,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1791,19 +1946,19 @@ const edges = new vis.DataSet([
 	{
 		from: 819,
 		to: 3000,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 819,
 		to: 3001,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 	{
 		from: 819,
 		to: 3002,
-		relation: "interests",
+		type: "interests",
 		color: { color: "blue" },
 	},
 
@@ -1823,16 +1978,70 @@ const edges = new vis.DataSet([
 // VARIABLE SET UP
 
 
+// this sets what elements are providing which filter inputs
+const nodeFilterSelector = document.getElementById("nodeFilterSelect");
+
+
+
+
 /**
  * filter values are updated in the outer scope.
  * in order to apply filters to new values, DataView.refresh() should be called
  */
 let nodeFilterValue = "";
-var edgesFilterValues = {
-	group: false,
-	interests: false,
-	collab: false,
-};
+
+
+
+
+
+
+
+// chat GPT update function for the radio buttons
+
+// this gets the acual radio buttons
+ const edgeFilters = document.getElementsByName("edgesFilter");
+
+// set inital values
+  let edgesFilterValues = {
+    group: false,
+    interests: false,
+    collab: false,
+  };
+
+// this handles the edgesFilerValues update
+  function updateEdgeFilters() {
+
+  	// this sees which radio button is selected
+    const selected = document.querySelector('input[name="edgesFilter"]:checked');
+
+    edgesFilterValues.group = selected?.value === "group";
+    edgesFilterValues.interests = selected?.value === "interests";
+    edgesFilterValues.collab = selected?.value === "collab";
+
+    console.log("Updated filters:", edgesFilterValues);
+
+    // 👉 If you're using a DataView or graph, refresh it here
+    // dataView.refresh();
+  }
+
+
+// need to add a function here to filter the noddes
+
+
+
+  // Attach listener to each radio button
+  edgeFilters.forEach(radio => {
+    radio.addEventListener("change", updateEdgeFilters);
+  });
+
+  // Optional: run once on page load
+  updateEdgeFilters();
+
+
+
+
+
+
 
 
 
@@ -1843,25 +2052,33 @@ var edgesFilterValues = {
       based on whether item in DataView satisfies a given condition.
     */
 const nodesFilter = (node) => {
-  if (nodeFilterValue === "") {
-    return true;
-  }
-  switch (nodeFilterValue) {
-    case "kid":
-      return node.age === "kid";
-    case "adult":
-      return node.age === "adult";
-    case "male":
-      return node.gender === "male";
-    case "female":
-      return node.gender === "female";
-    default:
-      return true;
-  }
+	if (nodeFilterValue === "") {
+		return true;
+	}
+	switch (nodeFilterValue) {
+	case "kid":
+		return node.age === "kid";
+	case "adult":
+		return node.age === "adult";
+	case "male":
+		return node.gender === "male";
+	case "female":
+		return node.gender === "female";
+	default:
+		return true;
+	}
 };
 
+
+
+
+
+
+
+
+
 const edgesFilter = (edge) => {
-  return edgesFilterValues[edge.relation];
+	return edgesFilterValues[edge.type];
 };
 
 const nodesView = new vis.DataView(nodes, { filter: nodesFilter });
@@ -1869,24 +2086,31 @@ const edgesView = new vis.DataView(edges, { filter: edgesFilter });
 
 
 
+
+
+
+
+
+
 nodeFilterSelector.addEventListener("change", (e) => {
   // set new value to filter variable
-  nodeFilterValue = e.target.value;
+	nodeFilterValue = e.target.value;
   /*
         refresh DataView,
         so that its filter function is re-calculated with the new variable
       */
-  nodesView.refresh();
+	nodesView.refresh();
 });
 
 
 
 edgeFilters.forEach((filter) =>
-  filter.addEventListener("change", (e) => {
-    const { value, checked } = e.target;
-    edgesFilterValues[value] = checked;
-    edgesView.refresh();
-  }),
-);
+	filter.addEventListener("change", (e) => {
+		const { value, checked } = e.target;
+		edgesFilterValues[value] = checked;
+		edgesView.refresh();
+		
+	}),
+	);
 
 startNetwork({ nodes: nodesView, edges: edgesView });
