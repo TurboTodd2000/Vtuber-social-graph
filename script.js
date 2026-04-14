@@ -158,6 +158,11 @@ const nodes = new vis.DataSet([
 	{ id: 902, label: "Lesange", group: "Fleshtubers" },
 	{ id: 903, label: "CDawgVA", group: "Fleshtubers" },
 	{ id: 904, label: "Emily Hopkins", group: "Fleshtubers" },
+	{ id: 905, label: "Jessie", group: "Fleshtubers" },
+	{ id: 906, label: "Doger", group: "Fleshtubers" },
+	{ id: 907, label: "Nagzz", group: "Fleshtubers" },
+	{ id: 908, label: "Ray", group: "Fleshtubers" },
+
 
 
       // INDO girlypops
@@ -626,6 +631,30 @@ const edges = new vis.DataSet([
 	{
 		from: 900,
 		to: 904,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 900,
+		to: 905,
+		type: "group",
+		color: { color: "blue" },
+	},
+	{
+		from: 900,
+		to: 906,
+		type: "group",
+		color: { color: "blue" },
+	},
+		{
+		from: 900,
+		to: 907,
+		type: "group",
+		color: { color: "blue" },
+	},
+		{
+		from: 900,
+		to: 908,
 		type: "group",
 		color: { color: "blue" },
 	},
