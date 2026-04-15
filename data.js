@@ -1,180 +1,49 @@
 
-// want to import nodes and edges from seperate file to keep things readable
-//import { nodes, edges } from "data.js";
-
-
-//need to figure out how we go from import to filter as the edge/node data needs to pass through the filter before going into the network
-
-
-
-
-//variables for node styles, this is for properties for nodes by type
-
-//for group nodes
-var typeGroupShape = "dot";
-var typeGroupSize = 30;
-
-
-
-
-
-
-//for interests
-
-
-
-//edge styles
-
-
-
-
-
-
-
-
-// this is what hold the params for and instintates the network
-function startNetwork(data) {
-	const container = document.getElementById("mynetwork");
-
-	const options = {
-		// global node properties, can be overidden on a per node basis
-		nodes: {
-			//this handles the case for the talent nodes
-			shape: "box",
-			margin: { top: 10, right: 15, bottom: 10, left: 15 },
-			font: { size: 14, face: "arial"},
-			// this sets how much the nodes repell each other, values >1 required
-			mass: 1.25,
-		}, 
-		edges: {
-			color: { inherit: true },
-			//width: 0.15,
-
-			//this option changes how the physics effects the network, compensate via adjusting mass?
-			/*	smooth: {
-				type: "continuous",
-			},*/
-
-		},
-		//this is overkill for this small a network, can improve responsiveness for large networks
-/*		interaction: {
-			hideEdgesOnDrag: true,
-			tooltipDelay: 200,
-		},*/
-
-		// manually set the colors for legibility
-		groups: {
-			interests: {
-				color: {background: "grey"},
-				shape: "hexagon",
-				size: 30
-			},
-			dentsu: {
-				color: {background: "blue"},
-				font: { color: "white" },
-			},
-			NOVA: {
-				color: {background: "red"},
-				font: { color: "white" },
-			},
-			Beastiez: {
-				color: {background: "purple"},
-				font: { color: "white" },
-			},
-			Vichi_Bon: {
-				color: {background: "yellow"},
-				font: { color: "black" },
-			},
-			Indies: {
-				color: {background: "orange"},
-				font: { color: "black" },
-			},
-			Neuroverse: {
-				//color: {background: "grey"},
-				font: { color: "lime" },
-			},
-			Fleshtubers: {
-				//color: {background: "grey"},
-				font: { color: "lime" },
-			},
-			Indo_Girlypops: {
-				//color: {background: "grey"},
-				font: { color: "lime" },
-			},
-			Hololive: {
-				color: {background: "green"},
-				font: { color: "white" },
-			},
-		},
-
-//not able to set custom properties in options sadly
-
-		physics: {
-			forceAtlas2Based: {
-				gravitationalConstant: -26,
-				centralGravity: 0.005,
-				springLength: 100,
-				springConstant: 0.1
-			},
-			maxVelocity: 146,
-			solver: "forceAtlas2Based",
-			timestep: 0.35,
-			stabilization: { iterations: 150 }
-		}
-	};
-
-
-	new vis.Network(container, data, options);
-}
-
-
-
 /**
  * In this example we do not mutate nodes or edges source data.
  */
 const nodes = new vis.DataSet([
 // vshojo
-	{ id: 0, label: "ex-Vshjo", group: "Vshojo", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 0, label: "ex-Vshjo", group: "Vshojo", type: "group", size: 30, shape: "dot" },
 
 
       // dentsu.exe
-	{ id: 100, label: "dentsu.exe", type: "group", group: "dentsu", shape: typeGroupShape, size: typeGroupSize },
-	{ id: 101, label: "Mint Fantome", type: "talent", group: "dentsu" },
-	{ id: 102, label: "Victoria Roma", type: "talent", group: "dentsu" },
-	{ id: 103, label: "Phoebe Chan", type: "talent", group: "dentsu" },
+	{ id: 100, label: "dentsu.exe", group: "dentsu", type: "group", size: 30, shape: "dot" },
+	{ id: 101, label: "Mint Fantome", group: "dentsu" },
+	{ id: 102, label: "Victoria Roma", group: "dentsu" },
+	{ id: 103, label: "Phoebe Chan", group: "dentsu" },
 
     // NOVA
-	{ id: 200, label: "Nova", type: "group", group: "NOVA", shape: typeGroupShape, size: typeGroupSize, font: { color: "black" } },
-	{ id: 201, label: "Akatsuki Hotaru", type: "talent", group: "NOVA" },
-	{ id: 202, label: "Hestia Happiness", type: "talent", group: "NOVA" },
-	{ id: 203, label: "Yutori Peke", type: "talent", group: "NOVA" },
-	{ id: 204, label: "Okamoto Nagi", type: "talent", group: "NOVA" },
+	{ id: 200, label: "Nova", group: "NOVA", type: "group", size: 30, shape: "dot" },
+	{ id: 201, label: "Akatsuki Hotaru", group: "NOVA" },
+	{ id: 202, label: "Hestia Happiness", group: "NOVA" },
+	{ id: 203, label: "Yutori Peke", group: "NOVA" },
+	{ id: 204, label: "Okamoto Nagi", group: "NOVA" },
 
     // Beastiez
-	{ id: 300, label: "Beastiez", type: "group", group: "Beastiez", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 300, label: "Beastiez", group: "Beastiez", type: "group", size: 30, shape: "dot" },
 	{ id: 301, label: "Tori Oriane", group: "Beastiez" },
 	{ id: 302, label: "PiaPiUFO", group: "Beastiez" },
 	{ id: 303, label: "Beribug", group: "Beastiez" },
 	{ id: 304, label: "Kairyu Crocodile", group: "Beastiez" },
 
       // Vichi Bon
-	{ id: 400, label: "VchiBan", group: "Vichi_Bon", type: "group", shape: typeGroupShape, size: typeGroupSize },
-	{ id: 401, label: "Buffpup", group: "Vichi_Bon" },
-	{ id: 402, label: "Ai Candii", group: "Vichi_Bon" },
-	{ id: 403, label: "Rosedoodle", group: "Vichi_Bon" },
-	{ id: 404, label: "ShiaBun", group: "Vichi_Bon" },
+	{ id: 400, label: "VchiBan", group: "Vichi Bon", type: "group", size: 30, shape: "dot" },
+	{ id: 401, label: "Buffpup", group: "Vichi Bon" },
+	{ id: 402, label: "Ai Candii", group: "Vichi Bon" },
+	{ id: 403, label: "Rosedoodle", group: "Vichi Bon" },
+	{ id: 404, label: "ShiaBun", group: "Vichi Bon" },
 
 
       // neuroverse
-	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", size: 30, shape: "dot" },
 	{ id: 601, label: "Vedal", group: "Neuroverse" },
 	{ id: 602, label: "Neurosama", group: "Neuroverse" },
 	{ id: 603, label: "Evil Neuro", group: "Neuroverse" },
 
 
       // indie
-	{ id: 800, label: "Indies", group: "Indies", type: "group", size: typeGroupSize },
-
+	{ id: 800, label: "Indies", group: "Indies", type: "group", size: 30, shape: "dot" },
 
 	{ id: 1, label: "Ironmouse", group: "Indies" },
 	{ id: 2, label: "Michi Mochievee", group: "Indies" },
@@ -227,8 +96,12 @@ const nodes = new vis.DataSet([
 	{ id: 821, label: "Cyyu", group: "Indies" },
 
 
+
+
+
+	
     // fleshtubers
-	{ id: 900, label: "Fleshtubers", type: "group", group: "Fleshtubers", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 900, label: "Fleshtubers", group: "Fleshtubers", type: "group", size: 30, shape: "dot" },
 	{ id: 901, label: "Marcomeatball", group: "Fleshtubers" },
 	{ id: 902, label: "Lesange", group: "Fleshtubers" },
 	{ id: 903, label: "CDawgVA", group: "Fleshtubers" },
@@ -239,13 +112,14 @@ const nodes = new vis.DataSet([
 	{ id: 908, label: "Ray", group: "Fleshtubers" },
 
 
-    // INDO girlypops
-	{ id: 1000, label: "Indo Girlypops", group: "Indo_Girlypops", type: "group", shape: typeGroupShape, size: typeGroupSize },
-	{ id: 1001, label: "RaeLaviere", interest: "Gaming", group: "Indo_Girlypops" },
+
+      // INDO girlypops
+	{ id: 1000, label: "Indo Girlypops", group: "Indo Girlypops", type: "group", size: 30, shape: "dot" },
+	{ id: 1001, label: "RaeLaviere", interest: "Gaming", group: "Indo Girlypops" },
 
 
     // Hololive folks
-	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", size: 30, shape: "dot" },
 	{ id: 2001, label: "Mori Calliope", group: "Hololive" },
 	{ id: 2002, label: "Nerissa Ravencroft", group: "Hololive" },
 	{ id: 2003, label: "Elizabeth Rose Bloodflame", group: "Hololive" },
@@ -256,28 +130,29 @@ const nodes = new vis.DataSet([
 	{ id: 2008, label: "Kobo Kanaeru", group: "Hololive" }, 
 	{ id: 2009, label: "Vestia Zeta", group: "Hololive" },
 	
-
+	
     // vein gang
-	{ id: 4000, label: "Vein Gang",  GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 4000, label: "Vein Gang",  GroupNode: 1, size: 30, shape: "dot" },
 
 	//balding with the boys
-	{ id: 500, label: "balding", group: "balding", GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 500, label: "balding", group: "balding", GroupNode: 1, size: 30, shape: "dot" },
 
 	// EN girlypops
-	{ id: 700, label: "EN Girlypops", group: "EN Girlypops", GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 700, label: "EN Girlypops", group: "EN Girlypops", GroupNode: 1, size: 30, shape: "dot" },
 
 	// crashout crew
-	{ id: 5000, label: "Crashout Crew", group: "EN Girlypops", GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
-
+	{ id: 5000, label: "Crashout Crew", group: "EN Girlypops", GroupNode: 1, size: 30, shape: "dot" },
 
 
     // interest groups
-	{ id: 3000, label: "Yapping",  group: "interests", type: "interests"  },
-	{ id: 3001, label: "Gaming",  group: "interests", type: "interests"  },
-	{ id: 3002, label: "Music",  group: "interests", type: "interests" },
-	{ id: 3003, label: "IRL",  group: "interests", type: "interests" },
-	{ id: 3004, label: "Art",  group: "interests", type: "interests" },
-	{ id: 3005, label: "STEM",  group: "interests", type: "interests" },	
+	{ id: 3000, label: "Yapping",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3001, label: "Gaming",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3002, label: "Music",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3003, label: "IRL",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3004, label: "Art",  group: "interests", type: "interests", size: 30, shape: "dot" },
+	{ id: 3005, label: "STEM",  group: "interests", type: "interests", size: 30, shape: "dot" },	
+
+
 
 
 ]);
@@ -298,13 +173,13 @@ const edges = new vis.DataSet([
 		from: 100,
 		to: 800,
 		type: "group",
-//		color: { color: "yellow" },
+		color: { color: "yellow" },
 	},
 	{
 		from: 100,
 		to: 0,
 		type: "group",
-//		color: { color: "yellow" },
+		color: { color: "yellow" },
 		dashes: true
 	},
 
@@ -312,19 +187,19 @@ const edges = new vis.DataSet([
 		from: 100,
 		to: 101,
 		type: "group",
-//		color: { color: "yellow" },
+		color: { color: "yellow" },
 	},
 	{
 		from: 100,
 		to: 102,
 		type: "group",
-//		color: { color: "yellow" },
+		color: { color: "yellow" },
 	},
 	{
 		from: 100,
 		to: 103,
 		type: "group",
-//		color: { color: "yellow" },
+		color: { color: "yellow" },
 	},
 
   // NOVA
@@ -332,13 +207,13 @@ const edges = new vis.DataSet([
 		from: 200,
 		to: 800,
 		type: "group",
-//		color: { color: "red" },
+		color: { color: "red" },
 	},
 	{
 		from: 200,
 		to: 0,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 
@@ -346,25 +221,25 @@ const edges = new vis.DataSet([
 		from: 200,
 		to: 201,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 200,
 		to: 202,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 200,
 		to: 203,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 200,
 		to: 204,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -373,38 +248,38 @@ const edges = new vis.DataSet([
 		from: 300,
 		to: 800,
 		type: "group",
-//		color: { color: "red" },
+		color: { color: "red" },
 	},
 	{
 		from: 300,
 		to: 0,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 300,
 		to: 301,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 300,
 		to: 302,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 300,
 		to: 303,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 300,
 		to: 304,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -413,59 +288,59 @@ const edges = new vis.DataSet([
 		from: 2000,
 		to: 2001,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 2000,
 		to: 2002,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},             
 	{
 		from: 2000,
 		to: 2003,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},             
 	{
 		from: 2000,
 		to: 2004,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},            
 	{
 		from: 2000,
 		to: 2005,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 2000,
 		to: 2006,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	
 	{
 		from: 2000,
 		to: 2007,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	
 	{
 		from: 2000,
 		to: 2008,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 2000,
 		to: 2009,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	
 
@@ -477,31 +352,31 @@ const edges = new vis.DataSet([
 		from: 400,
 		to: 800,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 401,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 402,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 403,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},  
 	{
 		from: 400,
 		to: 404,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},  
 
 
@@ -510,26 +385,26 @@ const edges = new vis.DataSet([
 		from: 600,
 		to: 800,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 600,
 		to: 601,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 600,
 		to: 602,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 600,
 		to: 603,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -543,28 +418,28 @@ const edges = new vis.DataSet([
 		from: 1000,
 		to: 1001,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 1000,
 		to: 2,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 1000,
 		to: 2004,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 1000,
 		to: 2005,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 
@@ -572,25 +447,25 @@ const edges = new vis.DataSet([
 		from: 1000,
 		to: 2006,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 	{
 		from: 1000,
 		to: 2007,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 	{
 		from: 1000,
 		to: 2008,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 	{
 		from: 1000,
 		to: 2009,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 
@@ -601,44 +476,47 @@ const edges = new vis.DataSet([
 		from: 600,
 		to: 501,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 502,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 504,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 505,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 701,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 600,
 		to: 704,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
+
+
+
 
 
 
@@ -647,28 +525,28 @@ const edges = new vis.DataSet([
 		from: 4000,
 		to: 1,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 4000,
 		to: 903,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 4000,
 		to: 813,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 	{
 		from: 4000,
 		to: 14,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	}, 
 
@@ -679,49 +557,49 @@ const edges = new vis.DataSet([
 		from: 900,
 		to: 901,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 902,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 903,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 904,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 905,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 900,
 		to: 906,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
-	{
+		{
 		from: 900,
 		to: 907,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
-	{
+		{
 		from: 900,
 		to: 908,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -730,116 +608,116 @@ const edges = new vis.DataSet([
 		from: 800,
 		to: 801,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 802,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 803,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 804,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 805,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 806,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 807,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 808,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 809,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 810,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 811,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 812,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 813,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 814,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 501,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 502,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 503,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 504,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 505,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -847,80 +725,80 @@ const edges = new vis.DataSet([
 		from: 800,
 		to: 701,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 702,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 703,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 704,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 705,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 815,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 816,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 817,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 818,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 819,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 820,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 800,
 		to: 821,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -929,7 +807,7 @@ const edges = new vis.DataSet([
 		from: 800,
 		to: 1,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -939,91 +817,91 @@ const edges = new vis.DataSet([
 		from: 800,
 		to: 2,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 3,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 4,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 5,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 6,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 7,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 8,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 9,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 10,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 11,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 12,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 13,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 14,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 15,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 800,
 		to: 16,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1032,42 +910,42 @@ const edges = new vis.DataSet([
 		from: 500,
 		to: 501,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 500,
 		to: 502,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 503,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 504,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 505,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 500,
 		to: 801,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 
@@ -1080,35 +958,35 @@ const edges = new vis.DataSet([
 		from: 700,
 		to: 701,
 		type: "group",
-		//color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 702,
 		type: "group",
-		//color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 703,
 		type: "group",
-		//color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 704,
 		type: "group",
-		//color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 700,
 		to: 705,
 		type: "group",
-		//color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 
@@ -1119,28 +997,28 @@ const edges = new vis.DataSet([
 		from: 5000,
 		to: 9,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 5000,
 		to: 820,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 5000,
 		to: 817,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 	{
 		from: 5000,
 		to: 821,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},	
 
@@ -1153,112 +1031,112 @@ const edges = new vis.DataSet([
 		from: 0,
 		to: 1,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 2,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 3,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 4,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 5,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 6,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 7,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 8,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 9,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 10,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 11,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 12,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 13,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 14,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 15,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 	{
 		from: 0,
 		to: 16,
 		type: "group",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 		dashes: true
 	},
 
@@ -1276,19 +1154,19 @@ const edges = new vis.DataSet([
 		from: 2,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 2,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 2,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 // mouse
@@ -1296,19 +1174,19 @@ const edges = new vis.DataSet([
 		from: 1,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 1,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 1,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// geega
@@ -1316,13 +1194,13 @@ const edges = new vis.DataSet([
 		from: 3,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 3,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 // zen
@@ -1330,13 +1208,13 @@ const edges = new vis.DataSet([
 		from: 4,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 4,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1347,13 +1225,13 @@ const edges = new vis.DataSet([
 		from: 6,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 6,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// apricot
@@ -1361,19 +1239,19 @@ const edges = new vis.DataSet([
 		from: 7,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 7,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 7,
 		to: 3003,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// haruka
@@ -1381,7 +1259,7 @@ const edges = new vis.DataSet([
 		from: 8,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// amalee
@@ -1389,13 +1267,13 @@ const edges = new vis.DataSet([
 		from: 9,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 9,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// henya
@@ -1403,13 +1281,13 @@ const edges = new vis.DataSet([
 		from: 10,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 10,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1418,21 +1296,21 @@ const edges = new vis.DataSet([
 		from: 11,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 11,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 11,
 		to: 3003,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// melody
@@ -1440,13 +1318,13 @@ const edges = new vis.DataSet([
 		from: 12,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 12,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// hajime
@@ -1454,7 +1332,7 @@ const edges = new vis.DataSet([
 		from: 13,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// nyanners
@@ -1462,13 +1340,13 @@ const edges = new vis.DataSet([
 		from: 14,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 14,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 //kson
@@ -1476,19 +1354,19 @@ const edges = new vis.DataSet([
 		from: 15,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 15,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 15,
 		to: 3003,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// veibae
@@ -1501,13 +1379,13 @@ const edges = new vis.DataSet([
 		from: 101,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 101,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1516,7 +1394,7 @@ const edges = new vis.DataSet([
 		from: 102,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// phoebe
@@ -1524,7 +1402,7 @@ const edges = new vis.DataSet([
 		from: 103,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1533,13 +1411,13 @@ const edges = new vis.DataSet([
 		from: 201,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 201,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1548,7 +1426,7 @@ const edges = new vis.DataSet([
 		from: 202,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// peke
@@ -1556,13 +1434,13 @@ const edges = new vis.DataSet([
 		from: 203,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 203,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// nagi
@@ -1570,13 +1448,13 @@ const edges = new vis.DataSet([
 		from: 204,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 204,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1587,7 +1465,7 @@ const edges = new vis.DataSet([
 		from: 301,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1596,13 +1474,13 @@ const edges = new vis.DataSet([
 		from: 302,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 302,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1611,13 +1489,13 @@ const edges = new vis.DataSet([
 		from: 303,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 303,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1626,7 +1504,7 @@ const edges = new vis.DataSet([
 		from: 304,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1637,7 +1515,7 @@ const edges = new vis.DataSet([
 		from: 401,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1646,7 +1524,7 @@ const edges = new vis.DataSet([
 		from: 402,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1655,13 +1533,13 @@ const edges = new vis.DataSet([
 		from: 403,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 403,
 		to: 3004,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1670,13 +1548,13 @@ const edges = new vis.DataSet([
 		from: 404,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 404,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1686,13 +1564,13 @@ const edges = new vis.DataSet([
 		from: 601,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 601,
 		to: 3005,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1701,14 +1579,14 @@ const edges = new vis.DataSet([
 		from: 501,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	{
 		from: 501,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1718,7 +1596,7 @@ const edges = new vis.DataSet([
 		from: 502,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1727,13 +1605,13 @@ const edges = new vis.DataSet([
 		from: 503,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 503,
 		to: 3005,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// cerber
@@ -1741,13 +1619,13 @@ const edges = new vis.DataSet([
 		from: 504,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 504,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1756,25 +1634,25 @@ const edges = new vis.DataSet([
 		from: 505,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 505,
 		to: 3005,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 505,
 		to: 3004,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 505,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1785,19 +1663,19 @@ const edges = new vis.DataSet([
 		from: 701,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 701,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 701,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1806,13 +1684,13 @@ const edges = new vis.DataSet([
 		from: 702,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 702,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1821,13 +1699,13 @@ const edges = new vis.DataSet([
 		from: 703,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 703,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1836,19 +1714,19 @@ const edges = new vis.DataSet([
 		from: 704,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 704,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 704,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1857,13 +1735,13 @@ const edges = new vis.DataSet([
 		from: 705,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 705,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -1872,7 +1750,7 @@ const edges = new vis.DataSet([
 		from: 801,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// dooby
@@ -1880,7 +1758,7 @@ const edges = new vis.DataSet([
 		from: 802,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// froggy
@@ -1888,25 +1766,25 @@ const edges = new vis.DataSet([
 		from: 803,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 803,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 803,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 803,
 		to: 3004,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// lime
@@ -1914,7 +1792,7 @@ const edges = new vis.DataSet([
 		from: 804,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// saba
@@ -1926,13 +1804,13 @@ const edges = new vis.DataSet([
 		from: 807,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 807,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 // cottontail
@@ -1942,13 +1820,13 @@ const edges = new vis.DataSet([
 		from: 809,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 809,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// daryl
@@ -1956,7 +1834,7 @@ const edges = new vis.DataSet([
 		from: 810,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// issa
@@ -1970,19 +1848,19 @@ const edges = new vis.DataSet([
 		from: 815,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 815,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 815,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// saii
@@ -1990,19 +1868,19 @@ const edges = new vis.DataSet([
 		from: 816,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 816,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 816,
 		to: 3003,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -2012,13 +1890,13 @@ const edges = new vis.DataSet([
 		from: 817,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 817,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 	// heavenly
@@ -2026,13 +1904,13 @@ const edges = new vis.DataSet([
 		from: 818,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 818,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -2041,19 +1919,19 @@ const edges = new vis.DataSet([
 		from: 819,
 		to: 3000,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 819,
 		to: 3001,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 	{
 		from: 819,
 		to: 3002,
 		type: "interests",
-//		color: { color: "blue" },
+		color: { color: "blue" },
 	},
 
 
@@ -2066,145 +1944,3 @@ const edges = new vis.DataSet([
 
 ]);
 
-
-
-
-// VARIABLE SET UP
-
-
-// this sets what elements are providing which filter inputs
-const nodeFilterSelector = document.getElementById("nodeFilterSelect");
-
-
-
-
-/**
- * filter values are updated in the outer scope.
- * in order to apply filters to new values, DataView.refresh() should be called
- */
-let nodeFilterValue = "";
-
-
-
-
-
-
-
-// chat GPT update function for the radio buttons
-
-// this gets the acual radio buttons
-const edgeFilters = document.getElementsByName("edgesFilter");
-
-// set inital values
-let edgesFilterValues = {
-	group: false,
-	interests: false,
-	collab: false,
-};
-
-// this handles the edgesFilerValues update
-function updateEdgeFilters() {
-
-  	// this sees which radio button is selected
-	const selected = document.querySelector('input[name="edgesFilter"]:checked');
-
-	edgesFilterValues.group = selected?.value === "group";
-	edgesFilterValues.interests = selected?.value === "interests";
-	edgesFilterValues.collab = selected?.value === "collab";
-
-	console.log("Updated filters:", edgesFilterValues);
-
-    // 👉 If you're using a DataView or graph, refresh it here
-    // dataView.refresh();
-}
-
-
-// need to add a function here to filter the noddes
-
-
-
-  // Attach listener to each radio button
-edgeFilters.forEach(radio => {
-	radio.addEventListener("change", updateEdgeFilters);
-});
-
-  // Optional: run once on page load
-updateEdgeFilters();
-
-
-
-
-
-
-
-
-
-
-
-/*
-      filter function should return true or false
-      based on whether item in DataView satisfies a given condition.
-    */
-const nodesFilter = (node) => {
-	if (nodeFilterValue === "") {
-		return true;
-	}
-	switch (nodeFilterValue) {
-	case "kid":
-		return node.age === "kid";
-	case "adult":
-		return node.age === "adult";
-	case "male":
-		return node.gender === "male";
-	case "female":
-		return node.gender === "female";
-	default:
-		return true;
-	}
-};
-
-
-
-
-
-
-
-
-
-const edgesFilter = (edge) => {
-	return edgesFilterValues[edge.type];
-};
-
-const nodesView = new vis.DataView(nodes, { filter: nodesFilter });
-const edgesView = new vis.DataView(edges, { filter: edgesFilter });
-
-
-
-
-
-
-
-
-
-nodeFilterSelector.addEventListener("change", (e) => {
-  // set new value to filter variable
-	nodeFilterValue = e.target.value;
-  /*
-        refresh DataView,
-        so that its filter function is re-calculated with the new variable
-      */
-	nodesView.refresh();
-});
-
-
-
-edgeFilters.forEach((filter) =>
-	filter.addEventListener("change", (e) => {
-		const { value, checked } = e.target;
-		edgesFilterValues[value] = checked;
-		edgesView.refresh();
-		
-	}),
-	);
-
-startNetwork({ nodes: nodesView, edges: edgesView });
