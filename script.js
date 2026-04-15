@@ -15,7 +15,7 @@ var typeGroupShape = "dot";
 var typeGroupSize = 30;
 
 
-
+var nodeLabelSize = 16;
 
 
 
@@ -67,7 +67,8 @@ function startNetwork(data) {
 			interests: {
 				color: {background: "grey"},
 				shape: "hexagon",
-				size: 30
+				size: 35,
+				font: { size: 16, }
 			},
 			dentsu: {
 				color: {background: "blue"},
@@ -90,8 +91,8 @@ function startNetwork(data) {
 				font: { color: "black" },
 			},
 			Neuroverse: {
-				//color: {background: "grey"},
-				font: { color: "lime" },
+				color: {background: "darkgreen"},
+				font: { color: "white" },
 			},
 			Fleshtubers: {
 				//color: {background: "grey"},
@@ -103,6 +104,10 @@ function startNetwork(data) {
 			},
 			Hololive: {
 				color: {background: "green"},
+				font: { color: "white" },
+			},
+			Fleshtubers: {
+				color: {background: "firebrick"},
 				font: { color: "white" },
 			},
 		},
@@ -134,31 +139,31 @@ function startNetwork(data) {
  */
 const nodes = new vis.DataSet([
 // vshojo
-	{ id: 0, label: "ex-Vshjo", group: "Vshojo", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 0, label: "ex-Vshjo", group: "Vshojo", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 
       // dentsu.exe
-	{ id: 100, label: "dentsu.exe", type: "group", group: "dentsu", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 100, label: "dentsu.exe", type: "group", group: "dentsu", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, color: "black" } },
 	{ id: 101, label: "Mint Fantome", type: "talent", group: "dentsu" },
 	{ id: 102, label: "Victoria Roma", type: "talent", group: "dentsu" },
 	{ id: 103, label: "Phoebe Chan", type: "talent", group: "dentsu" },
 
     // NOVA
-	{ id: 200, label: "Nova", type: "group", group: "NOVA", shape: typeGroupShape, size: typeGroupSize, font: { color: "black" } },
+	{ id: 200, label: "Nova", type: "group", group: "NOVA", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 201, label: "Akatsuki Hotaru", type: "talent", group: "NOVA" },
 	{ id: 202, label: "Hestia Happiness", type: "talent", group: "NOVA" },
 	{ id: 203, label: "Yutori Peke", type: "talent", group: "NOVA" },
 	{ id: 204, label: "Okamoto Nagi", type: "talent", group: "NOVA" },
 
     // Beastiez
-	{ id: 300, label: "Beastiez", type: "group", group: "Beastiez", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 300, label: "Beastiez", type: "group", group: "Beastiez", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 301, label: "Tori Oriane", group: "Beastiez" },
 	{ id: 302, label: "PiaPiUFO", group: "Beastiez" },
 	{ id: 303, label: "Beribug", group: "Beastiez" },
 	{ id: 304, label: "Kairyu Crocodile", group: "Beastiez" },
 
       // Vichi Bon
-	{ id: 400, label: "VchiBan", group: "Vichi_Bon", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 400, label: "VchiBan", group: "Vichi_Bon", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 	{ id: 401, label: "Buffpup", group: "Vichi_Bon" },
 	{ id: 402, label: "Ai Candii", group: "Vichi_Bon" },
 	{ id: 403, label: "Rosedoodle", group: "Vichi_Bon" },
@@ -166,14 +171,14 @@ const nodes = new vis.DataSet([
 
 
       // neuroverse
-	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 601, label: "Vedal", group: "Neuroverse" },
 	{ id: 602, label: "Neurosama", group: "Neuroverse" },
 	{ id: 603, label: "Evil Neuro", group: "Neuroverse" },
 
 
       // indie
-	{ id: 800, label: "Indies", group: "Indies", type: "group", size: typeGroupSize },
+	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
 
 
 	{ id: 1, label: "Ironmouse", group: "Indies" },
@@ -228,7 +233,7 @@ const nodes = new vis.DataSet([
 
 
     // fleshtubers
-	{ id: 900, label: "Fleshtubers", type: "group", group: "Fleshtubers", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 900, label: "Fleshtubers", type: "group", group: "Fleshtubers", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 901, label: "Marcomeatball", group: "Fleshtubers" },
 	{ id: 902, label: "Lesange", group: "Fleshtubers" },
 	{ id: 903, label: "CDawgVA", group: "Fleshtubers" },
@@ -240,12 +245,12 @@ const nodes = new vis.DataSet([
 
 
     // INDO girlypops
-	{ id: 1000, label: "Indo Girlypops", group: "Indo_Girlypops", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 1000, label: "Indo Girlypops", group: "Indo_Girlypops", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 	{ id: 1001, label: "RaeLaviere", interest: "Gaming", group: "Indo_Girlypops" },
 
 
     // Hololive folks
-	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize },
+	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 2001, label: "Mori Calliope", group: "Hololive" },
 	{ id: 2002, label: "Nerissa Ravencroft", group: "Hololive" },
 	{ id: 2003, label: "Elizabeth Rose Bloodflame", group: "Hololive" },
@@ -258,26 +263,26 @@ const nodes = new vis.DataSet([
 	
 
     // vein gang
-	{ id: 4000, label: "Vein Gang",  GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 4000, label: "Vein Gang",  type: "group", group: "Viein_Gang", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 	//balding with the boys
-	{ id: 500, label: "balding", group: "balding", GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 500, label: "balding", type: "group", group: "balding",  shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 	// EN girlypops
-	{ id: 700, label: "EN Girlypops", group: "EN Girlypops", GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 700, label: "EN Girlypops", type: "group", group: "EN Girlypops", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 	// crashout crew
-	{ id: 5000, label: "Crashout Crew", group: "EN Girlypops", GroupNode: 1, shape: typeGroupShape, size: typeGroupSize },
+	{ id: 5000, label: "Crashout Crew", type: "group", group: "EN Girlypops", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 
 
     // interest groups
-	{ id: 3000, label: "Yapping",  group: "interests", type: "interests"  },
-	{ id: 3001, label: "Gaming",  group: "interests", type: "interests"  },
-	{ id: 3002, label: "Music",  group: "interests", type: "interests" },
-	{ id: 3003, label: "IRL",  group: "interests", type: "interests" },
-	{ id: 3004, label: "Art",  group: "interests", type: "interests" },
-	{ id: 3005, label: "STEM",  group: "interests", type: "interests" },	
+	{ id: 3000, label: "Yapping", type: "interests", group: "interests",  },
+	{ id: 3001, label: "Gaming", type: "interests", group: "interests", },
+	{ id: 3002, label: "Music", type: "interests", group: "interests", },
+	{ id: 3003, label: "IRL", type: "interests", group: "interests", },
+	{ id: 3004, label: "Art", type: "interests", group: "interests", },
+	{ id: 3005, label: "STEM", type: "interests", group: "interests", },	
 
 
 ]);

@@ -115,7 +115,7 @@ var groupeNodes = {
 
 
 
-var groupeNodes{
+var talentNodes{
 
 	[
 		//TALENT node
