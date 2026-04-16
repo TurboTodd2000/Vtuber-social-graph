@@ -251,15 +251,23 @@ const nodes = new vis.DataSet([
 
     // Hololive folks
 	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
+	
+{ id: 2010, label: "Hololive EN", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 2001, label: "Mori Calliope", type: "talent", group: "Hololive" },
 	{ id: 2002, label: "Nerissa Ravencroft", type: "talent", group: "Hololive" },
 	{ id: 2003, label: "Elizabeth Rose Bloodflame", type: "talent", group: "Hololive" },
+
+	{ id: 2011, label: "Hololive Indo", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 2004, label: "Kureiji Ollie", type: "talent", group: "Hololive" },
 	{ id: 2005, label: "Moona Hoshinova", type: "talent", group: "Hololive" },
 	{ id: 2006, label: "MAyunda Risu", type: "talent", group: "Hololive" },
 	{ id: 2007, label: "Kaela Kovalskia", type: "talent", group: "Hololive" },
 	{ id: 2008, label: "Kobo Kanaeru", type: "talent", group: "Hololive" }, 
 	{ id: 2009, label: "Vestia Zeta", type: "talent", group: "Hololive" },
+
+	{ id: 2012, label: "Hololive JP", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
+
+
 	
 
     // vein gang
@@ -326,19 +334,22 @@ const edges = new vis.DataSet([
 
 
   // Hololive
-	{		from: 2000,		to: 2001,		type: "group",	},
-	{		from: 2000,		to: 2002,		type: "group",	},             
-	{		from: 2000,		to: 2003,		type: "group",	},             
-	{		from: 2000,		to: 2004,		type: "group",	},            
-	{		from: 2000,		to: 2005,		type: "group",	},
 
-	{		from: 2000,		to: 2006,		type: "group",	},
-	
-	{		from: 2000,		to: 2007,		type: "group",	},
-	
-	{		from: 2000,		to: 2008,		type: "group",	},
+	{		from: 2000,		to: 2010,		type: "group",	},
+	{		from: 2000,		to: 2011,		type: "group",	},   
 
-	{		from: 2000,		to: 2009,		type: "group",	},
+	{		from: 2010,		to: 2003,		type: "group",	}, 
+	{		from: 2010,		to: 2002,		type: "group",	}, 
+	{		from: 2010,		to: 2001,		type: "group",	}, 
+
+	{		from: 2011,		to: 2004,		type: "group",	},            
+	{		from: 2011,		to: 2005,		type: "group",	},
+	{		from: 2011,		to: 2006,		type: "group",	},
+	{		from: 2011,		to: 2007,		type: "group",	},
+	{		from: 2011,		to: 2008,		type: "group",	},
+	{		from: 2011,		to: 2009,		type: "group",	},
+
+		{		from: 2012,		to: 2000,		type: "group",	},
 	
 
 
@@ -387,624 +398,136 @@ const edges = new vis.DataSet([
 
 
 // vein gang
-	{
-		from: 4000,
-		to: 1,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
-	{
-		from: 4000,
-		to: 903,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
-	{
-		from: 4000,
-		to: 813,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
-	{
-		from: 4000,
-		to: 14,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
+	{	from: 4000,		to: 1,		type: "group",		dashes: true	}, 
+	{	from: 4000,		to: 903,		type: "group",		dashes: true	}, 
+	{	from: 4000,		to: 813,		type: "group",		dashes: true	}, 
+	{	from: 4000,		to: 14,		type: "group",		dashes: true	}, 
 
 
 
 // fleshtubers
-	{
-		from: 900,
-		to: 901,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 902,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 903,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 904,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 905,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 906,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 907,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 900,
-		to: 908,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 900,		to: 901,		type: "group",	},
+	{	from: 900, to: 902, type: "group", },
+	{	from: 900, to: 903, type: "group", },
+	{	from: 900, to: 904, type: "group", },
+	{	from: 900, to: 905, type: "group", },
+	{	from: 900, to: 906, type: "group", },
+	{	from: 900, to: 907, type: "group", },
+	{	from: 900, to: 908, type: "group", },
 
 
 // indy 
-	{
-		from: 800,
-		to: 801,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 802,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 803,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 804,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 805,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 806,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 807,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 808,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 809,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 810,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 811,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 812,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 813,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 814,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 801, type: "group", },
+	{	from: 800, to: 802, type: "group", },
+	{	from: 800, to: 803, type: "group", },
+	{	from: 800, to: 804, type: "group", },
+	{	from: 800, to: 805, type: "group", },
+	{	from: 800, to: 806, type: "group", },
+	{	from: 800, to: 807, type: "group", },
+	{	from: 800, to: 808, type: "group", },
+	{	from: 800, to: 809, type: "group", },
+	{	from: 800, to: 810, type: "group", },
+	{	from: 800, to: 811, type: "group", },
+	{	from: 800, to: 812, type: "group", },
+	{	from: 800, to: 813, type: "group", },
+	{	from: 800, to: 814, type: "group", },
 
-	{
-		from: 800,
-		to: 501,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 502,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 503,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 504,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 505,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 501, type: "group", },
+	{	from: 800, to: 502, type: "group", },
+	{	from: 800, to: 503, type: "group", },
+	{	from: 800, to: 504, type: "group", },
+	{	from: 800, to: 505, type: "group", },
 
+	{	from: 800, to: 701, type: "group", },
+	{	from: 800, to: 702, type: "group", },
+	{	from: 800, to: 703, type: "group", },
+	{	from: 800, to: 704, type: "group", },
+	{	from: 800, to: 705, type: "group", },
 
-	{
-		from: 800,
-		to: 701,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 702,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 703,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 704,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 705,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 815, type: "group", },
 
-	{
-		from: 800,
-		to: 815,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 816, type: "group", },
 
-	{
-		from: 800,
-		to: 816,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 817, type: "group", },
 
-	{
-		from: 800,
-		to: 817,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 818, type: "group", },
 
-	{
-		from: 800,
-		to: 818,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 819, type: "group", },
 
-	{
-		from: 800,
-		to: 819,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 820, type: "group", },
 
-	{
-		from: 800,
-		to: 820,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 821, type: "group", },
 
-	{
-		from: 800,
-		to: 821,
-		type: "group",
-//		color: { color: "blue" },
-	},
-
-
-
-	{
-		from: 800,
-		to: 1,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 1, type: "group", },
 
 
 
 
-	{
-		from: 800,
-		to: 2,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 3,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 4,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 5,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 6,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 7,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 8,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 9,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 10,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 11,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 12,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 13,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 14,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 15,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 800,
-		to: 16,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{	from: 800, to: 2, type: "group", },
+	{	from: 800, to: 3, type: "group", },
+	{	from: 800, to: 4, type: "group", },
+	{	from: 800, to: 5, type: "group", },
+	{	from: 800, to: 6, type: "group", },
+	{	from: 800, to: 7, type: "group", },
+	{	from: 800, to: 8, type: "group", },
+	{	from: 800, to: 9, type: "group", },
+	{	from: 800, to: 10, type: "group", },
+	{	from: 800, to: 11, type: "group", },
+	{	from: 800, to: 12, type: "group", },
+	{	from: 800, to: 13, type: "group", },
+	{	from: 800, to: 14, type: "group", },
+	{	from: 800, to: 15, type: "group", },
+	{	from: 800, to: 16, type: "group", },
 
 
 // balding
-	{
-		from: 500,
-		to: 501,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 500,
-		to: 502,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 500,
-		to: 503,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 500,
-		to: 504,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 500,
-		to: 505,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 500,
-		to: 801,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
+	{	from: 500, to: 501, type: "group", 		dashes: true },
+	{	from: 500, to: 502, type: "group", 		dashes: true },	
+	{	from: 500, to: 503, type: "group",		dashes: true },	
+	{	from: 500, to: 504, type: "group",		dashes: true },	
+	{	from: 500, to: 505, type: "group",		dashes: true },	
+	{	from: 500, to: 801, type: "group",		dashes: true },
 
 	
 
 
 // EN girlypops
 
-	{
-		from: 700,
-		to: 701,
-		type: "group",
-		//color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 700,
-		to: 702,
-		type: "group",
-		//color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 700,
-		to: 703,
-		type: "group",
-		//color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 700,
-		to: 704,
-		type: "group",
-		//color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 700,
-		to: 705,
-		type: "group",
-		//color: { color: "blue" },
-		dashes: true
-	},
+	{	from: 700, to: 701, type: "group",		dashes: true },
+	{	from: 700, to: 702, type: "group",		dashes: true },
+	{	from: 700, to: 703, type: "group",		dashes: true },
+	{	from: 700, to: 704, type: "group",		dashes: true },
+	{	from: 700, to: 705, type: "group",		dashes: true },
 
 
 
 // crashout crew
-	{
-		from: 5000,
-		to: 9,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 5000,
-		to: 820,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 5000,
-		to: 817,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
-	{
-		from: 5000,
-		to: 821,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},	
+	{	from: 5000, to: 9, type: "group",		dashes: true },	
+	{	from: 5000, to: 820, type: "group",		dashes: true },	
+	{	from: 5000, to: 817, type: "group",		dashes: true },	
+	{	from: 5000, to: 821, type: "group",		dashes: true },	
 
 
 
 
 //ex Vshjo
 
-	{
-		from: 0,
-		to: 1,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 2,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 3,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 4,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 5,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 6,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 7,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 8,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 9,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 10,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 11,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 12,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 13,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 14,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 15,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 0,
-		to: 16,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
+	{	from: 0, to: 1, type: "group",		dashes: true },
+	{	from: 0, to: 2, type: "group",		dashes: true },
+	{	from: 0, to: 3, type: "group",		dashes: true },
+	{	from: 0, to: 4, type: "group",		dashes: true },
+	{	from: 0, to: 5, type: "group",		dashes: true },
+	{	from: 0, to: 6, type: "group",		dashes: true },
+	{	from: 0, to: 7, type: "group",		dashes: true },
+	{	from: 0, to: 8, type: "group",		dashes: true },
+	{	from: 0, to: 9, type: "group",		dashes: true },
+	{	from: 0, to: 10, type: "group",		dashes: true },
+	{	from: 0, to: 11, type: "group",		dashes: true },
+	{	from: 0, to: 12, type: "group",		dashes: true },
+	{	from: 0, to: 13, type: "group",		dashes: true },
+	{	from: 0, to: 14, type: "group",		dashes: true },
+	{	from: 0, to: 15, type: "group",		dashes: true },
+	{	from: 0, to: 16, type: "group",		dashes: true },
 
 
 
@@ -1016,794 +539,332 @@ const edges = new vis.DataSet([
 // INTERESTS
 
 // michi
-	{
-		from: 2,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 2,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 2,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 2, to: 3000, type: "interests", },
+	{	from: 2, to: 3001, type: "interests", },
+	{	from: 2, to: 3002, type: "interests", },
 
 // mouse
-	{
-		from: 1,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 1,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 1,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 1, to: 3000, type: "interests", },
+	{	from: 1, to: 3001, type: "interests", },
+	{	from: 1, to: 3002, type: "interests", },
 
 	// geega
-	{
-		from: 3,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 3,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 3, to: 3000, type: "interests", },
+	{	from: 3, to: 3001, type: "interests", },
 
 // zen
-	{
-		from: 4,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 4,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 4, to: 3001, type: "interests", },
+	{	from: 4, to: 3002, type: "interests", },
 
 
 // silvervale
 
+
 	// k9kuro
-	{
-		from: 6,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 6,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 6, to: 3001, type: "interests", },
+	{	from: 6, to: 3002, type: "interests", },
 
 	// apricot
-	{
-		from: 7,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 7,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 7,
-		to: 3003,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 7, to: 3001, type: "interests", },
+	{	from: 7, to: 3002, type: "interests", },
+	{	from: 7, to: 3003, type: "interests", },
 
 	// haruka
-	{
-		from: 8,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 8, to: 3001, type: "interests", },
 
 	// amalee
-	{
-		from: 9,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 9,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 9, to: 3001, type: "interests", },
+	{	from: 9, to: 3002, type: "interests", },
 
 	// henya
-	{
-		from: 10,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 10,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 10, to: 3001, type: "interests", },
+	{	from: 10, to: 3000, type: "interests", },
 
 
 	// matara
-	{
-		from: 11,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-	{
-		from: 11,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-	{
-		from: 11,
-		to: 3003,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 11, to: 3000, type: "interests", },
+	{	from: 11, to: 3001, type: "interests", },
+	{	from: 11, to: 3003, type: "interests", },
 
 	// melody
-	{
-		from: 12,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 12,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 12, to: 3000, type: "interests", },
+	{	from: 12, to: 3001, type: "interests", },
 
 	// hajime
-	{
-		from: 13,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 13, to: 3001, type: "interests", },
 
 	// nyanners
-	{
-		from: 14,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 14,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 14, to: 3001, type: "interests", },
+	{	from: 14, to: 3002, type: "interests", },
 
 //kson
-	{
-		from: 15,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 15,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 15,
-		to: 3003,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 15, to: 3000, type: "interests", },
+	{	from: 15, to: 3001, type: "interests", },
+	{	from: 15, to: 3003, type: "interests", },
 
 	// veibae
 
 
 
 // mint
-
-	{
-		from: 101,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 101,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 101, to: 3002, type: "interests", },
+	{	from: 101, to: 3001, type: "interests", },
 
 // victoria
-	{
-		from: 102,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 102, to: 3002, type: "interests", },
 
 	// phoebe
-	{
-		from: 103,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 103, to: 3002, type: "interests", },
 
 // hotaru
-	{
-		from: 201,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 201,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 201, to: 3002, type: "interests", },
+	{	from: 201, to: 3001, type: "interests", },
 
 	// hestia
-	{
-		from: 202,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 202, to: 3001, type: "interests", },
 
 	// peke
-	{
-		from: 203,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 203,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 203, to: 3002, type: "interests", },
+	{	from: 203, to: 3001, type: "interests", },
 
 	// nagi
-	{
-		from: 204,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 204,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 204, to: 3002, type: "interests", },
+	{	from: 204, to: 3001, type: "interests", },
 
 
 
 
 // tori
-	{
-		from: 301,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 301, to: 3001, type: "interests", },
 
 	// Pia
-	{
-		from: 302,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 302,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 302, to: 3001, type: "interests", },
+	{	from: 302, to: 3002, type: "interests", },
 
 // beri
-	{
-		from: 303,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 303,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 303, to: 3001, type: "interests", },
+	{	from: 303, to: 3002, type: "interests", },
 
 	// kairyu
-	{
-		from: 304,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-
-
+	{	from: 304, to: 3001, type: "interests", },
 
 	// buff
-	{
-		from: 401,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 401, to: 3001, type: "interests", },
 
 	// candii
-	{
-		from: 402,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 402, to: 3001, type: "interests", },
 
 	// rosedoodle
-	{
-		from: 403,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 403,
-		to: 3004,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 403, to: 3001, type: "interests", },
+	{	from: 403, to: 3004, type: "interests", },
 
 	//shibun
-	{
-		from: 404,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 404,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-
+	{	from: 404, to: 3001, type: "interests", },
+	{	from: 404, to: 3002, type: "interests", },
 
 // vedal
-	{
-		from: 601,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 601,
-		to: 3005,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 601, to: 3001, type: "interests", },
+	{	from: 601, to: 3005, type: "interests", },
 
 	// chrchie
-	{
-		from: 501,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 501, to: 3001, type: "interests", },
+	{	from: 501, to: 3002, type: "interests", },
 
-	{
-		from: 501,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-
-	
 	//minikomew
-	{
-		from: 502,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 502, to: 3002, type: "interests", },
 
 
 	// shoomimi
-	{
-		from: 503,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 503,
-		to: 3005,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 503, to: 3001, type: "interests", },
+	{	from: 503, to: 3005, type: "interests", },
 
 	// cerber
-	{
-		from: 504,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 504,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 504, to: 3002, type: "interests", },
+	{	from: 504, to: 3001, type: "interests", },
 
 // elle
-	{
-		from: 505,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 505,
-		to: 3005,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 505,
-		to: 3004,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 505,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-
-
+	{	from: 505, to: 3002, type: "interests", },
+	{	from: 505, to: 3005, type: "interests", },
+	{	from: 505, to: 3004, type: "interests", },
+	{	from: 505, to: 3000, type: "interests", },
 
 //Numi
-	{
-		from: 701,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 701,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 701,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 701, to: 3000, type: "interests", },
+	{	from: 701, to: 3002, type: "interests", },
+	{	from: 701, to: 3001, type: "interests", },
 
 	//bao
-	{
-		from: 702,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 702,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 702, to: 3001, type: "interests", },
+	{	from: 702, to: 3002, type: "interests", },
 
 	//yuzu
-	{
-		from: 703,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 703,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 703, to: 3001, type: "interests", },
+	{	from: 703, to: 3002, type: "interests", },
 
 	//camila
-	{
-		from: 704,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 704,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 704,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 704, to: 3001, type: "interests", },
+	{	from: 704, to: 3000, type: "interests", },
+	{	from: 704, to: 3002, type: "interests", },
 
 	// tonkienator
-	{
-		from: 705,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 705,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
+	{	from: 705, to: 3000, type: "interests", },
+	{	from: 705, to: 3001, type: "interests", },
 
 // bajiru
-	{
-		from: 801,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 801, to: 3002, type: "interests", },
 
 	// dooby
-	{
-		from: 802,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 802, to: 3001, type: "interests", },
 
 	// froggy
-	{
-		from: 803,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 803,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 803,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 803,
-		to: 3004,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 803, to: 3000, type: "interests", },
+	{	from: 803, to: 3001, type: "interests", },
+	{	from: 803, to: 3002, type: "interests", },
+	{	from: 803, to: 3004, type: "interests", },
 
 	// lime
-	{
-		from: 804,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 804, to: 3001, type: "interests", },
 
 	// saba
+	{	from: 805, to: 3001, type: "interests", },
+	{	from: 805, to: 3002, type: "interests", },
 
 	// nimi
+	{	from: 806, to: 3001, type: "interests", },
+	{	from: 806, to: 3002, type: "interests", },
 
 	// mono
-	{
-		from: 807,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 807,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 807, to: 3001, type: "interests", },
+	{	from: 807, to: 3002, type: "interests", },
 
 // cottontail
+	{	from: 808, to: 3001, type: "interests", },
+	{	from: 808, to: 3001, type: "interests", },
+	{	from: 808, to: 3001, type: "interests", },
 
 	// arielle
-	{
-		from: 809,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 809,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 809, to: 3000, type: "interests", },
+	{	from: 809, to: 3001, type: "interests", },
 
 	// daryl
-	{
-		from: 810,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 810, to: 3002, type: "interests", },
 
 	// issa
-
+	{	from: 811, to: 3001, type: "interests", },
+	{	from: 811, to: 3002, type: "interests", },
+	
 	// aethel
+	{	from: 813, to: 3001, type: "interests", },
+	{	from: 813, to: 3001, type: "interests", },		
 
 	// katie
+	{	from: 814, to: 3001, type: "interests", },
 
 	// usan
-	{
-		from: 815,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 815,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 815,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 815, to: 3000, type: "interests", },
+	{	from: 815, to: 3001, type: "interests", },
+	{	from: 815, to: 3002, type: "interests", },
 
 	// saii
-	{
-		from: 816,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 816,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 816,
-		to: 3003,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-
-
+	{	from: 816, to: 3000, type: "interests", },
+	{	from: 816, to: 3001, type: "interests", },
+	{	from: 816, to: 3003, type: "interests", },
 
 	// porcelian maid
-	{
-		from: 817,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 817,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 817, to: 3000, type: "interests", },
+	{	from: 817, to: 3001, type: "interests", },
 
 	// heavenly
-	{
-		from: 818,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 818,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 818, to: 3000, type: "interests", },
+	{	from: 818, to: 3001, type: "interests", },
 
 
 	// pumpkin
-	{
-		from: 819,
-		to: 3000,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 819,
-		to: 3001,
-		type: "interests",
-//		color: { color: "blue" },
-	},
-	{
-		from: 819,
-		to: 3002,
-		type: "interests",
-//		color: { color: "blue" },
-	},
+	{	from: 819, to: 3000, type: "interests", },
+	{	from: 819, to: 3001, type: "interests", },
+	{	from: 819, to: 3002, type: "interests", },
 
 
 	// miss shadow lovely
 
 	// cyyu
+
+//marcomeatball
+	{	from: 901, to: 3001, type: "interests", },
+	{	from: 901, to: 3002, type: "interests", },
+	{	from: 901, to: 3003, type: "interests", },
+
+	//lesange
+	{	from: 902, to: 3002, type: "interests", },
+	{	from: 902, to: 3003, type: "interests", },
+
+	//CDawgVA
+	{	from: 903, to: 3000, type: "interests", },
+	{	from: 903, to: 3001, type: "interests", },
+	{	from: 903, to: 3003, type: "interests", },
+
+	//Emily Hopkins
+	{	from: 904, to: 3001, type: "interests", },
+	{	from: 904, to: 3002, type: "interests", },
+	{	from: 904, to: 3003, type: "interests", },
+
+	//Jessie
+	{	from: 905, to: 3000, type: "interests", },
+	{	from: 905, to: 3001, type: "interests", },
+	{	from: 905, to: 3003, type: "interests", },
+
+	//Dodger
+	{	from: 906, to: 3000, type: "interests", },
+	{	from: 906, to: 3001, type: "interests", },
+	{	from: 906, to: 3003, type: "interests", },
+
+	//Nagzz
+	{	from: 907, to: 3000, type: "interests", },
+	{	from: 907, to: 3001, type: "interests", },
+	{	from: 907, to: 3003, type: "interests", },
+
+	//Ray
+	{	from: 908, to: 3000, type: "interests", },
+	{	from: 908, to: 3001, type: "interests", },
+	{	from: 908, to: 3003, type: "interests", },
+
+
+
+//mori
+	{	from: 2001, to: 3000, type: "interests", },
+	{	from: 2001, to: 3001, type: "interests", },
+	{	from: 2001, to: 3002, type: "interests", },
+
+
+//nerissa
+	{	from: 2002, to: 3000, type: "interests", },
+	{	from: 2002, to: 3001, type: "interests", },
+	{	from: 2002, to: 3002, type: "interests", },
+
+
+//erb
+	{	from: 2003, to: 3000, type: "interests", },
+	{	from: 2003, to: 3001, type: "interests", },
+	{	from: 2003, to: 3002, type: "interests", },
+
+
+//ollie
+	{	from: 2004, to: 3000, type: "interests", },
+	{	from: 2004, to: 3001, type: "interests", },
+	{	from: 2004, to: 3002, type: "interests", },
+
+//moona
+
+//risu
+
+//kaela
+
+//kobo
+
+//zeta
+
+
+
 
 
 
