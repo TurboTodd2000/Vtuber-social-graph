@@ -15,7 +15,7 @@ var typeGroupShape = "dot";
 var typeGroupSize = 30;
 
 
-var nodeLabelSize = 16;
+var nodeLabelSize = 20;
 
 
 
@@ -172,94 +172,94 @@ const nodes = new vis.DataSet([
 
       // neuroverse
 	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 601, label: "Vedal", group: "Neuroverse" },
-	{ id: 602, label: "Neurosama", group: "Neuroverse" },
-	{ id: 603, label: "Evil Neuro", group: "Neuroverse" },
+	{ id: 601, label: "Vedal", type: "talent", group: "Neuroverse" },
+	{ id: 602, label: "Neurosama", type: "talent", group: "Neuroverse" },
+	{ id: 603, label: "Evil Neuro", type: "talent", group: "Neuroverse" },
 
 
       // indie
 	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
 
 
-	{ id: 1, label: "Ironmouse", group: "Indies" },
-	{ id: 2, label: "Michi Mochievee", group: "Indies" },
-	{ id: 3, label: "Geega", group: "Indies" },
-	{ id: 4, label: "Zentraya", group: "Indies" },
-	{ id: 5, label: "Silvervale", group: "Indies" },
-	{ id: 6, label: "K9Kuro", group: "Indies" },
-	{ id: 7, label: "Apricot (froot)", group: "Indies" },
-	{ id: 8, label: "Haruka Karibu", group: "Indies" },
-	{ id: 9, label: "AmaLee", group: "Indies" },
-	{ id: 10, label: "Henya the Genius", group: "Indies" },
-	{ id: 11, label: "Matara Kan", group: "Indies" },
-	{ id: 12, label: "Projket Melody", group: "Indies" },
-	{ id: 13, label: "Hajime", group: "Indies" },
-	{ id: 14, label: "nyanners", group: "Indies" },
-	{ id: 15, label: "Kson", group: "Indies" },
-	{ id: 16, label: "Veibae", group: "Indies" },
+	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies" },
+	{ id: 2, label: "Michi Mochievee", type: "talent", group: "Indies" },
+	{ id: 3, label: "Geega", type: "talent", group: "Indies" },
+	{ id: 4, label: "Zentraya", type: "talent", group: "Indies" },
+	{ id: 5, label: "Silvervale", type: "talent", group: "Indies" },
+	{ id: 6, label: "K9Kuro", type: "talent", group: "Indies" },
+	{ id: 7, label: "Apricot (froot)", type: "talent", group: "Indies" },
+	{ id: 8, label: "Haruka Karibu", type: "talent", group: "Indies" },
+	{ id: 9, label: "AmaLee", type: "talent", group: "Indies" },
+	{ id: 10, label: "Henya the Genius", type: "talent", group: "Indies" },
+	{ id: 11, label: "Matara Kan", type: "talent", group: "Indies" },
+	{ id: 12, label: "Projket Melody", type: "talent", group: "Indies" },
+	{ id: 13, label: "Hajime", type: "talent", group: "Indies" },
+	{ id: 14, label: "nyanners", type: "talent", group: "Indies" },
+	{ id: 15, label: "Kson", type: "talent", group: "Indies" },
+	{ id: 16, label: "Veibae", type: "talent", group: "Indies" },
 
-	{ id: 501, label: "chrchie", group: "Indies" },
-	{ id: 502, label: "Minikomew", group: "Indies" },
-	{ id: 503, label: "Shoomimi", group: "Indies" },
-	{ id: 504, label: "Cerber", group: "Indies" },
-	{ id: 505, label: "Elle_Minibot", group: "Indies" },
+	{ id: 501, label: "chrchie", type: "talent", group: "Indies" },
+	{ id: 502, label: "Minikomew", type: "talent", group: "Indies" },
+	{ id: 503, label: "Shoomimi", type: "talent", group: "Indies" },
+	{ id: 504, label: "Cerber", type: "talent", group: "Indies" },
+	{ id: 505, label: "Elle_Minibot", type: "talent", group: "Indies" },
 
-	{ id: 701, label: "Akuma Nihmune", group: "Indies" },
-	{ id: 702, label: "Bao the Whale", group: "Indies" },
-	{ id: 703, label: "Yuzu", group: "Indies" },
-	{ id: 704, label: "Camila", group: "Indies" },
-	{ id: 705, label: "tonkienator", group: "Indies" },
+	{ id: 701, label: "Akuma Nihmune", type: "talent", group: "Indies" },
+	{ id: 702, label: "Bao the Whale", type: "talent", group: "Indies" },
+	{ id: 703, label: "Yuzu", type: "talent", group: "Indies" },
+	{ id: 704, label: "Camila", type: "talent", group: "Indies" },
+	{ id: 705, label: "tonkienator", type: "talent", group: "Indies" },
 
-	{ id: 801, label: "Bajiru", group: "Indies" },
-	{ id: 802, label: "dooby3D", group: "Indies" },
-	{ id: 803, label: "FroggyLoch", group: "Indies" },
-	{ id: 804, label: "Limealicious", group: "Indies" },
-	{ id: 805, label: "Sameko Saba", group: "Indies" },
-	{ id: 806, label: "Nimi Nightmare", group: "Indies" },
-	{ id: 807, label: "SixteenInMono", group: "Indies" },
-	{ id: 808, label: "Cottontail_VA", group: "Indies" },
-	{ id: 809, label: "Arielle_VT", group: "Indies" },
-	{ id: 810, label: "Starlight Daryl", group: "Indies" },
-	{ id: 811, label: "Issa Corva", group: "Indies" },
-	{ id: 813, label: "LordAethelstan", group: "Indies" },
-	{ id: 814, label: "obkatiekat", group: "Indies" },
-	{ id: 815, label: "U-san", group: "Indies" },
-	{ id: 816, label: "Saiiren", group: "Indies" },
-	{ id: 817, label: "Porcelain Maid", group: "Indies" },
-	{ id: 818, label: "Heavenly Father", group: "Indies" },	
-	{ id: 819, label: "pumpkinpotion", group: "Indies" },
-	{ id: 820, label: "missshadowlovely", group: "Indies" },
-	{ id: 821, label: "Cyyu", group: "Indies" },
+	{ id: 801, label: "Bajiru", type: "talent", group: "Indies" },
+	{ id: 802, label: "dooby3D", type: "talent", group: "Indies" },
+	{ id: 803, label: "FroggyLoch", type: "talent", group: "Indies" },
+	{ id: 804, label: "Limealicious", type: "talent", group: "Indies" },
+	{ id: 805, label: "Sameko Saba", type: "talent", group: "Indies" },
+	{ id: 806, label: "Nimi Nightmare", type: "talent", group: "Indies" },
+	{ id: 807, label: "SixteenInMono", type: "talent", group: "Indies" },
+	{ id: 808, label: "Cottontail_VA", type: "talent", group: "Indies" },
+	{ id: 809, label: "Arielle_VT", type: "talent", group: "Indies" },
+	{ id: 810, label: "Starlight Daryl", type: "talent", group: "Indies" },
+	{ id: 811, label: "Issa Corva", type: "talent", group: "Indies" },
+	{ id: 813, label: "LordAethelstan", type: "talent", group: "Indies" },
+	{ id: 814, label: "obkatiekat", type: "talent", group: "Indies" },
+	{ id: 815, label: "U-san", type: "talent", group: "Indies" },
+	{ id: 816, label: "Saiiren", type: "talent", group: "Indies" },
+	{ id: 817, label: "Porcelain Maid", type: "talent", group: "Indies" },
+	{ id: 818, label: "Heavenly Father", type: "talent", group: "Indies" },	
+	{ id: 819, label: "pumpkinpotion", type: "talent", group: "Indies" },
+	{ id: 820, label: "missshadowlovely", type: "talent", group: "Indies" },
+	{ id: 821, label: "Cyyu", type: "talent", group: "Indies" },
 
 
     // fleshtubers
 	{ id: 900, label: "Fleshtubers", type: "group", group: "Fleshtubers", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 901, label: "Marcomeatball", group: "Fleshtubers" },
-	{ id: 902, label: "Lesange", group: "Fleshtubers" },
-	{ id: 903, label: "CDawgVA", group: "Fleshtubers" },
-	{ id: 904, label: "Emily Hopkins", group: "Fleshtubers" },
-	{ id: 905, label: "Jessie", group: "Fleshtubers" },
-	{ id: 906, label: "Doger", group: "Fleshtubers" },
-	{ id: 907, label: "Nagzz", group: "Fleshtubers" },
-	{ id: 908, label: "Ray", group: "Fleshtubers" },
+	{ id: 901, label: "Marcomeatball", type: "talent", group: "Fleshtubers" },
+	{ id: 902, label: "Lesange", type: "talent", group: "Fleshtubers" },
+	{ id: 903, label: "CDawgVA", type: "talent", group: "Fleshtubers" },
+	{ id: 904, label: "Emily Hopkins", type: "talent", group: "Fleshtubers" },
+	{ id: 905, label: "Jessie", type: "talent", group: "Fleshtubers" },
+	{ id: 906, label: "Doger", type: "talent", group: "Fleshtubers" },
+	{ id: 907, label: "Nagzz", type: "talent", group: "Fleshtubers" },
+	{ id: 908, label: "Ray", type: "talent", group: "Fleshtubers" },
 
 
     // INDO girlypops
 	{ id: 1000, label: "Indo Girlypops", group: "Indo_Girlypops", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-	{ id: 1001, label: "RaeLaviere", interest: "Gaming", group: "Indo_Girlypops" },
+	{ id: 1001, label: "RaeLaviere", type: "talent", group: "Indo_Girlypops" },
 
 
     // Hololive folks
 	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 2001, label: "Mori Calliope", group: "Hololive" },
-	{ id: 2002, label: "Nerissa Ravencroft", group: "Hololive" },
-	{ id: 2003, label: "Elizabeth Rose Bloodflame", group: "Hololive" },
-	{ id: 2004, label: "Kureiji Ollie", group: "Hololive" },
-	{ id: 2005, label: "Moona Hoshinova", group: "Hololive" },
-	{ id: 2006, label: "MAyunda Risu", group: "Hololive" },
-	{ id: 2007, label: "Kaela Kovalskia", group: "Hololive" },
-	{ id: 2008, label: "Kobo Kanaeru", group: "Hololive" }, 
-	{ id: 2009, label: "Vestia Zeta", group: "Hololive" },
+	{ id: 2001, label: "Mori Calliope", type: "talent", group: "Hololive" },
+	{ id: 2002, label: "Nerissa Ravencroft", type: "talent", group: "Hololive" },
+	{ id: 2003, label: "Elizabeth Rose Bloodflame", type: "talent", group: "Hololive" },
+	{ id: 2004, label: "Kureiji Ollie", type: "talent", group: "Hololive" },
+	{ id: 2005, label: "Moona Hoshinova", type: "talent", group: "Hololive" },
+	{ id: 2006, label: "MAyunda Risu", type: "talent", group: "Hololive" },
+	{ id: 2007, label: "Kaela Kovalskia", type: "talent", group: "Hololive" },
+	{ id: 2008, label: "Kobo Kanaeru", type: "talent", group: "Hololive" }, 
+	{ id: 2009, label: "Vestia Zeta", type: "talent", group: "Hololive" },
 	
 
     // vein gang
@@ -299,243 +299,63 @@ const edges = new vis.DataSet([
 	
 
   //dentsu
-	{
-		from: 100,
-		to: 800,
-		type: "group",
-//		color: { color: "yellow" },
-	},
-	{
-		from: 100,
-		to: 0,
-		type: "group",
-//		color: { color: "yellow" },
-		dashes: true
-	},
+	{		from: 100, 		to: 800,		type: "group",	},
+	{		from: 100,		to: 0,			type: "group",		dashes: true	},
+	{		from: 100,		to: 101,		type: "group",	},
+	{		from: 100,		to: 102,		type: "group",	},
+	{		from: 100,		to: 103,		type: "group",	},
 
-	{
-		from: 100,
-		to: 101,
-		type: "group",
-//		color: { color: "yellow" },
-	},
-	{
-		from: 100,
-		to: 102,
-		type: "group",
-//		color: { color: "yellow" },
-	},
-	{
-		from: 100,
-		to: 103,
-		type: "group",
-//		color: { color: "yellow" },
-	},
 
   // NOVA
-	{
-		from: 200,
-		to: 800,
-		type: "group",
-//		color: { color: "red" },
-	},
-	{
-		from: 200,
-		to: 0,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
+	{		from: 200,		to: 800,		type: "group",	},
+	{		from: 200,		to: 0,			type: "group",		dashes: true	},
 
-	{
-		from: 200,
-		to: 201,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 200,
-		to: 202,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 200,
-		to: 203,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 200,
-		to: 204,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 200,		to: 201,		type: "group",	},
+	{		from: 200,		to: 202,		type: "group",	},
+	{		from: 200,		to: 203,		type: "group",	},
+	{		from: 200,		to: 204,		type: "group",	},
 
 
 // Beastiez
-	{
-		from: 300,
-		to: 800,
-		type: "group",
-//		color: { color: "red" },
-	},
-	{
-		from: 300,
-		to: 0,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 300,
-		to: 301,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 300,
-		to: 302,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 300,
-		to: 303,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 300,
-		to: 304,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 300,		to: 800,		type: "group",	},
+	{		from: 300,		to: 0,			type: "group",		dashes: true,	},
+	{		from: 300,		to: 301,		type: "group",	},
+	{		from: 300,		to: 302,		type: "group",	},
+	{		from: 300,		to: 303,		type: "group",	},
+	{		from: 300,		to: 304,		type: "group",	},
 
 
   // Hololive
-	{
-		from: 2000,
-		to: 2001,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 2000,
-		to: 2002,
-		type: "group",
-//		color: { color: "blue" },
-	},             
-	{
-		from: 2000,
-		to: 2003,
-		type: "group",
-//		color: { color: "blue" },
-	},             
-	{
-		from: 2000,
-		to: 2004,
-		type: "group",
-//		color: { color: "blue" },
-	},            
-	{
-		from: 2000,
-		to: 2005,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 2000,		to: 2001,		type: "group",	},
+	{		from: 2000,		to: 2002,		type: "group",	},             
+	{		from: 2000,		to: 2003,		type: "group",	},             
+	{		from: 2000,		to: 2004,		type: "group",	},            
+	{		from: 2000,		to: 2005,		type: "group",	},
 
-	{
-		from: 2000,
-		to: 2006,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 2000,		to: 2006,		type: "group",	},
 	
-	{
-		from: 2000,
-		to: 2007,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 2000,		to: 2007,		type: "group",	},
 	
-	{
-		from: 2000,
-		to: 2008,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 2000,		to: 2008,		type: "group",	},
 
-	{
-		from: 2000,
-		to: 2009,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 2000,		to: 2009,		type: "group",	},
 	
-
-
 
 
 // VchiBan
-	{
-		from: 400,
-		to: 800,
-		type: "group",
-//		color: { color: "blue" },
-	},  
-	{
-		from: 400,
-		to: 401,
-		type: "group",
-//		color: { color: "blue" },
-	},  
-	{
-		from: 400,
-		to: 402,
-		type: "group",
-//		color: { color: "blue" },
-	},  
-	{
-		from: 400,
-		to: 403,
-		type: "group",
-//		color: { color: "blue" },
-	},  
-	{
-		from: 400,
-		to: 404,
-		type: "group",
-//		color: { color: "blue" },
-	},  
+	{		from: 400,		to: 800,		type: "group",	},  
+	{		from: 400,		to: 401,		type: "group",	},  
+	{		from: 400,		to: 402,		type: "group",	},  
+	{		from: 400,		to: 403,		type: "group",	},  
+	{		from: 400,		to: 404,		type: "group",	},  
 
 
 // neuroverse
-	{
-		from: 600,
-		to: 800,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 600,		to: 800,		type: "group",	},
 
-	{
-		from: 600,
-		to: 601,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 600,
-		to: 602,
-		type: "group",
-//		color: { color: "blue" },
-	},
-	{
-		from: 600,
-		to: 603,
-		type: "group",
-//		color: { color: "blue" },
-	},
+	{		from: 600,		to: 601,		type: "group",	},
+	{		from: 600,		to: 602,		type: "group",	},
+	{		from: 600,		to: 603,		type: "group",	},
 
 
 
@@ -544,106 +364,25 @@ const edges = new vis.DataSet([
 
 // Indo girlypops
 
-	{
-		from: 1000,
-		to: 1001,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
-	{
-		from: 1000,
-		to: 2,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
-	{
-		from: 1000,
-		to: 2004,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
-	{
-		from: 1000,
-		to: 2005,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
+	{		from: 1000,		to: 1001,		type: "group",		dashes: true	}, 
+	{		from: 1000,		to: 2,		type: "group",		dashes: true	}, 
+	{		from: 1000,		to: 2004,		type: "group",		dashes: true	}, 
+	{		from: 1000,		to: 2005,		type: "group",		dashes: true	}, 
 
-	{
-		from: 1000,
-		to: 2006,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 	{
-		from: 1000,
-		to: 2007,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 	{
-		from: 1000,
-		to: 2008,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 	{
-		from: 1000,
-		to: 2009,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	}, 
+	{		from: 1000,		to: 2006,		type: "group",		dashes: true	}, 
+	{		from: 1000,		to: 2007,		type: "group",		dashes: true	}, 	
+	{		from: 1000,		to: 2008,		type: "group",		dashes: true	}, 	
+	{		from: 1000,		to: 2009,		type: "group",		dashes: true	}, 
 
 
 
 // neuroverse affiliated
-	{
-		from: 600,
-		to: 501,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 600,
-		to: 502,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 600,
-		to: 504,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 600,
-		to: 505,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 600,
-		to: 701,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
-	{
-		from: 600,
-		to: 704,
-		type: "group",
-//		color: { color: "blue" },
-		dashes: true
-	},
+	{  		from: 600,		to: 501,		type: "group",		dashes: true	},
+	{		from: 600,		to: 502,		type: "group",		dashes: true	},
+	{		from: 600,		to: 504,		type: "group",		dashes: true	},
+	{		from: 600,		to: 505,		type: "group",		dashes: true	},
+	{		from: 600,		to: 701,		type: "group",		dashes: true	},
+	{		from: 600,		to: 704,		type: "group",		dashes: true	},
 
 
 
@@ -2104,9 +1843,6 @@ const edgeFilters = document.getElementsByName("edgesFilter");
 
 
 
-
-
-
 // set inital values
 let edgesFilterValues = {
 	
@@ -2123,8 +1859,6 @@ let nodesFilterValues = {
 	interests: false,
 	collab: false,
 };
-
-
 
 
 
@@ -2180,7 +1914,6 @@ const nodesFilter = (node) => {
 };
 
 
-
 const edgesFilter = (edge) => {
 	return edgesFilterValues[edge.type];
 };
@@ -2214,6 +1947,8 @@ edgeFilters.forEach((filter) =>
 		
 	}),
 	);
+
+
 
 startNetwork({ nodes: nodesView, edges: edgesView });
 
