@@ -139,7 +139,7 @@ function startNetwork(data) {
  */
 const nodes = new vis.DataSet([
 // vshojo
-	{ id: 0, label: "ex-Vshjo", group: "Vshojo", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
+	{ id: 0, label: "ex-Vshjo", type: "group", group: "Vshojo", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 
       // dentsu.exe
@@ -157,17 +157,17 @@ const nodes = new vis.DataSet([
 
     // Beastiez
 	{ id: 300, label: "Beastiez", type: "group", group: "Beastiez", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 301, label: "Tori Oriane", group: "Beastiez" },
-	{ id: 302, label: "PiaPiUFO", group: "Beastiez" },
-	{ id: 303, label: "Beribug", group: "Beastiez" },
-	{ id: 304, label: "Kairyu Crocodile", group: "Beastiez" },
+	{ id: 301, label: "Tori Oriane", type: "talent", group: "Beastiez" },
+	{ id: 302, label: "PiaPiUFO", type: "talent",  group: "Beastiez" },
+	{ id: 303, label: "Beribug", type: "talent",  group: "Beastiez" },
+	{ id: 304, label: "Kairyu Crocodile", type: "talent", group: "Beastiez" },
 
       // Vichi Bon
 	{ id: 400, label: "VchiBan", group: "Vichi_Bon", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-	{ id: 401, label: "Buffpup", group: "Vichi_Bon" },
-	{ id: 402, label: "Ai Candii", group: "Vichi_Bon" },
-	{ id: 403, label: "Rosedoodle", group: "Vichi_Bon" },
-	{ id: 404, label: "ShiaBun", group: "Vichi_Bon" },
+	{ id: 401, label: "Buffpup", type: "talent", group: "Vichi_Bon" },
+	{ id: 402, label: "Ai Candii", type: "talent", group: "Vichi_Bon" },
+	{ id: 403, label: "Rosedoodle", type: "talent", group: "Vichi_Bon" },
+	{ id: 404, label: "ShiaBun", type: "talent", group: "Vichi_Bon" },
 
 
       // neuroverse
@@ -2080,6 +2080,8 @@ const edges = new vis.DataSet([
 // this sets what elements are providing which filter inputs
 const nodeFilterSelector = document.getElementById("nodeFilterSelect");
 
+const edgesFilterSelector = document.getElementById("nodeFilterSelect");
+
 
 
 
@@ -2100,12 +2102,31 @@ let nodeFilterValue = "";
 // this gets the acual radio buttons
 const edgeFilters = document.getElementsByName("edgesFilter");
 
+
+
+
+
+
 // set inital values
 let edgesFilterValues = {
+	
 	group: false,
 	interests: false,
 	collab: false,
 };
+
+
+// set inital values
+let nodesFilterValues = {
+	talent: true,
+	group: false,
+	interests: false,
+	collab: false,
+};
+
+
+
+
 
 // this handles the edgesFilerValues update
 function updateEdgeFilters() {
@@ -2113,25 +2134,36 @@ function updateEdgeFilters() {
   	// this sees which radio button is selected
 	const selected = document.querySelector('input[name="edgesFilter"]:checked');
 
+//edge value update
 	edgesFilterValues.group = selected?.value === "group";
 	edgesFilterValues.interests = selected?.value === "interests";
 	edgesFilterValues.collab = selected?.value === "collab";
 
 	console.log("Updated filters:", edgesFilterValues);
 
+
+//node value update
+	nodesFilterValues.group = selected?.value === "group";
+	nodesFilterValues.interests = selected?.value === "interests";
+	nodesFilterValues.collab = selected?.value === "collab";
+
+	console.log("Updated filters:", nodesFilterValues);
+	
+
     // 👉 If you're using a DataView or graph, refresh it here
     // dataView.refresh();
-}
 
 
-// need to add a function here to filter the noddes
-
+};
 
 
   // Attach listener to each radio button
 edgeFilters.forEach(radio => {
 	radio.addEventListener("change", updateEdgeFilters);
 });
+
+
+
 
   // Optional: run once on page load
 updateEdgeFilters();
@@ -2143,36 +2175,9 @@ updateEdgeFilters();
 
 
 
-
-
-
-/*
-      filter function should return true or false
-      based on whether item in DataView satisfies a given condition.
-    */
 const nodesFilter = (node) => {
-	if (nodeFilterValue === "") {
-		return true;
-	}
-	switch (nodeFilterValue) {
-	case "kid":
-		return node.age === "kid";
-	case "adult":
-		return node.age === "adult";
-	case "male":
-		return node.gender === "male";
-	case "female":
-		return node.gender === "female";
-	default:
-		return true;
-	}
+	return nodesFilterValues[node.type];
 };
-
-
-
-
-
-
 
 
 
@@ -2190,16 +2195,14 @@ const edgesView = new vis.DataView(edges, { filter: edgesFilter });
 
 
 
-
-nodeFilterSelector.addEventListener("change", (e) => {
-  // set new value to filter variable
-	nodeFilterValue = e.target.value;
-  /*
-        refresh DataView,
-        so that its filter function is re-calculated with the new variable
-      */
-	nodesView.refresh();
-});
+edgeFilters.forEach((filter) =>
+	filter.addEventListener("change", (e) => {
+		const { value, checked } = e.target;
+		nodesFilterValues[value] = checked;
+		nodesView.refresh();
+		
+	}),
+	);
 
 
 
@@ -2213,3 +2216,8 @@ edgeFilters.forEach((filter) =>
 	);
 
 startNetwork({ nodes: nodesView, edges: edgesView });
+
+
+
+
+
