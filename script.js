@@ -177,6 +177,15 @@ const nodes = new vis.DataSet([
 	{ id: 603, label: "Evil Neuro", type: "talent", group: "Neuroverse" },
 
 
+
+//first stage
+	{ id: 6000, label: "Liron Lockheart", type: "talent", group: "First Stage" },
+
+
+
+
+
+
       // indie
 	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
 
@@ -230,6 +239,20 @@ const nodes = new vis.DataSet([
 	{ id: 819, label: "pumpkinpotion", type: "talent", group: "Indies" },
 	{ id: 820, label: "missshadowlovely", type: "talent", group: "Indies" },
 	{ id: 821, label: "Cyyu", type: "talent", group: "Indies" },
+	{ id: 822, label: "Croc", type: "talent", group: "Indies" },
+	{ id: 823, label: "ENVI", type: "talent", group: "Indies" },
+	{ id: 824, label: "lucia", type: "talent", group: "Indies" },
+	{ id: 825, label: "KloeKroc", type: "talent", group: "Indies" },
+	{ id: 826, label: "Derivakat", type: "talent", group: "Indies" },
+{ id: 827, label: "fufu", type: "talent", group: "Indies", size: 90 },
+
+//crelly
+	//koko nuts
+	//aqua
+
+
+	
+
 
 
     // fleshtubers
@@ -238,10 +261,11 @@ const nodes = new vis.DataSet([
 	{ id: 902, label: "Lesange", type: "talent", group: "Fleshtubers" },
 	{ id: 903, label: "CDawgVA", type: "talent", group: "Fleshtubers" },
 	{ id: 904, label: "Emily Hopkins", type: "talent", group: "Fleshtubers" },
-	{ id: 905, label: "Jessie", type: "talent", group: "Fleshtubers" },
+	{ id: 905, label: "JessieCox", type: "talent", group: "Fleshtubers" },
 	{ id: 906, label: "Doger", type: "talent", group: "Fleshtubers" },
 	{ id: 907, label: "Nagzz", type: "talent", group: "Fleshtubers" },
 	{ id: 908, label: "Ray", type: "talent", group: "Fleshtubers" },
+	{ id: 909, label: "Chris Broad", type: "talent", group: "Fleshtubers" },
 
 
     // INDO girlypops
@@ -252,7 +276,7 @@ const nodes = new vis.DataSet([
     // Hololive folks
 	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	
-{ id: 2010, label: "Hololive EN", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
+	{ id: 2010, label: "Hololive EN", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 2001, label: "Mori Calliope", type: "talent", group: "Hololive" },
 	{ id: 2002, label: "Nerissa Ravencroft", type: "talent", group: "Hololive" },
 	{ id: 2003, label: "Elizabeth Rose Bloodflame", type: "talent", group: "Hololive" },
@@ -264,6 +288,9 @@ const nodes = new vis.DataSet([
 	{ id: 2007, label: "Kaela Kovalskia", type: "talent", group: "Hololive" },
 	{ id: 2008, label: "Kobo Kanaeru", type: "talent", group: "Hololive" }, 
 	{ id: 2009, label: "Vestia Zeta", type: "talent", group: "Hololive" },
+
+	{ id: 2013, label: "Banzoin Hakka", type: "talent", group: "Hololive" },
+	
 
 	{ id: 2012, label: "Hololive JP", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 
@@ -349,7 +376,7 @@ const edges = new vis.DataSet([
 	{		from: 2011,		to: 2008,		type: "group",	},
 	{		from: 2011,		to: 2009,		type: "group",	},
 
-		{		from: 2012,		to: 2000,		type: "group",	},
+	{		from: 2012,		to: 2000,		type: "group",	},
 	
 
 
@@ -828,8 +855,6 @@ const edges = new vis.DataSet([
 	{	from: 908, to: 3001, type: "interests", },
 	{	from: 908, to: 3003, type: "interests", },
 
-
-
 //mori
 	{	from: 2001, to: 3000, type: "interests", },
 	{	from: 2001, to: 3001, type: "interests", },
@@ -854,19 +879,244 @@ const edges = new vis.DataSet([
 	{	from: 2004, to: 3002, type: "interests", },
 
 //moona
+	{	from: 2005, to: 3002, type: "interests", },
 
 //risu
+	{	from: 2006, to: 3002, type: "interests", },
 
 //kaela
+	{	from: 2007, to: 3002, type: "interests", },
 
 //kobo
+	{	from: 2008, to: 3002, type: "interests", },
 
 //zeta
+	{	from: 2009, to: 3002, type: "interests", },
 
 
 
 
 
+//collab
+
+//ironmouse
+	{	from: 1, to: 201, type: "collab", },
+	{	from: 1, to: 202, type: "collab", },
+	{	from: 1, to: 203, type: "collab", },
+	{	from: 1, to: 204, type: "collab", },
+
+	{	from: 1, to: 401, type: "collab", },
+	{	from: 1, to: 402, type: "collab", },
+	{	from: 1, to: 403, type: "collab", },
+	{	from: 1, to: 404, type: "collab", },
+
+	{	from: 1, to: 301, type: "collab", },
+	{	from: 1, to: 302, type: "collab", },
+	{	from: 1, to: 303, type: "collab", },
+	{	from: 1, to: 304, type: "collab", },
+
+
+	{	from: 1, to: 8, type: "collab", },
+	{	from: 1, to: 14, type: "collab", },
+	{	from: 1, to: 10, type: "collab", },
+	{	from: 1, to: 13, type: "collab", },
+	{	from: 1, to: 15, type: "collab", },
+
+	{	from: 1, to: 803, type: "collab", },
+	{	from: 1, to: 809, type: "collab", },
+	{	from: 1, to: 813, type: "collab", },
+	{	from: 1, to: 817, type: "collab", },
+	{	from: 1, to: 823, type: "collab", },
+	{	from: 1, to: 822, type: "collab", },
+	{	from: 1, to: 818, type: "collab", },
+
+	{	from: 1, to: 901, type: "collab", },
+	{	from: 1, to: 903, type: "collab", },
+	{	from: 1, to: 909, type: "collab", },
+
+	{	from: 1, to: 4000, type: "collab", },
+
+	
+	{	from: 1, to: 2013, type: "collab", },
+
+	{	from: 1, to: 6000, type: "collab", },
+
+	{	from: 1, to: 2001, type: "collab", },
+	{	from: 1, to: 2002, type: "collab", },
+	{	from: 1, to: 2003, type: "collab", },
+
+
+
+//michi
+	{	from: 2, to: 701, type: "collab", },
+	{	from: 2, to: 807, type: "collab", },
+	{	from: 2, to: 902, type: "collab", },
+	{	from: 2, to: 819, type: "collab", },
+	{	from: 2, to: 816, type: "collab", },
+	{	from: 2, to: 815, type: "collab", },
+
+	{	from: 2, to: 2004, type: "collab", },
+	{	from: 2, to: 2005, type: "collab", },
+	{	from: 2, to: 2006, type: "collab", },
+	{	from: 2, to: 2007, type: "collab", },
+	{	from: 2, to: 2008, type: "collab", },
+	{	from: 2, to: 2009, type: "collab", },
+
+	{	from: 2, to: 907, type: "collab", },
+
+	{	from: 2, to: 6, type: "collab", },
+
+
+//lesange
+	{	from: 902, to: 810, type: "collab", },
+	{	from: 902, to: 807, type: "collab", },
+	{	from: 902, to: 801, type: "collab", },
+
+
+//elle
+	{	from: 505, to: 501, type: "collab", },
+	{	from: 505, to: 502, type: "collab", },
+	{	from: 505, to: 503, type: "collab", },
+	{	from: 505, to: 504, type: "collab", },
+	{	from: 505, to: 801, type: "collab", },
+	{	from: 505, to: 811, type: "collab", },
+
+
+//neuroverse
+	{	from: 601, to: 602, type: "collab", },
+	{	from: 601, to: 603, type: "collab", },
+
+
+//zentraya
+	{	from: 4, to: 11, type: "collab", },
+	{	from: 4, to: 3, type: "collab", },
+	{	from: 4, to: 816, type: "collab", },
+	{	from: 4, to: 9, type: "collab", },
+	{	from: 4, to: 808, type: "collab", },
+	{	from: 4, to: 7, type: "collab", },
+	{	from: 4, to: 704, type: "collab", },
+	{	from: 4, to: 824, type: "collab", },
+	{	from: 4, to: 814, type: "collab", },
+	{	from: 4, to: 819, type: "collab", },
+	{	from: 4, to: 818, type: "collab", },
+	
+
+
+//lime
+	{	from: 804, to: 805, type: "collab", },
+	{	from: 804, to: 802, type: "collab", },
+	{	from: 804, to: 806, type: "collab", },
+
+
+//henya
+	{	from: 10, to: 804, type: "collab", },
+	{	from: 10, to: 805, type: "collab", },
+	{	from: 10, to: 908, type: "collab", },
+	
+
+
+//amalee
+	{	from: 9, to: 821, type: "collab", },
+	{	from: 9, to: 820, type: "collab", },
+	{	from: 9, to: 817, type: "collab", },
+
+
+	//numi
+	{	from: 701, to: 702, type: "collab", },
+	{	from: 701, to: 703, type: "collab", },
+
+
+
+//arielle
+	{	from: 809, to: 8, type: "collab", },
+	{	from: 809, to: 803, type: "collab", },
+	{	from: 809, to: 908, type: "collab", },
+	{	from: 809, to: 6, type: "collab", },
+
+
+	//ray
+	{	from: 908, to: 824, type: "collab", },
+	{	from: 908, to: 8, type: "collab", },
+	{	from: 908, to: 907, type: "collab", },
+
+
+//haruka
+	{	from: 8, to: 825, type: "collab", },
+	{	from: 8, to: 907, type: "collab", },
+
+
+//beastiez
+	{	from: 301, to: 302, type: "collab", },
+	{	from: 302, to: 303, type: "collab", },
+	{	from: 303, to: 304, type: "collab", },
+	
+
+	//vichiban
+	{	from: 401, to: 402, type: "collab", },
+	{	from: 402, to: 403, type: "collab", },
+	{	from: 403, to: 404, type: "collab", },
+
+
+//dentsu
+	{	from: 101, to: 102, type: "collab", },
+	{	from: 102, to: 103, type: "collab", },
+	{	from: 103, to: 101, type: "collab", },
+
+
+//neuroverse
+	{	from: 601, to: 501, type: "collab", },
+	{	from: 601, to: 502, type: "collab", },
+	{	from: 601, to: 504, type: "collab", },
+	{	from: 601, to: 505, type: "collab", },
+	{	from: 601, to: 701, type: "collab", },
+	{	from: 601, to: 4, type: "collab", },
+
+
+//matara
+	{	from: 11, to: 101, type: "collab", },
+	{	from: 11, to: 908, type: "collab", },
+
+
+	//holo en
+	{	from: 2001, to: 2002, type: "collab", },
+	{	from: 2002, to: 2003, type: "collab", },
+
+
+//melody
+	{	from: 12, to: 907, type: "collab", },
+	{	from: 12, to: 301, type: "collab", },
+	{	from: 12, to: 302, type: "collab", },
+	{	from: 12, to: 303, type: "collab", },
+	{	from: 12, to: 304, type: "collab", },
+
+
+
+//jessie and dodger
+	{	from: 905, to: 2004, type: "collab", },
+	{	from: 905, to: 401, type: "collab", },
+	{	from: 905, to: 402, type: "collab", },
+	{	from: 905, to: 403, type: "collab", },
+	{	from: 905, to: 404, type: "collab", },
+
+	{	from: 906, to: 2004, type: "collab", },
+
+
+
+
+//froggy
+	{	from: 803, to: 6, type: "collab", },
+
+
+//henya
+	{	from: 10, to: 802, type: "collab", },
+
+
+//issa
+	{	from: 811, to: 826, type: "collab", },
+
+
+	//obiekatiekat
+	{	from: 814, to: 827, type: "collab", },
 
 
 ]);
