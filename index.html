@@ -2,85 +2,157 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Vis Network | Data | Dynamic filtering</title>
-  <link rel="stylesheet" href="./style.css">
+	<meta charset="UTF-8">
+	<title>Vtuber social network</title>
+
+	<link rel="stylesheet" href="./style.css">
+
+	<style>
+		
+		.donate-now {
+			height: 50px;
+		}
+
+		.button {
+			float: left;
+			margin: 0 5px 0 0;
+			width: 250px;
+			height: 40px;
+			position: relative;
+			  border: 1px solid #CCC;
+			  text-align: center;
+		}
+
+		.button label,
+		.button input {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding-top: 5px;
+		}
+
+		.button input[type="radio"] {
+			opacity: 0.011;
+			z-index: 100;
+		}
+
+		.button input[type="radio"]:checked + label {
+			background: #20b8be;
+			border-radius: 4px;
+		}
+
+		.button label {
+			cursor: pointer;
+			z-index: 90;
+			line-height: 1.8em;
+		}
 
 
-
-
-
+	</style>
 </head>
 
 <body>
 
-<script>
+	<div>
+		<h1>Group affliation and relationships of indie vtubers and streamers</h1>
 
-  document.getElementById("none").checked = true;
+		<h3>NOTE: this is not intended to be an objective map of relationships but only to serve as a "neighborhood map" of folks who know or collab with each other. No malice, ill will or foul intent is ment by this.</h3>
+	</div>
 
-</script>
+	<div>
+
+		<b>Filter edges</b>
+
+		<div class="donate-now">
 
 
-
-  <h1>Group affliation and relationships of indie vtubers and streamers</h1>
-
-  <h3>NOTE: this is not intended to be an objective map of relationships but only to serve as a "neighborhood map" of folks who know or collab with each other. No malice, ill will or foul intent is ment by this.</h3>
-
-  <p>
-
-    <div>
-
-<!--       <label>
-        Filter display
-        <select id="nodeFilterSelect">
-          <option value="">None</option>
-          <option value="1">Groups</option>
-          <option value="2">Interests</option>
-          <option value="3">Has Collabed With</option>
-        </select>
-      </label>
-      <br /> -->
+			<div class="button">
+				<input type="radio" name="edgesFilter" id="group" value="group" checked="checked"  />
+				<label for "group" id="group">
+					Is/was a member of
+				</label>
+			</div>
 
 
 
-      <br />
-      <br />
+			<div class="button">
 
-      <label>
-        <b>Filter edges</b>
-        <br />
-        <div>
+				<input type="radio" name="edgesFilter" id="interests" value="interests"  />
+				<label for "interests" id="interests">
+					Interests/stream content is
+				</label>
+			</div>
+
+
+			<div class="button">
+				<input type="radio" name="edgesFilter" id="collab" value="collab"  />
+				<label for "collab" id="collab">
+					Has collabed with
+				</label>
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+<!-- Adapted from https://stackoverflow.com/a/16243163 -->
 <!-- 
-         <label>
-          <input type="radio" name="edgesFilter" id="none" value="none"  />
-          None
-        </label> -->
+<div class="donate-now">
+	<input type="radio" id="a25" name="amount" checked="checked" />
+	<label for="a25" id="a25">$25</label>
+	<input type="radio" id="a50" name="amount" />
+	<label for="a50" id="a50">$50</label>
+	<input type="radio" id="a75" name="amount" />
+	<label for="a75" id="a75">$75</label>
+	<input type="radio" id="a100" name="amount" />
+	<label for="a100" id="a100">$100</label>
+	<input type="radio" id="other" name="amount" />
+	<label for="other" id="other">other:</label>
+	<input type="text" id="otherAmount" name="numAmount" />
+</div>
 
-        <label>
-          <input type="radio" name="edgesFilter" id="group" value="group"  />
-          Is/was a <span style="color: green">member</span> of
-        </label>
+-->
 
-        <label>
-          <input type="radio" name="edgesFilter" id="interests" value="interests"  />
-          Interests/stream <span style="color: blue">content</span> is
-        </label>
 
-        <label>
-          <input type="radio" name="edgesFilter" id="collab" value="collab"  />
-          Has <span style="color: red">collabed</span> with
-        </label>
 
-      </div>
 
-    </label>
 
-  </div>
 
-  <br />
-  <div id="mynetwork"></div>
-  <script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script><script  src="./script.js"></script>
+
+</div>
+
+
+
+
+
+<div id="mynetwork"></div>
+
+<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
+<script  src="./script.js"></script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

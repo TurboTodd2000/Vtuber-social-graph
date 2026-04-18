@@ -14,6 +14,8 @@
 var typeGroupShape = "dot";
 var typeGroupSize = 30;
 
+var typeSubgroupSize = 17
+
 
 var nodeLabelSize = 20;
 
@@ -218,6 +220,7 @@ const nodes = new vis.DataSet([
 	{ id: 703, label: "Yuzu", type: "talent", group: "Indies" },
 	{ id: 704, label: "Camila", type: "talent", group: "Indies" },
 	{ id: 705, label: "tonkienator", type: "talent", group: "Indies" },
+	//lucy pyre
 
 	{ id: 801, label: "Bajiru", type: "talent", group: "Indies" },
 	{ id: 802, label: "dooby3D", type: "talent", group: "Indies" },
@@ -244,13 +247,34 @@ const nodes = new vis.DataSet([
 	{ id: 824, label: "lucia", type: "talent", group: "Indies" },
 	{ id: 825, label: "KloeKroc", type: "talent", group: "Indies" },
 	{ id: 826, label: "Derivakat", type: "talent", group: "Indies" },
-{ id: 827, label: "fufu", type: "talent", group: "Indies", size: 90 },
+	{ id: 827, label: "fufu", type: "talent", group: "Indies" },
+	{ id: 828, label: "KokoNuts", type: "talent", group: "Indies" },
+	{ id: 829, label: "crelly", type: "talent", group: "Indies" },
+	{ id: 830, label: "Bluto", type: "talent", group: "Indies" },
+	{ id: 831, label: "chibidoki", type: "talent", group: "Indies" },
+	{ id: 832, label: "x3Dustco", type: "talent", group: "Indies" },
+	{ id: 833, label: "LaynaLazar", type: "talent", group: "Indies" },
+	{ id: 834, label: "papamutt", type: "talent", group: "Indies" },
+	{ id: 835, label: "Fefe", type: "talent", group: "Indies" },
+	{ id: 836, label: "Vexoria the Suneater", type: "talent", group: "Indies" },
+	{ id: 837, label: "Spite", type: "talent", group: "Indies" },
 
-//crelly
-	//koko nuts
-	//aqua
 
 
+//aqua
+
+//Zen collab partners
+//baddaboom
+	//fream
+	//Mei
+	//megalodon
+
+
+
+	//ray collab
+	
+	//kumi
+	//RubinSargasm
 	
 
 
@@ -276,12 +300,12 @@ const nodes = new vis.DataSet([
     // Hololive folks
 	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
 	
-	{ id: 2010, label: "Hololive EN", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
+	{ id: 2010, label: "Hololive EN", group: "Hololive", type: "group", shape: typeGroupShape, size: typeSubgroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 2001, label: "Mori Calliope", type: "talent", group: "Hololive" },
 	{ id: 2002, label: "Nerissa Ravencroft", type: "talent", group: "Hololive" },
 	{ id: 2003, label: "Elizabeth Rose Bloodflame", type: "talent", group: "Hololive" },
 
-	{ id: 2011, label: "Hololive Indo", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
+	{ id: 2011, label: "Hololive Indo", group: "Hololive", type: "group", shape: typeGroupShape, size: typeSubgroupSize, font: { size: nodeLabelSize,color: "black" } },
 	{ id: 2004, label: "Kureiji Ollie", type: "talent", group: "Hololive" },
 	{ id: 2005, label: "Moona Hoshinova", type: "talent", group: "Hololive" },
 	{ id: 2006, label: "MAyunda Risu", type: "talent", group: "Hololive" },
@@ -292,7 +316,7 @@ const nodes = new vis.DataSet([
 	{ id: 2013, label: "Banzoin Hakka", type: "talent", group: "Hololive" },
 	
 
-	{ id: 2012, label: "Hololive JP", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
+	{ id: 2012, label: "Hololive JP", group: "Hololive", type: "group", shape: typeGroupShape, size: typeSubgroupSize, font: { size: nodeLabelSize,color: "black" } },
 
 
 	
@@ -317,7 +341,8 @@ const nodes = new vis.DataSet([
 	{ id: 3002, label: "Music", type: "interests", group: "interests", },
 	{ id: 3003, label: "IRL", type: "interests", group: "interests", },
 	{ id: 3004, label: "Art", type: "interests", group: "interests", },
-	{ id: 3005, label: "STEM", type: "interests", group: "interests", },	
+	{ id: 3005, label: "STEM", type: "interests", group: "interests", },
+
 
 
 ]);
@@ -364,19 +389,17 @@ const edges = new vis.DataSet([
 
 	{		from: 2000,		to: 2010,		type: "group",	},
 	{		from: 2000,		to: 2011,		type: "group",	},   
-
 	{		from: 2010,		to: 2003,		type: "group",	}, 
 	{		from: 2010,		to: 2002,		type: "group",	}, 
 	{		from: 2010,		to: 2001,		type: "group",	}, 
-
 	{		from: 2011,		to: 2004,		type: "group",	},            
 	{		from: 2011,		to: 2005,		type: "group",	},
 	{		from: 2011,		to: 2006,		type: "group",	},
 	{		from: 2011,		to: 2007,		type: "group",	},
 	{		from: 2011,		to: 2008,		type: "group",	},
 	{		from: 2011,		to: 2009,		type: "group",	},
-
 	{		from: 2012,		to: 2000,		type: "group",	},
+	{		from: 2010,		to: 2013,		type: "group",	},
 	
 
 
@@ -390,10 +413,11 @@ const edges = new vis.DataSet([
 
 // neuroverse
 	{		from: 600,		to: 800,		type: "group",	},
-
 	{		from: 600,		to: 601,		type: "group",	},
 	{		from: 600,		to: 602,		type: "group",	},
 	{		from: 600,		to: 603,		type: "group",	},
+
+
 
 
 
@@ -441,6 +465,7 @@ const edges = new vis.DataSet([
 	{	from: 900, to: 906, type: "group", },
 	{	from: 900, to: 907, type: "group", },
 	{	from: 900, to: 908, type: "group", },
+	{	from: 900, to: 909, type: "group", },
 
 
 // indy 
@@ -472,23 +497,19 @@ const edges = new vis.DataSet([
 	{	from: 800, to: 705, type: "group", },
 
 	{	from: 800, to: 815, type: "group", },
-
 	{	from: 800, to: 816, type: "group", },
-
 	{	from: 800, to: 817, type: "group", },
-
 	{	from: 800, to: 818, type: "group", },
-
 	{	from: 800, to: 819, type: "group", },
-
 	{	from: 800, to: 820, type: "group", },
-
 	{	from: 800, to: 821, type: "group", },
-
 	{	from: 800, to: 1, type: "group", },
-
-
-
+	{	from: 800, to: 822, type: "group", },
+	{	from: 800, to: 823, type: "group", },
+	{	from: 800, to: 824, type: "group", },
+	{	from: 800, to: 825, type: "group", },
+	{	from: 800, to: 826, type: "group", },
+	{	from: 800, to: 827, type: "group", },
 
 	{	from: 800, to: 2, type: "group", },
 	{	from: 800, to: 3, type: "group", },
@@ -507,6 +528,8 @@ const edges = new vis.DataSet([
 	{	from: 800, to: 16, type: "group", },
 
 
+
+
 // balding
 	{	from: 500, to: 501, type: "group", 		dashes: true },
 	{	from: 500, to: 502, type: "group", 		dashes: true },	
@@ -514,8 +537,6 @@ const edges = new vis.DataSet([
 	{	from: 500, to: 504, type: "group",		dashes: true },	
 	{	from: 500, to: 505, type: "group",		dashes: true },	
 	{	from: 500, to: 801, type: "group",		dashes: true },
-
-	
 
 
 // EN girlypops
@@ -533,8 +554,6 @@ const edges = new vis.DataSet([
 	{	from: 5000, to: 820, type: "group",		dashes: true },	
 	{	from: 5000, to: 817, type: "group",		dashes: true },	
 	{	from: 5000, to: 821, type: "group",		dashes: true },	
-
-
 
 
 //ex Vshjo
@@ -894,10 +913,37 @@ const edges = new vis.DataSet([
 	{	from: 2009, to: 3002, type: "interests", },
 
 
+//kloe
+	{	from: 825, to: 3001, type: "interests", },
+
+//croc
+	{	from: 822, to: 3001, type: "interests", },
+
+	//ENVI
+	{	from: 823, to: 3001, type: "interests", },
+
+//lucia
+	{	from: 824, to: 3001, type: "interests", },
+	{	from: 824, to: 3000, type: "interests", },
+
+
+//chris broad
+	{	from: 909, to: 3000, type: "interests", },
+	{	from: 909, to: 3003, type: "interests", },
+
+
+//derivakat
+	{	from: 826, to: 3002, type: "interests", },
+
+
+	//x3dustco
+	{	from: 832, to: 3001, type: "interests", },
+	{	from: 832, to: 3004, type: "interests", },
 
 
 
-//collab
+
+//COLLAB
 
 //ironmouse
 	{	from: 1, to: 201, type: "collab", },
@@ -965,6 +1011,8 @@ const edges = new vis.DataSet([
 	{	from: 2, to: 907, type: "collab", },
 
 	{	from: 2, to: 6, type: "collab", },
+	{	from: 2, to: 704, type: "collab", },
+	{	from: 2, to: 818, type: "collab", },
 
 
 //lesange
@@ -999,6 +1047,9 @@ const edges = new vis.DataSet([
 	{	from: 4, to: 814, type: "collab", },
 	{	from: 4, to: 819, type: "collab", },
 	{	from: 4, to: 818, type: "collab", },
+	{	from: 4, to: 834, type: "collab", },
+	{	from: 4, to: 830, type: "collab", },
+	{	from: 4, to: 837, type: "collab", },
 	
 
 
@@ -1038,6 +1089,9 @@ const edges = new vis.DataSet([
 	{	from: 908, to: 824, type: "collab", },
 	{	from: 908, to: 8, type: "collab", },
 	{	from: 908, to: 907, type: "collab", },
+	{	from: 908, to: 3, type: "collab", },
+	{	from: 908, to: 818, type: "collab", },
+	{	from: 908, to: 4, type: "collab", },
 
 
 //haruka
@@ -1070,6 +1124,8 @@ const edges = new vis.DataSet([
 	{	from: 601, to: 505, type: "collab", },
 	{	from: 601, to: 701, type: "collab", },
 	{	from: 601, to: 4, type: "collab", },
+	{	from: 601, to: 833, type: "collab", },
+	{	from: 601, to: 828, type: "collab", },
 
 
 //matara
@@ -1088,6 +1144,8 @@ const edges = new vis.DataSet([
 	{	from: 12, to: 302, type: "collab", },
 	{	from: 12, to: 303, type: "collab", },
 	{	from: 12, to: 304, type: "collab", },
+	{	from: 12, to: 832, type: "collab", },
+	{	from: 12, to: 836, type: "collab", },
 
 
 
@@ -1117,6 +1175,18 @@ const edges = new vis.DataSet([
 
 	//obiekatiekat
 	{	from: 814, to: 827, type: "collab", },
+
+	//naggz
+	{	from: 907, to: 831, type: "collab", },
+	{	from: 907, to: 814, type: "collab", },
+	{	from: 907, to: 827, type: "collab", },
+	{	from: 907, to: 835, type: "collab", },
+	{	from: 907, to: 836, type: "collab", },
+	{	from: 907, to: 837, type: "collab", },
+
+
+
+
 
 
 ]);
