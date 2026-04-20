@@ -21,16 +21,8 @@ body {
 
 /* Adapted from https://stackoverflow.com/a/16243163 */
 
-
-label {
-  background-color: green;
-}
-
-
-/*
-
-label,
-input {
+.donate-now label,
+.donate-now input {
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -87,4 +79,7 @@ input {
   top: 20px;
   left: 620px;
 }
-*/
+
+
+
+
