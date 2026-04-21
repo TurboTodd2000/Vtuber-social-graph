@@ -39,7 +39,9 @@ function startNetwork(data) {
 			font: { size: 14, face: "arial"},
 			// this sets how much the nodes repell each other, values >1 required
 			mass: 1.25,
-		}, 
+		},
+
+
 		edges: {
 			color: { inherit: true },
 			//width: 0.15,
@@ -50,11 +52,16 @@ function startNetwork(data) {
 			},*/
 
 		},
-		//this is overkill for this small a network, can improve responsiveness for large networks
-/*		interaction: {
-			hideEdgesOnDrag: true,
+
+
+		interaction: { 
+			selectable: true,
+/*
+		hideEdgesOnDrag: true,
 			tooltipDelay: 200,
-		},*/
+			 */
+		},
+
 
 		// manually set the colors for legibility
 		groups: {
@@ -106,6 +113,7 @@ function startNetwork(data) {
 			},
 		},
 
+
 //not able to set custom properties in options sadly
 
 		physics: {
@@ -123,16 +131,76 @@ function startNetwork(data) {
 	};
 
 
-	new vis.Network(container, data, options);
+
+//on select functions to get the custom url properties
+
+	globalThis.network = new vis.Network(container, data, options);
+
+
+	globalThis.network.on("selectNode", function (params) {
+		if (params.nodes.length === 1) {
+			var node = nodes.get(params.nodes[0]);
+
+
+		//console.log(node.youtube);
+/*
+			globalThis.composedURLYoutube = "<b>" + node.youtube + "</b>";
+
+			globalThis.composedURLTwitch = "<b>" + node.twitch + "</b>";
+
+
+			
+			console.log(globalThis.composedURLYoutube);
+			console.log(globalThis.composedURLTwitch);*/
+
+
+
+
+
+
+
+
+const talentName = document.getElementById("talentName");
+console.log(talentName);
+
+
+const youtubeLink = document.getElementById("youtubeLink");
+const twitchLink = document.getElementById("twitchLink");
+
+
+// set name
+talentName.textContent = node.label || "#";
+
+// set URL
+youtubeLink.href = node.youtube || "#";
+twitchLink.href = node.twitch || "#";
+
+// set visible text (optional)
+talentName.innerHTML = node.label;
+youtubeLink.innerHTML = node.youtube ? "YouTube" : "No YouTube";
+twitchLink.innerHTML = node.twitch ? "Twitch" : "No Twitch";
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+	});
+
+
+
 }
 
 
 
-
-
-
-
-
+//need to figure out how to get from the function back to the html
 
 
 
@@ -215,7 +283,9 @@ const nodes = new vis.DataSet([
 	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
 
 
-	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies" },
+	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies", youtube: "youtube", /*twitch: "twitch"*/ },
+
+
 	{ id: 2, label: "Michi Mochievee", type: "talent", group: "Indies" },
 	{ id: 3, label: "Geega", type: "talent", group: "Indies" },
 	{ id: 4, label: "Zentraya", type: "talent", group: "Indies" },
@@ -281,6 +351,7 @@ const nodes = new vis.DataSet([
 	{ id: 835, label: "Fefe", type: "talent", group: "Indies" },
 	{ id: 836, label: "Vexoria the Suneater", type: "talent", group: "Indies" },
 	{ id: 837, label: "Spite", type: "talent", group: "Indies" },
+	{ id: 838, label: "Cha Cha your Vtuber Mom", type: "talent", group: "Indies" },
 
 
 
@@ -438,7 +509,7 @@ const edges = new vis.DataSet([
 	{		from: 600,		to: 800,		type: "group",	},
 	{		from: 600,		to: 601,		type: "group",	},
 	{		from: 600,		to: 602,		type: "group",	},
-	{		from: 600,		to: 603,		type: "group",	},
+	{		from: 600,		to: 603,		type: "group", dashes: true	},
 
 
 
@@ -468,6 +539,7 @@ const edges = new vis.DataSet([
 	{		from: 600,		to: 505,		type: "group",		dashes: true	},
 	{		from: 600,		to: 701,		type: "group",		dashes: true	},
 	{		from: 600,		to: 704,		type: "group",		dashes: true	},
+	{		from: 600,		to: 838,		type: "group",		dashes: true	},
 
 
 
@@ -533,6 +605,18 @@ const edges = new vis.DataSet([
 	{	from: 800, to: 825, type: "group", },
 	{	from: 800, to: 826, type: "group", },
 	{	from: 800, to: 827, type: "group", },
+	{	from: 800, to: 828, type: "group", },
+	{	from: 800, to: 829, type: "group", },
+	{	from: 800, to: 830, type: "group", },
+	{	from: 800, to: 831, type: "group", },
+	{	from: 800, to: 832, type: "group", },
+	{	from: 800, to: 833, type: "group", },
+	{	from: 800, to: 834, type: "group", },
+	{	from: 800, to: 835, type: "group", },
+	{	from: 800, to: 836, type: "group", },
+
+	{	from: 800, to: 837, type: "group", },
+	{	from: 800, to: 838, type: "group", },
 
 	{	from: 800, to: 2, type: "group", },
 	{	from: 800, to: 3, type: "group", },
@@ -549,6 +633,10 @@ const edges = new vis.DataSet([
 	{	from: 800, to: 14, type: "group", },
 	{	from: 800, to: 15, type: "group", },
 	{	from: 800, to: 16, type: "group", },
+	{	from: 800, to: 838, type: "group", },
+
+
+
 
 
 
@@ -560,6 +648,7 @@ const edges = new vis.DataSet([
 	{	from: 500, to: 504, type: "group",		dashes: true },	
 	{	from: 500, to: 505, type: "group",		dashes: true },	
 	{	from: 500, to: 801, type: "group",		dashes: true },
+	{	from: 500, to: 838, type: "group",		dashes: true },
 
 
 // EN girlypops
@@ -1319,32 +1408,24 @@ function updateEdgeFilters() {
 
 
 
-
-
-
 //create filters
-var nodesFilter = (node) => {
-	return nodesFilterValues[node.type];
-};
+	var nodesFilter = (node) => {
+		return nodesFilterValues[node.type];
+	};
 
 
-var edgesFilter = (edge) => {
-	return edgesFilterValues[edge.type];
-};
+	var edgesFilter = (edge) => {
+		return edgesFilterValues[edge.type];
+	};
 
 
 //create data views based on the filters
-var nodesView = new vis.DataView(nodes, { filter: nodesFilter });
-var edgesView = new vis.DataView(edges, { filter: edgesFilter });
+	var nodesView = new vis.DataView(nodes, { filter: nodesFilter });
+	var edgesView = new vis.DataView(edges, { filter: edgesFilter });
 
 
 //start (or restart) network per function upate
-startNetwork({ nodes: nodesView, edges: edgesView });
-
-
-
-
-
+	startNetwork({ nodes: nodesView, edges: edgesView });
 
 
 };
@@ -1360,6 +1441,19 @@ edgeFilters.forEach(radio => {
 
   // Optional: run once on page load
 updateEdgeFilters();
+
+
+
+//need to get current network here
+
+
+
+
+
+
+
+
+
 
 
 

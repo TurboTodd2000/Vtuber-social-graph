@@ -12,23 +12,25 @@
 
 
 
-body {
-  font-family:
-  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+		body {
+			font-family:
+			-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+			"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
 
 
+		#mynetwork {
+			width: 99vw;
+			height: 85vh;
+			border: 1px solid lightgray;
+		};
 
 
-#mynetwork {
-  width: 99vw;
-  height: 85vh;
-  border: 1px solid lightgray;
-};
-
+		.buttonRow {
+			height: 40px;
+		}
 
 		
 		.donate-now {
@@ -41,8 +43,8 @@ body {
 			width: 250px;
 			height: 40px;
 			position: relative;
-			  border: 1px solid #CCC;
-			  text-align: center;
+			border: 1px solid #CCC;
+			text-align: center;
 		}
 
 		.button label,
@@ -84,7 +86,7 @@ body {
 		<h3>NOTE: this is not intended to be an objective map of relationships but only to serve as a "neighborhood map" of folks who know or collab with each other. No malice, ill will or foul intent is ment by this.</h3>
 	</div>
 
-	<div>
+	<div class="buttonRow">
 
 		<b>Filter edges</b>
 
@@ -124,14 +126,26 @@ body {
 
 
 
-</div>
+	</div>
 
 
 
-<div id="mynetwork"></div>
+	<div id="mynetwork"></div>
 
-<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
-<script  src="./script.js"></script>
+	<div id="urlContainer">
+
+		<p id="talentName">
+			#
+		</p>
+		<a id="youtubeLink" href="#" target="_blank">YouTube</a> <br />
+		<a id="twitchLink" href="#" target="_blank">Twitch</a>
+
+
+	</div>
+
+
+	<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
+	<script  src="./script.js"></script>
 
 </body>
 
