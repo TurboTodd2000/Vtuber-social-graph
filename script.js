@@ -63,6 +63,8 @@ function startNetwork(data) {
 		},
 
 
+
+ 
 		// manually set the colors for legibility
 		groups: {
 			interests: {
@@ -143,49 +145,28 @@ function startNetwork(data) {
 
 
 		//console.log(node.youtube);
-/*
-			globalThis.composedURLYoutube = "<b>" + node.youtube + "</b>";
-
-			globalThis.composedURLTwitch = "<b>" + node.twitch + "</b>";
 
 
-			
-			console.log(globalThis.composedURLYoutube);
-			console.log(globalThis.composedURLTwitch);*/
+//more chatgpt code, needed the assist to get this working
+			const talentName = document.getElementById("talentName");
+			//console.log(talentName);
 
-
-
-
-
-
-
-
-const talentName = document.getElementById("talentName");
-console.log(talentName);
-
-
-const youtubeLink = document.getElementById("youtubeLink");
-const twitchLink = document.getElementById("twitchLink");
+			const youtubeLink = document.getElementById("youtubeLink");
+			const twitchLink = document.getElementById("twitchLink");
 
 
 // set name
-talentName.textContent = node.label || "#";
+			talentName.textContent = node.label || "#";
 
 // set URL
-youtubeLink.href = node.youtube || "#";
-twitchLink.href = node.twitch || "#";
+			youtubeLink.href = node.youtube || "#";
+			twitchLink.href = node.twitch || "#";
+
 
 // set visible text (optional)
-talentName.innerHTML = node.label;
-youtubeLink.innerHTML = node.youtube ? "YouTube" : "No YouTube";
-twitchLink.innerHTML = node.twitch ? "Twitch" : "No Twitch";
-
-
-
-
-
-
-
+			talentName.innerHTML = node.label;
+			youtubeLink.innerHTML = node.youtube ? "YouTube" : "No YouTube";
+			twitchLink.innerHTML = node.twitch ? "Twitch" : "No Twitch";
 
 
 		}
@@ -197,14 +178,6 @@ twitchLink.innerHTML = node.twitch ? "Twitch" : "No Twitch";
 
 
 }
-
-
-
-//need to figure out how to get from the function back to the html
-
-
-
-
 
 
 
