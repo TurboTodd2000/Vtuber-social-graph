@@ -256,7 +256,7 @@ const nodes = new vis.DataSet([
 	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
 
 
-	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies", youtube: "youtube", /*twitch: "twitch"*/ },
+	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies", youtube: "https://www.youtube.com/@IronMouseParty", twitch: "https://www.twitch.tv/ironmouse" },
 
 
 	{ id: 2, label: "Michi Mochievee", type: "talent", group: "Indies" },
