@@ -325,6 +325,10 @@ const nodes = new vis.DataSet([
 	{ id: 836, label: "Vexoria the Suneater", type: "talent", group: "Indies" },
 	{ id: 837, label: "Spite", type: "talent", group: "Indies" },
 	{ id: 838, label: "Cha Cha your Vtuber Mom", type: "talent", group: "Indies" },
+	{ id: 839, label: "el_XoX", type: "talent", group: "Indies" },
+	{ id: 840, label: "megladonvt", type: "talent", group: "Indies" },
+
+	
 
 
 
@@ -512,7 +516,7 @@ const edges = new vis.DataSet([
 	{		from: 600,		to: 505,		type: "group",		dashes: true	},
 	{		from: 600,		to: 701,		type: "group",		dashes: true	},
 	{		from: 600,		to: 704,		type: "group",		dashes: true	},
-	{		from: 600,		to: 838,		type: "group",		dashes: true	},
+	
 
 
 
@@ -606,7 +610,7 @@ const edges = new vis.DataSet([
 	{	from: 800, to: 14, type: "group", },
 	{	from: 800, to: 15, type: "group", },
 	{	from: 800, to: 16, type: "group", },
-	{	from: 800, to: 838, type: "group", },
+	
 
 
 
@@ -1231,6 +1235,8 @@ const edges = new vis.DataSet([
 	{	from: 12, to: 304, type: "collab", },
 	{	from: 12, to: 832, type: "collab", },
 	{	from: 12, to: 836, type: "collab", },
+	{	from: 12, to: 839, type: "collab", },
+	{	from: 12, to: 840, type: "collab", },
 
 
 

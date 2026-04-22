@@ -91,12 +91,11 @@ const interestNode = [
 ];
 
 
+//GROUP NODE
+//index, type, GROUP, label, node shape, node size, label color, label size
 
 //increment 101-200
 const formalGroupNodes = [
-
-	//FORMAL GROUP NODE
-	//index, type, GROUP, label, node shape, node size, label color, label size
 
 //vshojo
 	{ 101,  "group",  "VSHOJO", "ex-Vshjo", typeGroupNodeShape,  typeGroupNodeSize,  typeGroupNodeLabelSize },
@@ -142,45 +141,56 @@ const formalGroupNodes = [
 const informalGroupNodes = [
 
     // vein gang
-	{  201,  "group", "Vein_Gang", "Vein Gang", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
+	{  201,  "group", "VEIN_GANG", "Vein Gang", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
 
 	//balding with the boys
-	{  202,  "group", "balding", "Balding with the Boys", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
+	{  202,  "group", "BALDING", "Balding with the Boys", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
 
 	// EN girlypops
-	{  203,  "group", "EN_Girlypops", "EN Girlypops", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
+	{  203,  "group", "EN_GIRLYPOPS", "EN Girlypops", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
 
 	// crashout crew
-	{  204,  "group", "Crashout_Crew", "Crashout Crew", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
+	{  204,  "group", "CRASHOUT_CREW", "Crashout Crew", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, "labelcolor", typeGroupNodeLabelSize },
 
 ];
 
 
+	//TALENT node
+	//index, type, GROUP, label, [informal groups id], [interests], [collabs], [URLs] description - color is set by group node
 
-
-
-
-//increment by group in steps of 1000
+	//increment by group in steps of 1000
 const talentNodes = [
 
-	
-		//TALENT node
-		//index, name, type, group, [informal groups id], [interests], [collabs], [URLs] - color is set by group node
-		{1000, "Ironmouse", "talent", "indie", [1], [1, 2, 3], [1, 2, 3, etc], ["youtube", "twitch"]},
-	
-	
+	{1000, "talent", "indie", "Ironmouse", [1], [1, 2, 3], [1, 2, 3, etc], ["youtube", "twitch"], "description"},
 
 
-
-	{ 101, "Mint Fantome", "talent", "dentsu", [], [], [], [] },
-	{ 102, "Victoria Roma", "talent", "dentsu", [], [], [], []},
-	{ 103, "Phoebe Chan", "talent", "dentsu", [], [], [], [] },
-
-
-
+	{ 2000, "talent", "dentsu", "Mint Fantome", [], [], [], [] },
+	{ 2001, "talent", "dentsu", "Victoria Roma", [], [], [], []},
+	{ 2002, "talent", "dentsu", "Phoebe Chan", [], [], [], [] },
 
 	
 ];
+
+
+
+
+
+
+/*
+Array related variables go here
+-----------------------------------------------
+*/
+
+var interestNum = interestNode.length;
+
+var formalNum = formalGroupNodes.length;
+
+var informalNum = informalGroupNodes.length;
+
+var talentNum = talentNodes.length;
+
+
+//path to file
 
 
 
@@ -190,30 +200,59 @@ CREATE NODES/EDGES
 -----------------------------------------------
 */
 
-
-
-//loop through each interest node
-
-//loop through each group, group node first
-	//loop through edges per talent node
-
-
-
-
-
-
-//loop to make ndoes and edges
-
-
-
-
 //need to figure out which direction I want edges to run
+//all group edges source from group node?
+//all interest nodes sourced from interest node?
+//collab talent to talent?
 
-	//all group edges source from group node?
 
-	//all interest nodes sourced from interest node?
 
-	//collab talent to talent?
+
+
+//nodes
+
+//interest loop
+for (var a = 0; j < interestNum; j++) {
+
+
+};
+
+
+//formal loop
+for (var b = 0; j < formalNum; j++) {
+
+
+};
+
+
+//informal loop
+for (var c = 0; j < informalNum; j++) {
+
+
+};
+
+
+//talent
+for (var d = 0; j < talentNum; j++) {
+
+
+
+
+};
+
+
+
+//edges
+
+
+
+
+
+
+
+
+
+
 
 
 
