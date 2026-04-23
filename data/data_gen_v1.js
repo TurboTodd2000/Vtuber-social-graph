@@ -22,20 +22,21 @@ VARIABLES
 //variables for node styles, this is for properties for nodes by type
 
 
-//for group nodes
+//FOR GROUP NODES
+
+//size and shape
 var typeGroupNodeShape = "dot";
 var typeGroupNodeSize = 30;
 
+//label size
 var typeGroupNodeLabelSize = 20;
 
 
-//for subgroups
+//subgroups node size
 var typeSubgroupSize = 17;
 
 
 
-
-//
 
 
 
@@ -57,21 +58,6 @@ DATA GOES HERE
 */
 
 
-//need to add view ID so nodes can be filtered, talent in all views should be 0
-
-
-//OLD ORGINIZATION NODE
-//{ id: 0, label: "ex-Vshjo", group: "Vshojo", GroupNode: 1, size: 30, shape: "dot" },
-
-
-//OLD INTEREST NODE
-//{ id: 3005, label: "STEM",  group: "interests", GroupNode: 2, size: 30, shape: "dot" },	
-
-
-//OLO TALENT NODE
-//{ id: 1, label: "Ironmouse", group: "Vshojo" },
-
-
 
 //arrays for node/edge gen
 
@@ -91,40 +77,41 @@ const interestNode = [
 ];
 
 
+
 //GROUP NODE
 //index, type, GROUP, label, node shape, node size, label color, label size
 
-//increment 101-200
+	//increment 101-200
 const formalGroupNodes = [
 
-//vshojo
+	//vshojo
 	{ 101,  "group",  "VSHOJO", "ex-Vshjo", typeGroupNodeShape,  typeGroupNodeSize,  typeGroupNodeLabelSize },
 
-// dentsu.exe
+	// dentsu.exe
 	{ 102,  "group", "DENTSU", "dentsu.exe",  typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// nova
+	// nova
 	{ 103, "group", "NOVA", "Nova", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// beastiez
+	// beastiez
 	{ 104, "group", "BEASTIEZ", "Beastiez", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// vichi ban
+	// vichi ban
 	{ 105, "group", "VICHIBAN", "VchiBan", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// neuroverse
+	// neuroverse
 	{ 106, "group", "NEUROVERSE", "Neuroverse", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// indies
+	// indies
 	{ 107, "group", "INDIES", "Indies", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// fleshtubers
+	// fleshtubers
 	{ 108, "group", "FLESHTUBERS", "Fleshtubers", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// indo girlypops
+	// indo girlypops
 	{ 109, "group", "INDO_GIRLYPOPS", "Indo Girlypops", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
-// hololive
+	// hololive
 	{ 110, "group", "HOLOLIVE", "Hololive", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize },
 
 	{ 111, "group", "HOLOLIVE", "Hololive EN", typeGroupNodeShape, typeGroupNodeSize, typeSubgroupSize, typeGroupNodeLabelSize },
@@ -214,6 +201,11 @@ CREATE NODES/EDGES
 //interest loop
 for (var a = 0; j < interestNum; j++) {
 
+	set currentInterestNode = interestNode[a];
+
+	var nodeHTMLoutput = "{ id: " + currentInterestNode[0] + ", type: " + currentInterestNode[1] + ", label: " + currentInterestNode[3] + ",  group: " + currentInterestNode[2] + " },\n";
+
+	testHTMLOutput(nodeHTMLoutput);
 
 };
 
@@ -221,6 +213,11 @@ for (var a = 0; j < interestNum; j++) {
 //formal loop
 for (var b = 0; j < formalNum; j++) {
 
+	set currentFormalNode = formalGroupNodes[a];
+
+	var nodeHTMLoutput = "{ id: " + currentFormalNode[0] + ", type: " + currentFormalNode[1] + ", label: " + currentFormalNode[3] + ",  group: " + currentFormalNode[2] + " },\n";
+
+	testHTMLOutput(nodeHTMLoutput);
 
 };
 
@@ -228,11 +225,16 @@ for (var b = 0; j < formalNum; j++) {
 //informal loop
 for (var c = 0; j < informalNum; j++) {
 
+	set currentInformalNode = informalGroupNodes[a];
+
+	var nodeHTMLoutput = "{ id: " + currentInformalNode[0] + ", type: " + currentInformalNode[1] + ", label: " + currentInformalNode[3] + ",  group: " + currentInformalNode[2] + " },\n";
+
+	testHTMLOutput(nodeHTMLoutput);
 
 };
 
 
-//talent
+//talent 
 for (var d = 0; j < talentNum; j++) {
 
 
@@ -250,13 +252,29 @@ for (var d = 0; j < talentNum; j++) {
 
 
 
+/*
+FUNCTIONS
+-----------------------------------------------
+*/
 
 
 
+function testHTMLOutput() {
 
 
+//more chatgpt code, needed the assist to get this working
+	const talentName = document.getElementById("nodeOutput");
 
 
+// set name
+	talentName.textContent = node.label || "#node" + "\n";
+
+
+// set visible text (optional)
+	talentName.innerHTML = node.label;
+
+
+};
 
 
 

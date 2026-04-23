@@ -99,11 +99,11 @@ function startNetwork(data) {
 			},
 			Fleshtubers: {
 				//color: {background: "grey"},
-				font: { color: "lime" },
+				font: { color: "black" },
 			},
 			Indo_Girlypops: {
 				//color: {background: "grey"},
-				font: { color: "lime" },
+				font: { color: "black" },
 			},
 			Hololive: {
 				color: {background: "green"},
