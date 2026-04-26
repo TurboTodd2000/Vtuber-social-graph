@@ -1,9 +1,12 @@
 
 
 
+/**
+ * In this example we do not mutate nodes or edges source data.
+ */
 
-export const nodes = [
-
+const nodes = new vis.DataSet([
+// vshojo
 	{ id: 0, label: "ex-Vshjo", type: "group", group: "Vshojo", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 
@@ -55,7 +58,9 @@ export const nodes = [
 	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
 
 
-	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies" },
+	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies", youtube: "https://www.youtube.com/@IronMouseParty", twitch: "https://www.twitch.tv/ironmouse" },
+
+
 	{ id: 2, label: "Michi Mochievee", type: "talent", group: "Indies" },
 	{ id: 3, label: "Geega", type: "talent", group: "Indies" },
 	{ id: 4, label: "Zentraya", type: "talent", group: "Indies" },
@@ -121,6 +126,11 @@ export const nodes = [
 	{ id: 835, label: "Fefe", type: "talent", group: "Indies" },
 	{ id: 836, label: "Vexoria the Suneater", type: "talent", group: "Indies" },
 	{ id: 837, label: "Spite", type: "talent", group: "Indies" },
+	{ id: 838, label: "Cha Cha your Vtuber Mom", type: "talent", group: "Indies" },
+	{ id: 839, label: "el_XoX", type: "talent", group: "Indies" },
+	{ id: 840, label: "megladonvt", type: "talent", group: "Indies" },
+
+	
 
 
 
@@ -188,7 +198,7 @@ export const nodes = [
 	{ id: 4000, label: "Vein Gang",  type: "group", group: "Viein_Gang", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 	//balding with the boys
-	{ id: 500, label: "balding", type: "group", group: "balding",  shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
+	{ id: 500, label: "Lab Rats", type: "group", group: "LabRats",  shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
 
 	// EN girlypops
 	{ id: 700, label: "EN Girlypops", type: "group", group: "EN Girlypops", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
@@ -206,13 +216,15 @@ export const nodes = [
 	{ id: 3004, label: "Art", type: "interests", group: "interests", },
 	{ id: 3005, label: "STEM", type: "interests", group: "interests", },
 
-];
+
+
+]);
 
 
 
 
-export const edges = [
-	
+const edges = new vis.DataSet([
+
 // FORMAL GROUPS
 
 // vshojo
@@ -276,7 +288,7 @@ export const edges = [
 	{		from: 600,		to: 800,		type: "group",	},
 	{		from: 600,		to: 601,		type: "group",	},
 	{		from: 600,		to: 602,		type: "group",	},
-	{		from: 600,		to: 603,		type: "group",	},
+	{		from: 600,		to: 603,		type: "group", dashes: true	},
 
 
 
@@ -306,6 +318,7 @@ export const edges = [
 	{		from: 600,		to: 505,		type: "group",		dashes: true	},
 	{		from: 600,		to: 701,		type: "group",		dashes: true	},
 	{		from: 600,		to: 704,		type: "group",		dashes: true	},
+	
 
 
 
@@ -371,6 +384,18 @@ export const edges = [
 	{	from: 800, to: 825, type: "group", },
 	{	from: 800, to: 826, type: "group", },
 	{	from: 800, to: 827, type: "group", },
+	{	from: 800, to: 828, type: "group", },
+	{	from: 800, to: 829, type: "group", },
+	{	from: 800, to: 830, type: "group", },
+	{	from: 800, to: 831, type: "group", },
+	{	from: 800, to: 832, type: "group", },
+	{	from: 800, to: 833, type: "group", },
+	{	from: 800, to: 834, type: "group", },
+	{	from: 800, to: 835, type: "group", },
+	{	from: 800, to: 836, type: "group", },
+
+	{	from: 800, to: 837, type: "group", },
+	{	from: 800, to: 838, type: "group", },
 
 	{	from: 800, to: 2, type: "group", },
 	{	from: 800, to: 3, type: "group", },
@@ -387,6 +412,10 @@ export const edges = [
 	{	from: 800, to: 14, type: "group", },
 	{	from: 800, to: 15, type: "group", },
 	{	from: 800, to: 16, type: "group", },
+	
+
+
+
 
 
 
@@ -398,6 +427,7 @@ export const edges = [
 	{	from: 500, to: 504, type: "group",		dashes: true },	
 	{	from: 500, to: 505, type: "group",		dashes: true },	
 	{	from: 500, to: 801, type: "group",		dashes: true },
+	{	from: 500, to: 838, type: "group",		dashes: true },
 
 
 // EN girlypops
@@ -1007,6 +1037,8 @@ export const edges = [
 	{	from: 12, to: 304, type: "collab", },
 	{	from: 12, to: 832, type: "collab", },
 	{	from: 12, to: 836, type: "collab", },
+	{	from: 12, to: 839, type: "collab", },
+	{	from: 12, to: 840, type: "collab", },
 
 
 
@@ -1049,9 +1081,8 @@ export const edges = [
 
 
 
-];
 
-
+]);
 
 
 
