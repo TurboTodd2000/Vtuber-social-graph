@@ -21,181 +21,190 @@
 		}
 
 
+
+#header {
+	text-align: center;
+}
+
+
 		#mynetwork {
 			width: 99vw;
 			height: 85vh;
 			border: 1px solid lightgray;
-		};
-
-
-
-
-		.buttonRow {
-			height: 40px;
-		}
-
-		
-		.donate-now {
-			height: 50px;
-		}
-
-		.button {
-			float: left;
-			margin: 0 5px 0 0;
-			width: 250px;
-			height: 35px;
-			position: relative;
-			border: 1px solid #CCC;
-			text-align: center;
-		}
-
-		.button label,
-		.button input {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			padding-top: 2px;
-		}
-
-		.button input[type="radio"] {
-			opacity: 0.011;
-			z-index: 100;
-		}
-
-		.button input[type="radio"]:checked + label {
-			background: #20b8be;
-			border-radius: 4px;
-		}
-
-		.button label {
-			cursor: pointer;
-			z-index: 90;
-			line-height: 1.8em;
 		}
 
 
-		/* bottom info */
-		#legendOverlay {
-			position: fixed;
-			bottom: 9px;
-			left: 9px;
-			right: 9px;
-
-			pointer-events: none;
-
-			display: flex;
-			justify-content: center;
-		}
 
 
-		#legend, 
-		#urlContainer {
-			background-color: rgba(150,150,150,.9);
-			display: flex;
-			padding: 10px 15px;
-		}
+		/*display buttons*/
 
-
-		/* talent continers */
-		#urlContainer {
-			pointer-events: auto;
-			margin-right: 10px;
-		}
-
-		#urlContainer:last-child {
-			margin-right: 0;
-		}
-
-		.name,
-		.url {
-			
-			text-align: left;
-		}
-
-		.name {
-			font-size: 20px;
-			font-weight: bold;
-			align-self: center;
-			margin-right: 15px;
-		}
-
-		.url {
-			display: flex;
-			flex-flow: column;
-		}
-
-		.talentButton {
-			padding: 5px 10px;
-			background-color: green;
-		}
-
-		.talentButton:first-child {
-			margin-bottom: 5px;
-		}
-
-
-		/* legend containers */
-
-		.legendEntry {
-			align-self: center;
-			margin-right: 13px;
-			text-align: center;
-		}
-
-		.legendEntry:last-child {
-			margin-right: 0px;
-		}
-
-
-/*legend display*/
-#group:checked:is(#legend) {
-	display: none;
+div#buttonRow.me {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
 }
+			
+
+				.button {
+					position: relative;
+					margin: 0 5px 0 0;
+			padding: 10px 15px;
+					border: 1px solid #CCC;
+					text-align: center;
+					width: 250px;
+					height: 20px;
+				}
+
+				.button label,
+				.button input {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					padding-top: 2px;
+				}
+
+				.button input[type="radio"] {
+					opacity: 0.011;
+					z-index: 100;
+				}
+
+				.button input[type="radio"]:checked + label {
+					background: #20b8be;
+					border-radius: 4px;
+				}
+
+				.button label {
+					cursor: pointer;
+					z-index: 90;
+					line-height: 1.8em;
+				}
+
+
+	
+
+
+
+				/* bottom info */
+				#legendOverlay {
+					position: fixed;
+					bottom: 9px;
+					left: 9px;
+					right: 9px;
+
+					pointer-events: none;
+
+					display: flex;
+					justify-content: center;
+				}
+
+
+				#legend, 
+				#urlContainer {
+					background-color: rgba(150,150,150,.9);
+					display: flex;
+					padding: 10px 15px;
+				}
+
+
+				/* talent continers */
+				#urlContainer {
+					pointer-events: auto;
+					margin-right: 10px;
+				}
+
+				#urlContainer:last-child {
+					margin-right: 0;
+				}
+
+				.name,
+				.url {
+
+					text-align: left;
+				}
+
+				.name {
+					font-size: 20px;
+					font-weight: bold;
+					align-self: center;
+					margin-right: 15px;
+				}
+
+				.url {
+					display: flex;
+					flex-flow: column;
+				}
+
+				.talentButton {
+					padding: 5px 10px;
+					background-color: green;
+				}
+
+				.talentButton:first-child {
+					margin-bottom: 5px;
+				}
+
+
+				/* legend containers */
+
+				.legendEntry {
+					align-self: center;
+					margin-right: 13px;
+					text-align: center;
+				}
+
+				.legendEntry:last-child {
+					margin-right: 0px;
+				}
+
+
+				/*legend display*/
+				#group:checked,
+				:is(#legend) {
+					display: none;
+				}
 
 
 
 
-	</style>
+</style>
+
+
+
 </head>
 
 <body>
 
-	<div>
+	<div id="header">
 		<h1>Group affliation and relationships of indie vtubers and streamers</h1>
 
 		<h3>NOTE: this is not intended to be an objective map of relationships but only to serve as a "neighborhood map" of folks who know or collab with each other. No malice, ill will or foul intent is ment by this.</h3>
-	</div>
-
+	
 	<p>
 		Instructions: click and drag to pan, mouse wheel to zoom in and out. Click on a node to get youtube/twitch links where possible. Buttons swap display per label.
 	</p>
+</div>
 
-	<div class="buttonRow">
+	<div id="buttonRow" class="me">
 
-		
-
-		<div class="donate-now">
-
-
-			<div class="button">
-				<input type="radio" name="edgesFilter" id="group" value="group" checked="checked"  />
-				<label for "group" id="group">
-					Is/was a member of
-				</label>
-			</div>
+		<div class="button">
+			<input type="radio" name="edgesFilter" id="group" value="group" checked="checked"  />
+			<label for "group" id="group">
+				Is/was a member of
+			</label>
+		</div>
 
 
 
-			<div class="button">
+		<div class="button">
 
-				<input type="radio" name="edgesFilter" id="interests" value="interests"  />
-				<label for "interests" id="interests">
-					Interests/stream content is
-				</label>
-			</div>
+			<input type="radio" name="edgesFilter" id="interests" value="interests"  />
+			<label for "interests" id="interests">
+				Interests/stream content is
+			</label>
+		</div>
 
 
 <!-- 			<div class="button">
@@ -205,15 +214,12 @@
 				</label>
 			</div> -->
 
-
-
-
-
-		</div>
-
-
-
 	</div>
+
+
+
+
+
 
 
 <!-- canvas for graph -->
@@ -240,7 +246,7 @@
 		</div>
 
 		<div class="talentButton">
-			<a id="twitchLink" class="talentButton" href="#" target="_blank">Twitch</a>
+			<a id="twitchLink" href="#" target="_blank">Twitch</a>
 		</div>
 		
 	</div>
