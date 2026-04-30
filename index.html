@@ -25,9 +25,9 @@
 
 
 
-#header {
-	text-align: center;
-}
+		#header {
+			text-align: center;
+		}
 
 
 		#mynetwork {
@@ -41,138 +41,136 @@
 
 		/*display buttons*/
 
-div#buttonRow.me {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 10px;
-}
-			
+		div#buttonRow.me {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 10px;
+		}
 
-				.button {
-					position: relative;
-					margin: 0 5px 0 0;
+
+		.button {
+			position: relative;
+			margin: 0 5px 0 0;
 			padding: 10px 15px;
-					border: 1px solid #CCC;
-					text-align: center;
-					width: 250px;
-					height: 20px;
-				}
+			border: 1px solid #CCC;
+			text-align: center;
+			width: 250px;
+			height: 20px;
+		}
 
-				.button label,
-				.button input {
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					padding-top: 2px;
-				}
+		.button label,
+		.button input {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding-top: 2px;
+		}
 
-				.button input[type="radio"] {
-					opacity: 0.011;
-					z-index: 100;
-				}
+		.button input[type="radio"] {
+			opacity: 0.011;
+			z-index: 100;
+		}
 
-				.button input[type="radio"]:checked + label {
-					background: #20b8be;
-					border-radius: 4px;
-				}
+		.button input[type="radio"]:checked + label {
+			background: #20b8be;
+			border-radius: 4px;
+		}
 
-				.button label {
-					cursor: pointer;
-					z-index: 90;
-					line-height: 2em;
-				}
-
-
-	
-
-
-
-				/* bottom info */
-				#legendOverlay {
-					position: fixed;
-					bottom: 9px;
-					left: 9px;
-					right: 9px;
-
-					pointer-events: none;
-
-					display: flex;
-					justify-content: center;
-				}
-
-
-				#legend, 
-				#urlContainer {
-					background-color: rgba(150,150,150,.9);
-					display: flex;
-					padding: 10px 15px;
-				}
-
-
-				/* talent continers */
-				#urlContainer {
-					pointer-events: auto;
-					margin-right: 10px;
-				}
-
-				#urlContainer:last-child {
-					margin-right: 0;
-				}
-
-				.name,
-				.url {
-
-					text-align: left;
-				}
-
-				.name {
-					font-size: 20px;
-					font-weight: bold;
-					align-self: center;
-					margin-right: 15px;
-				}
-
-				.url {
-					display: flex;
-					flex-flow: column;
-				}
-
-				.talentButton {
-					padding: 5px 10px;
-					background-color: green;
-				}
-
-				.talentButton:first-child {
-					margin-bottom: 5px;
-				}
-
-
-				/* legend containers */
-
-				.legendEntry {
-					align-self: center;
-					margin-right: 13px;
-					text-align: center;
-				}
-
-				.legendEntry:last-child {
-					margin-right: 0px;
-				}
-
-
-				/*legend display*/
-				#group:checked,
-				:is(#legend) {
-					display: none;
-				}
+		.button label {
+			cursor: pointer;
+			z-index: 90;
+			line-height: 2em;
+		}
 
 
 
 
-</style>
+
+
+		/* bottom info */
+		#legendOverlay {
+			position: fixed;
+			bottom: 9px;
+			left: 9px;
+			right: 9px;
+
+			pointer-events: none;
+
+			display: flex;
+			justify-content: center;
+		}
+
+
+		#legend, 
+		#urlContainer {
+			background-color: rgba(150,150,150,.9);
+			display: flex;
+			padding: 10px 15px;
+		}
+
+
+		/* talent continers */
+		#urlContainer {
+			pointer-events: auto;
+			margin-right: 10px;
+		}
+
+		#urlContainer:last-child {
+			margin-right: 0;
+		}
+
+		.name,
+		.url {
+
+			text-align: left;
+		}
+
+		.name {
+			font-size: 20px;
+			font-weight: bold;
+			align-self: center;
+			margin-right: 15px;
+		}
+
+		.url {
+			display: flex;
+			flex-flow: column;
+		}
+
+		.talentButton {
+			padding: 5px 10px;
+			background-color: green;
+		}
+
+		.talentButton:first-child {
+			margin-bottom: 5px;
+		}
+
+
+		/* legend containers */
+
+		.legendEntry {
+			align-self: center;
+			margin-right: 13px;
+			text-align: center;
+		}
+
+		.legendEntry:last-child {
+			margin-right: 0px;
+		}
+
+
+		/*legend display*/
+		#group:checked,
+		:is(#legend) {
+			display: none;
+		}
+
+	</style>
+
 
 
 
@@ -184,11 +182,11 @@ div#buttonRow.me {
 		<h1>Group affliation and relationships of indie vtubers and streamers</h1>
 
 		<h3>NOTE: this is not intended to be an objective map of relationships but only to serve as a "neighborhood map" of folks who know or collab with each other. No malice, ill will or foul intent is ment by this.</h3>
-	
-	<p>
-		Instructions: click and drag to pan, mouse wheel to zoom in and out. Click on a node to get youtube/twitch links where possible. Buttons swap display per label.
-	</p>
-</div>
+
+		<p>
+			Instructions: click and drag to pan, mouse wheel to zoom in and out. Click on a node to get youtube/twitch links where possible. Buttons swap display per label.
+		</p>
+	</div>
 
 	<div id="buttonRow" class="me">
 
@@ -217,7 +215,7 @@ div#buttonRow.me {
 				</label>
 			</div> -->
 
-	</div>
+		</div>
 
 
 
@@ -336,6 +334,7 @@ div#buttonRow.me {
 <!-- <script  src="./script.js"></script> -->
 
 <script  src="./script copy.js"></script>
+
 
 </body>
 

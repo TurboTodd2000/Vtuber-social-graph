@@ -68,21 +68,22 @@ DATA GOES HERE
 const interestNode = [
 
 	//INTEREST NODE
-	//index, type, GROUP, label, size var, shape var
+	//index, type, GROUP, label, size var, shape var, physics
 	
-	[ 0, "interests", "INTERESTS", "Yapping", [9034, 9028, 1000, 1001, 1003, 9042, 9024, 9038, 1012, 9039, 9019, 9032, 9003, 7003, 1002, 11001, 5001, 6004, 9004, 9016, 5005, 1008, 1010, 9009, 9029, 1011, 10007, 10003, 10002, 9036, 9040, 6001, 1015  ] ],
+	[ 0, "interests", "INTERESTS", "Yapping", [9034, 9028, 1000, 1001, 1003, 9042, 9024, 9038, 1012, 9039, 9019, 9032, 9003, 7003, 1002, 11001, 5001, 6004, 9004, 9016, 5005, 1008, 1010, 9009, 9029, 1011, 10007, 10003, 10002, 9036, 9040, 6001, 1015, 9052, 9053  ], false ],
 
-	[ 1, "interests", "INTERESTS", "Gaming", [10005, 10006, 10007, 10008, 10001, 10003, 10004, 9004, 1001, 9033, 9018, 9009, 1008, 1010, 1013, 1003, 9017, 9016, 7002, 9043, 1000, 1009, 1011, 1012, 1014, 1007, 9025, 9021, 9024, 9020, 9019, 9002, 9006, 9007, 9013, 3001, 3002, 3003, 3004, 2001, 2002, 4001, 4002, 4003, 4004, 6003, 1002, 9031, 7004, 9022, 13001, 9045, 6006, 9051, 6002, 9030, 9050, 9044, 9049, 9035, 9027, 11003, 11001, 9036, 1015, 9034, 9052 ] ],
+	[ 1, "interests", "INTERESTS", "Gaming", [10005, 10006, 10007, 10008, 10001, 10003, 10004, 9004, 1001, 9033, 9018, 9009, 1008, 1010, 1013, 1003, 9017, 9016, 7002, 9043, 1000, 1009, 1011, 1012, 1014, 1007, 9025, 9021, 9024, 9020, 9019, 9002, 9006, 9007, 9013, 3001, 3002, 3003, 3004, 2001, 2002, 4001, 4002, 4003, 4004, 6003, 1002, 9031, 7004, 9022, 13001, 9045, 6006, 9051, 6002, 9030, 9050, 9044, 9049, 9035, 9027, 11003, 11001, 9036, 1015, 9034, 9052, 12001, 9023 ], false ],
 
-	[ 2, "interests", "INTERESTS", "Music", [1000, 1002, 1005, 1006, 1007, 1009, 1011, 1014, 1015, 2001, 2002, 2003, 3001, 3002, 3003, 3004, 4001, 4002, 4003, 4004, 6001, 6002, 6003, 6004, 9001, 9002, 9003, 9005, 9006, 9007, 9008, 9010, 9011, 9013, 9014, 9015, 9019, 9026, 9031, 9037, 9041, 9043, 5002, 11001, 11014, 11015, 11002, 11016, 11017, 11018, 11019, 11003, 11020, 11021, 11022, 11004, 11005, 11006, 11007, 11008, 11009, 5005, 7001, 7004, 5001, 6005, 10004, 10002, 10001, 11013, 13001, 9046, 9047 ] ],
+	[ 2, "interests", "INTERESTS", "Music", [1000, 1002, 1005, 1006, 1007, 1009, 1011, 1014, 1015, 2001, 2002, 2003, 3001, 3002, 3003, 3004, 4001, 4002, 4003, 4004, 6001, 6002, 6003, 6004, 9001, 9002, 9003, 9005, 9006, 9007, 9008, 9010, 9011, 9013, 9014, 9015, 9019, 9026, 9031, 9037, 9041, 9043, 5002, 11001, 11014, 11015, 11002, 11016, 11017, 11018, 11019, 11003, 11020, 11021, 11022, 11004, 11005, 11006, 11007, 11008, 11009, 5005, 7001, 7004, 5001, 6005, 10004, 10002, 10001, 11013, 13001, 9046, 9047 ], false ],
 
-	[ 3, "interests", "INTERESTS", "IRL", [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 9016, 9008, 9033 ] ],
-	[ 4, "interests", "INTERESTS", "Art", [9032, 9003, 7003, 13001] ],
-	[ 5, "interests", "INTERESTS", "STEM", [5005, 8001, 5003, 7002, 9048] ],
-	[ 6, "interests", "INTERESTS", "Sexuality", [1012, 9039, 9036, 9040] ],
-	[ 7, "interests", "INTERESTS", "N/A", [8002, 8003] ],
-	[ 8, "interests", "INTERESTS", "Educational", [10002, 1012, 9048, ] ],
-	[ 9, "interests", "INTERESTS", "Media/React", [9034, 9052] ],
+	[ 3, "interests", "INTERESTS", "IRL", [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 9016, 9008, 9033, 9053 ], true ],
+	[ 4, "interests", "INTERESTS", "Art", [9032, 9003, 7003, 13001], true ],
+	[ 5, "interests", "INTERESTS", "STEM", [5005, 8001, 5003, 7002, 9048], true ],
+	[ 6, "interests", "INTERESTS", "Sexuality", [1012, 9039, 9036, 9040], true ],
+	[ 7, "interests", "INTERESTS", "N/A", [8002, 8003], true ],
+	[ 8, "interests", "INTERESTS", "Educational", [10002, 1012, 9048, ], true ],
+	[ 9, "interests", "INTERESTS", "Media/React", [9034, 9052], true ],
+	[ 10, "interests", "INTERESTS", "ASMR", [12001, 9008, 5005 ], true ],
 
 
 
@@ -167,7 +168,7 @@ const informalGroupNodes = [
 	[ 206, "group", "FLESHTUBERS", "Fleshtubers", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009 ] ],
 
 	// indies
-	[ 207, "group", "INDIES", "Indies", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [5001, 5002, 5003, 5005, 6001, 6002, 6003, 6004, 7001, 7002, 7003, 7004, 8001, 8002, 8003, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032, 9033, 9034, 9035, 9036, 9037, 9038, 9039, 9040, 9041, 9042, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 2001, 2002, 2003, 4001, 4002, 4003, 4004, 6005, 9043, 3001, 3002, 3003, 3004, 9044, 6006, 9045, 9046, 9047, 9048, 9049, 9050, 9051 ] ],
+	[ 207, "group", "INDIES", "Indies", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [5001, 5002, 5003, 5005, 6001, 6002, 6003, 6004, 7001, 7002, 7003, 7004, 8001, 8002, 8003, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032, 9033, 9034, 9035, 9036, 9037, 9038, 9039, 9040, 9041, 9042, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 2001, 2002, 2003, 4001, 4002, 4003, 4004, 6005, 9043, 3001, 3002, 3003, 3004, 9044, 6006, 9045, 9046, 9047, 9048, 9049, 9050, 9051, 9052, 9053 ] ],
 
 	// indo girlypops
 	[ 209, "group", "INDO_GIRLYPOPS", "Indo Girlypops", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [11004, 11005, 11006, 11007, 11008, 11009, 13001, 1002,  ] ],
@@ -267,6 +268,7 @@ const talentNodes = [
 	[ 9050, "talent", "INDIES", "Momo", "http://www.youtube.com/themastermo", "https://www.twitch.tv/momo", "wikilink", [], ],
 	[ 9051, "talent", "INDIES", "girl_dm_", "https://www.youtube.com/channel/UC_WC6plpIdL_buebR9vSVkg", "https://www.twitch.tv/girl_dm_", "wikilink", [], ],
 	[ 9052, "talent", "INDIES", "SunnySplosion", "https://www.youtube.com/@OopsAllSunny", "https://www.twitch.tv/sunnysplosion", "wikilink", [], ],
+	[ 9053, "talent", "INDIES", "OniGiri", "https://www.youtube.com/c/OniGirien", "https://www.twitch.tv/onigiri", "wikilink", [], ],
 
 //aqua
 //baddaboom
@@ -398,8 +400,11 @@ const youtubeText = `", youtube: "`;
 const twitchText = `", twitch: "`;
 const wikiText = `", wiki: "`;
 
+const physicsText = `", physics: `;
+
 
 const endText = `" }`;
+const physicsEndText = ` }`;
 
 //for edges
 const fromText = `{ from: `;
@@ -420,7 +425,7 @@ for (var a = 0; a < interestNode.length; a++) {
 	//nodee elements
 	var currentInterestNode = interestNode[a];
 
-	var nodeHTMLoutput = idText + currentInterestNode[0] + typeText + currentInterestNode[1] + groupText + currentInterestNode[2] + labelText + currentInterestNode[3] + endText;
+	var nodeHTMLoutput = idText + currentInterestNode[0] + typeText + currentInterestNode[1] + groupText + currentInterestNode[2] + labelText + currentInterestNode[3] + physicsText + currentInterestNode[5] + physicsEndText;
 
 	outputNodeAcc.push(nodeHTMLoutput);
 
