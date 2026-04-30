@@ -74,16 +74,16 @@ const interestNode = [
 
 	[ 1, "interests", "INTERESTS", "Gaming", [10005, 10006, 10007, 10008, 10001, 10003, 10004, 9004, 1001, 9033, 9018, 9009, 1008, 1010, 1013, 1003, 9017, 9016, 7002, 9043, 1000, 1009, 1011, 1012, 1014, 1007, 9025, 9021, 9024, 9020, 9019, 9002, 9006, 9007, 9013, 3001, 3002, 3003, 3004, 2001, 2002, 4001, 4002, 4003, 4004, 6003, 1002, 9031, 7004, 9022, 13001, 9045, 6006, 9051, 6002, 9030, 9050, 9044, 9049, 9035, 9027, 11003, 11001, 9036, 1015, 9034, 9052, 12001, 9023 ], false ],
 
-	[ 2, "interests", "INTERESTS", "Music", [1000, 1002, 1005, 1006, 1007, 1009, 1011, 1014, 1015, 2001, 2002, 2003, 3001, 3002, 3003, 3004, 4001, 4002, 4003, 4004, 6001, 6002, 6003, 6004, 9001, 9002, 9003, 9005, 9006, 9007, 9008, 9010, 9011, 9013, 9014, 9015, 9019, 9026, 9031, 9037, 9041, 9043, 5002, 11001, 11014, 11015, 11002, 11016, 11017, 11018, 11019, 11003, 11020, 11021, 11022, 11004, 11005, 11006, 11007, 11008, 11009, 5005, 7001, 7004, 5001, 6005, 10004, 10002, 10001, 11013, 13001, 9046, 9047 ], false ],
+	[ 2, "interests", "INTERESTS", "Music", [1000, 1002, 1005, 1006, 1007, 1009, 1011, 1014, 1015, 2001, 2002, 2003, 3001, 3002, 3003, 3004, 4001, 4002, 4003, 4004, 6001, 6002, 6003, 6004, 9001, 9002, 9003, 9005, 9006, 9007, 9008, 9010, 9011, 9013, 9014, 9015, 9019, 9026, 9031, 9037, 9041, 9043, 5002, 11001, 11014, 11015, 11002, 11016, 11017, 11018, 11019, 11003, 11020, 11021, 11022, 11004, 11005, 11006, 11007, 11008, 11009, 5005, 7001, 7004, 5001, 6005, 10004, 10002, 10001, 11013, 13001, 9046, 9047 ], true ],
 
-	[ 3, "interests", "INTERESTS", "IRL", [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 9016, 9008, 9033, 9053 ], true ],
-	[ 4, "interests", "INTERESTS", "Art", [9032, 9003, 7003, 13001], true ],
-	[ 5, "interests", "INTERESTS", "STEM", [5005, 8001, 5003, 7002, 9048], true ],
-	[ 6, "interests", "INTERESTS", "Sexuality", [1012, 9039, 9036, 9040], true ],
-	[ 7, "interests", "INTERESTS", "N/A", [8002, 8003], true ],
-	[ 8, "interests", "INTERESTS", "Educational", [10002, 1012, 9048, ], true ],
-	[ 9, "interests", "INTERESTS", "Media/React", [9034, 9052], true ],
-	[ 10, "interests", "INTERESTS", "ASMR", [12001, 9008, 5005 ], true ],
+	[ 3, "interests", "INTERESTS", "IRL", [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 9016, 9008, 9033, 9053 ], false ],
+	[ 4, "interests", "INTERESTS", "Art", [9032, 9003, 7003, 13001], false ],
+	[ 5, "interests", "INTERESTS", "STEM", [5005, 8001, 5003, 7002, 9048], false ],
+	[ 6, "interests", "INTERESTS", "Sexuality", [1012, 9039, 9036, 9040], false ],
+	[ 7, "interests", "INTERESTS", "N/A", [8002, 8003], false ],
+	[ 8, "interests", "INTERESTS", "Educational", [10002, 1012, 9048, ], false ],
+	[ 9, "interests", "INTERESTS", "Media/React", [9034, 9052], false ],
+	[ 10, "interests", "INTERESTS", "ASMR", [12001, 9008, 5005 ], false ],
 
 
 
@@ -376,10 +376,7 @@ CREATE NODES/EDGES
 -----------------------------------------------
 */
 
-//need to figure out which direction I want edges to run
-//all group edges source from group node?
-//all interest nodes sourced from interest node?
-//collab talent to talent?
+//these const are to deal with the quote mark issue  when concatanating strings in an array
 
 //for nodes
 const idText = `{ id: `;
@@ -392,7 +389,6 @@ const collabText = `collab`;
 const shapeText = `", shape: "`;
 const sizeNodeText = `", size: `;
 
-
 const fontSizeText = `, font: { size: `;
 const fontColorText = `, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } }`;
 
@@ -400,11 +396,11 @@ const youtubeText = `", youtube: "`;
 const twitchText = `", twitch: "`;
 const wikiText = `", wiki: "`;
 
-const physicsText = `", physics: `;
-
+const physicsText = `", fixed: `;
 
 const endText = `" }`;
 const physicsEndText = ` }`;
+
 
 //for edges
 const fromText = `{ from: `;
@@ -427,6 +423,8 @@ for (var a = 0; a < interestNode.length; a++) {
 
 	var nodeHTMLoutput = idText + currentInterestNode[0] + typeText + currentInterestNode[1] + groupText + currentInterestNode[2] + labelText + currentInterestNode[3] + physicsText + currentInterestNode[5] + physicsEndText;
 
+/*	var nodeHTMLoutput = idText + currentInterestNode[0] + typeText + currentInterestNode[1] + groupText + currentInterestNode[2] + labelText + currentInterestNode[3] + endText;
+*/
 	outputNodeAcc.push(nodeHTMLoutput);
 
 
