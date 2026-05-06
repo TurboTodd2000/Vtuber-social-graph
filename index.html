@@ -87,9 +87,6 @@
 
 
 
-
-
-
 		/* bottom info */
 		#legendOverlay {
 			position: fixed;
@@ -98,19 +95,27 @@
 			right: 9px;
 
 			pointer-events: none;
-
-			display: flex;
-			justify-content: center;
 		}
 
+/*		#legendOverlay:last-child {
+			margin-right: 0;
+		}*/
+
+
+		.legendRows {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
 
 		#legend, 
 		#urlContainer {
 			background-color: rgba(150,150,150,.9);
 			display: flex;
-			padding: 10px 15px;
+			padding:15px;
+			align-items: stretch;
+			border-radius: 10px 10px 0px 0px;
 		}
-
 
 		/* talent continers */
 		#urlContainer {
@@ -122,31 +127,43 @@
 			margin-right: 0;
 		}
 
-		.name,
-		.url {
 
-			text-align: left;
+		.talentButton {
+			padding: 0 15px;
+			height: 44px;
+			background: #20b8be;
+			color: black;
+			border-radius: 5px;
+			text-align: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			text-decoration: none;
+			margin-right: 5px;
 		}
+
+		.talentButton span {
+			display: inline-block;
+			align-content: center;
+		}
+
+
+		.talentContainer a:last-child {
+			margin-right: 0;
+		}
+
 
 		.name {
 			font-size: 20px;
 			font-weight: bold;
 			align-self: center;
-			margin-right: 15px;
 		}
 
-		.url {
-			display: flex;
-			flex-flow: column;
-		}
 
-		.talentButton {
-			padding: 5px 10px;
-			background-color: green;
-		}
 
-		.talentButton:first-child {
-			margin-bottom: 5px;
+		#youtubeLink .talentButton,
+		{
+			padding: 2px 0;
 		}
 
 
@@ -154,7 +171,7 @@
 
 		.legendEntry {
 			align-self: center;
-			margin-right: 13px;
+			margin-right: 25px;
 			text-align: center;
 		}
 
@@ -163,15 +180,12 @@
 		}
 
 
-		/*legend display*/
-		#group:checked,
-		:is(#legend) {
-			display: none;
-		}
 
 	</style>
 
-
+	<script>
+	//on click function to swap display attr. goes here
+	</script>
 
 
 </head>
@@ -223,114 +237,173 @@
 
 
 
-<!-- canvas for graph -->
-<div id="mynetwork"></div>
+		<!-- canvas for graph -->
+		<div id="mynetwork"></div>
 
-<div id="legendOverlay">
-	
+		<div id="legendOverlay">
 
-<!-- container for talent info -->
-<div id="urlContainer" class="talentContainer">
+			<div class="legendRows" >
 
-	<div class="name">
+				<!-- container for talent info -->
+				<div id="urlContainer" class="talentContainer">
 
-		<span id="talentName">
-			#
-		</span>
+					<a href="##" target="_blank" id="talentName" class="name talentButton">
+						<span >Name</span>
+					</a>
 
-	</div>
+					<a  href="#" id="youtubeLink" class="talentButton" target="_blank">
+						<span >YouTube</span>
+					</a>
 
-	<div class="url">
+					<a  href="#" id="twitchLink" class="talentButton" target="_blank">
+						<span >Twitch</span>
+					</a>	
 
-		<div class="talentButton">
-			<a id="youtubeLink"  href="#" target="_blank">YouTube</a> <br />
+				</div>
+
+			</div>
+
+			<div class="legendRows" style="display: none;">
+
+				<!-- legend for certain display modes -->
+				<div id="legend">
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="orange" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Indies</span>
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="blue" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>dentsu.exe</span>
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="purple" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Beastiez</span>
+
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="red" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Nova</span>
+
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="yellow" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>VichiBan</span>
+
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="darkgreen" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Neuroverse</span>
+
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="firebrick" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Fleshtubers</span>
+
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="DarkOrchid" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Indo Girlypops</span>
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="LightSeaGreen" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Lab Brats</span>
+					</div>
+
+
+					<div class="legendEntry">
+
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="10" cy="10" r="10" fill="green" />
+							Sorry, your browser does not support inline SVG.
+						</svg>
+
+						<span>Hololive</span>
+					</div>
+
+
+					
+
+				</div>
+
+			</div>
+
+
+
 		</div>
 
-		<div class="talentButton">
-			<a id="twitchLink" href="#" target="_blank">Twitch</a>
-		</div>
-		
-	</div>
 
-</div>
+		<div>
 
 
-<!-- legend for certain display modes -->
-<div id="legend">
-
-	<div class="legendEntry">
-		<div >
-			
-			<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="15" cy="15" r="15" fill="red" />
-				Sorry, your browser does not support inline SVG.
-			</svg>
 
 		</div>
 
-		<span>title</span>
-	</div>
-
-	<div class="legendEntry">
-		<div >
-			
-			<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="15" cy="15" r="15" fill="red" />
-				Sorry, your browser does not support inline SVG.
-			</svg>
-
-		</div>
-
-		<span>Hololive</span>
-	</div>
-
-	<div class="legendEntry">
-		<div >
-			
-			<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="15" cy="15" r="15" fill="red" />
-				Sorry, your browser does not support inline SVG.
-			</svg>
-
-		</div>
-
-		<span>Vshjo</span>
-	</div>
-
-	<div class="legendEntry">
-		<div >
-			
-			<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="15" cy="15" r="15" fill="red" />
-				Sorry, your browser does not support inline SVG.
-			</svg>
-
-		</div>
-
-		<span>Indie</span>
-	</div>
-
-	<div class="legendEntry">
-		<div >
-			
-			<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="15" cy="15" r="15" fill="red" />
-				Sorry, your browser does not support inline SVG.
-			</svg>
-
-		</div>
-
-		<span>VichiBan</span>
-	</div>
-
-</div>
 
 
-</div>
-
-
-
-<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
+		<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
 <!-- <script  src="./script.js"></script> -->
 
 <script  src="./script copy.js"></script>
