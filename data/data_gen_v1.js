@@ -79,11 +79,11 @@ const interestNode = [
 	[ 3, "interests", "INTERESTS", "IRL", [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 9016, 9008, 9033, 9053 ], false ],
 	[ 4, "interests", "INTERESTS", "Art", [9032, 9003, 7003, 13001], false ],
 	[ 5, "interests", "INTERESTS", "STEM", [5005, 8001, 5003, 7002, 9048], false ],
-	[ 6, "interests", "INTERESTS", "Sexuality", [1012, 9039, 9036, 9040], false ],
+	[ 6, "interests", "INTERESTS", "Sexuality", [1012, 9039, 9036, 9040, 9024, 9035, ], false ],
 	[ 7, "interests", "INTERESTS", "N/A", [8002, 8003], false ],
 	[ 8, "interests", "INTERESTS", "Educational", [10002, 1012, 9048, ], false ],
 	[ 9, "interests", "INTERESTS", "Media/React", [9034, 9052], false ],
-	[ 10, "interests", "INTERESTS", "ASMR", [12001, 9008, 5005 ], false ],
+	[ 10, "interests", "INTERESTS", "ASMR", [12001, 9008, 5005, 9038 ], false ],
 
 
 
@@ -188,178 +188,184 @@ const talentNodes = [
 	//INFORMAL GROUPS
 
 	//ex vshjo and vshojo affliated
-	[ 1000, "talent", "INDIES", "Ironmouse", "https://www.youtube.com/@IronMouseParty", "https://www.twitch.tv/ironmouse", "wikilink", [], ],
-	[ 1001, "talent", "INDIES", "Zentraya", "http://youtube.com/c/Zentreya", "https://www.twitch.tv/zentreya", "wikilink", [],  ],
-	[ 1002, "talent", "INDIES", "Michi Mochievee", "https://www.youtube.com/channel/UCnS5IYNyGKOti9cFlK5SefQ", "https://www.twitch.tv/michimochievee", "wikilink", [], ],
-	[ 1003, "talent", "INDIES", "Geega", "https://www.youtube.com/@GEEGA/", "https://www.twitch.tv/geega", "wikilink", [], ],
-	[ 1005, "talent", "INDIES", "Silvervale", "https://www.youtube.com/channel/UCm8Dj7dQ0oRHXNUXF31kjEw", "https://www.twitch.tv/silvervale", "wikilink", [], ],
-	[ 1006, "talent", "INDIES", "K9Kuro", "https://www.youtube.com/channel/UCN5J_HKNGFCPtqAnSjBekcA", "https://www.twitch.tv/k9kuro", "wikilink", [], ],
-	[ 1007, "talent", "INDIES", "Apricot (froot)", "https://www.youtube.com/c/ApricottheLichVS", "https://www.twitch.tv/apricot", "wikilink", [], ],
-	[ 1008, "talent", "INDIES", "Haruka Karibu", "https://www.youtube.com/c/HarukaKaribu", "https://www.twitch.tv/harukakaribu", "wikilink", [], ],
-	[ 1009, "talent", "INDIES", "AmaLee", "https://youtube.com/leeandlie", "https://www.twitch.tv/amalee", "wikilink", [], ],
-	[ 1010, "talent", "INDIES", "Henya the Genius", "https://www.youtube.com/channel/UCVhRMzNWYcg8XDTgB9NFRTw", "https://www.twitch.tv/henyathegenius", "wikilink", [], ],
-	[ 1011, "talent", "INDIES", "Matara Kan", "https://www.youtube.com/channel/UCxx2uRmAwkhb3QJMfLssgsw", "https://www.twitch.tv/matarakan", "wikilink", [], ],
-	[ 1012, "talent", "INDIES", "Projket Melody", "https://www.youtube.com/c/ProjektMelodyOfficial", "https://www.twitch.tv/projektmelody", "wikilink", [], ],
-	[ 1013, "talent", "INDIES", "Hime Hajime", "https://www.youtube.com/@himehajime1570", "https://www.twitch.tv/hajime", "wikilink", [], ],
-	[ 1014, "talent", "INDIES", "Nyatasha Nyanners", "https://youtube.com/nyanners", "https://www.twitch.tv/nyanners", "wikilink", [], ],
-	[ 1015, "talent", "INDIES", "Kson", "https://www.youtube.com/channel/UC9ruVYPv7yJmV0Rh0NKA-Lw", "https://www.twitch.tv/ksonsouchou", "wikilink", [], ],
-	//[ 1016, "talent", "INDIES", "Veibae", "youtube", "twitch", "wikilink", [], ],
+	[ 1000, "talent", "INDIES", "Ironmouse", "https://www.youtube.com/@IronMouseParty", "https://www.twitch.tv/ironmouse", "https://en.wikipedia.org/wiki/Ironmouse", [], ],
+	[ 1001, "talent", "INDIES", "Zentraya", "http://youtube.com/c/Zentreya", "https://www.twitch.tv/zentreya", "https://virtualyoutuber.fandom.com/wiki/Zentreya", [],  ],
+	[ 1002, "talent", "INDIES", "Michi Mochievee", "https://www.youtube.com/channel/UCnS5IYNyGKOti9cFlK5SefQ", "https://www.twitch.tv/michimochievee", "https://virtualyoutuber.fandom.com/wiki/Michi_Mochievee", [], ],
+	[ 1003, "talent", "INDIES", "Geega", "https://www.youtube.com/@GEEGA/", "https://www.twitch.tv/geega", "https://virtualyoutuber.fandom.com/wiki/GEEGA", [], ],
+	[ 1005, "talent", "INDIES", "Silvervale", "https://www.youtube.com/channel/UCm8Dj7dQ0oRHXNUXF31kjEw", "https://www.twitch.tv/silvervale", "https://virtualyoutuber.fandom.com/wiki/Silvervale", [], ],
+	[ 1006, "talent", "INDIES", "K9 Kuro", "https://www.youtube.com/channel/UCN5J_HKNGFCPtqAnSjBekcA", "https://www.twitch.tv/k9kuro", "https://virtualyoutuber.fandom.com/wiki/Kuro_Kurenai", [], ],
+	[ 1007, "talent", "INDIES", "Apricot (froot)", "https://www.youtube.com/c/ApricottheLichVS", "https://www.twitch.tv/apricot", "https://virtualyoutuber.fandom.com/wiki/Apricot", [], ],
+	[ 1008, "talent", "INDIES", "Haruka Karibu", "https://www.youtube.com/c/HarukaKaribu", "https://www.twitch.tv/harukakaribu", "https://virtualyoutuber.fandom.com/wiki/Haruka_Karibu", [], ],
+	[ 1009, "talent", "INDIES", "AmaLee", "https://youtube.com/leeandlie", "https://www.twitch.tv/amalee", "https://virtualyoutuber.fandom.com/wiki/AmaLee", [], ],
+	[ 1010, "talent", "INDIES", "Henya the Genius", "https://www.youtube.com/channel/UCVhRMzNWYcg8XDTgB9NFRTw", "https://www.twitch.tv/henyathegenius", "https://virtualyoutuber.fandom.com/wiki/Henya_the_Genius", [], ],
+	[ 1011, "talent", "INDIES", "Matara Kan", "https://www.youtube.com/channel/UCxx2uRmAwkhb3QJMfLssgsw", "https://www.twitch.tv/matarakan", "https://virtualyoutuber.fandom.com/wiki/Matara_Kan", [], ],
+	[ 1012, "talent", "INDIES", "Projket Melody", "https://www.youtube.com/c/ProjektMelodyOfficial", "https://www.twitch.tv/projektmelody", "https://virtualyoutuber.fandom.com/wiki/Projekt_Melody", [], ],
+	[ 1013, "talent", "INDIES", "Hime Hajime", "https://www.youtube.com/@himehajime1570", "https://www.twitch.tv/hajime", "https://virtualyoutuber.fandom.com/wiki/Hime_Hajime", [], ],
+	[ 1014, "talent", "INDIES", "Nyatasha Nyanners", "https://youtube.com/nyanners", "https://www.twitch.tv/nyanners", "https://virtualyoutuber.fandom.com/wiki/Nyatasha_Nyanners", [], ],
+	[ 1015, "talent", "INDIES", "Kson", "https://www.youtube.com/channel/UC9ruVYPv7yJmV0Rh0NKA-Lw", "https://www.twitch.tv/ksonsouchou", "https://virtualyoutuber.fandom.com/wiki/Kson", [], ],
+	[ 1016, "talent", "INDIES", "Veibae", "https://www.youtube.com/channel/UCsBFeCb82qOXyUP19nmD9xw", "https://www.twitch.tv/vei", "https://virtualyoutuber.fandom.com/wiki/Veibae", [], ],
 
 	//EN girlypops
-	[ 6001, "talent", "INDIES", "Akuma Nihmune", "https://www.youtube.com/c/AkumaNihmuneCh", "https://www.twitch.tv/nihmune", "wikilink", [], ],
-	[ 6002, "talent", "INDIES", "Bao the Whale", "https://www.youtube.com/@baovtuber", "https://www.twitch.tv/bao", "wikilink", [], ],
-	[ 6003, "talent", "INDIES", "Yuzu", "https://www.youtube.com/channel/UCKvij44VV9TWt-EM3evoRWg", "https://www.twitch.tv/yuzu", "wikilink", [], ],
-	[ 6004, "talent", "INDIES", "Camila", "https://www.youtube.com/channel/UCdjLJvro7Q3V0M2V2pwWfZA", "https://www.twitch.tv/camila", "wikilink", [], ],
-	[ 6005, "talent", "INDIES", "Lucy Pyre", "https://www.youtube.com/channel/UC5VWF53rrEiuYvO5e5Ecn9Q", "https://www.twitch.tv/lucypyre", "wikilink", [], ],
-	[ 6006, "talent", "INDIES", "Trickywi", "", "", "wikilink", [], ],
+	[ 6001, "talent", "INDIES", "Akuma Nihmune", "https://www.youtube.com/c/AkumaNihmuneCh", "https://www.twitch.tv/nihmune", "https://virtualyoutuber.fandom.com/wiki/Akuma_Nihmune", [], ],
+	[ 6002, "talent", "INDIES", "Bao the Whale", "https://www.youtube.com/@baovtuber", "https://www.twitch.tv/bao", "https://virtualyoutuber.fandom.com/wiki/Bao", [], ],
+	[ 6003, "talent", "INDIES", "Yuzu", "https://www.youtube.com/channel/UCKvij44VV9TWt-EM3evoRWg", "https://www.twitch.tv/yuzu", "https://virtualyoutuber.fandom.com/wiki/Sanagi_Yuzu", [], ],
+	[ 6004, "talent", "INDIES", "Camila", "https://www.youtube.com/channel/UCdjLJvro7Q3V0M2V2pwWfZA", "https://www.twitch.tv/camila", "https://virtualyoutuber.fandom.com/wiki/Camila", [], ],
+	[ 6005, "talent", "INDIES", "Lucy Pyre", "https://www.youtube.com/channel/UC5VWF53rrEiuYvO5e5Ecn9Q", "https://www.twitch.tv/lucypyre", "https://virtualyoutuber.fandom.com/wiki/Lucy_Pyre", [], ],
+	[ 6006, "talent", "INDIES", "Trickywi", "https://www.youtube.com/@Trickywi", "https://www.twitch.tv/trickywi", "https://virtualyoutuber.fandom.com/wiki/Trickywi", [], ],
 
 	
 	
 
 	//indie general population
-	[ 9001, "talent", "INDIES", "Bajiru", "https://www.youtube.com/c/bajiru_EN", "https://www.twitch.tv/bajiru_en", "wikilink", [], ],
-	[ 9002, "talent", "INDIES", "dooby3D", "https://www.youtube.com/@dooby3d", "https://www.twitch.tv/dooby3d", "wikilink", [], ],
-	[ 9003, "talent", "INDIES", "FroggyLoch", "https://www.youtube.com/channel/UCyHiAEZfJmXO_cBRtgzcWZA/featured", "https://www.twitch.tv/froggyloch", "wikilink", [], ],
-	[ 9004, "talent", "INDIES", "Limealicious", "https://www.youtube.com/c/Limealicious", "https://www.twitch.tv/limealicious", "wikilink", [], ],
-	[ 9005, "talent", "INDIES", "Sameko Saba", "youtube", "twitch", "wikilink", [], ],
-	[ 9006, "talent", "INDIES", "Nimi Nightmare", "youtube", "twitch", "wikilink", [], ],
-	[ 9007, "talent", "INDIES", "SixteenInMono", "youtube", "https://www.twitch.tv/sixteeninmono", "wikilink", [], ],
-	[ 9008, "talent", "INDIES", "Cottontail_VA", "https://www.youtube.com/cottontailva", "https://www.twitch.tv/cottontailva", "wikilink", [], ],
-	[ 9009, "talent", "INDIES", "Arielle_VT", "https://www.youtube.com/@Arielle-VT", "https://www.twitch.tv/arielle", "wikilink", [], ],
-	[ 9010, "talent", "INDIES", "Starlight Daryl", "youtube", "https://www.twitch.tv/starlightdaryl", "wikilink", [], ],
-	[ 9011, "talent", "INDIES", "Isaa Corva", "https://www.youtube.com/@isaacorva", "https://www.twitch.tv/isaa", "wikilink", [], ],
-	[ 9013, "talent", "INDIES", "LordAethelstan", "https://www.youtube.com/channel/UCLI_XmsVZzOrOB1LaoV0BEQ", "https://www.twitch.tv/lordaethelstan", "wikilink", [], ],
-	[ 9014, "talent", "INDIES", "obkatiekat", "https://www.youtube.com/obkatiekat", "https://www.twitch.tv/obkatiekat", "wikilink", [], ],
-	[ 9015, "talent", "INDIES", "U-san", "https://www.youtube.com/@unnamednow00", "https://www.twitch.tv/unnamednow00", "wikilink", [], ],
-	[ 9016, "talent", "INDIES", "Saiiren", "https://www.youtube.com/@saiiren", "https://www.twitch.tv/saiiren", "wikilink", [], ],
-	[ 9017, "talent", "INDIES", "Porcelain Maid", "https://www.youtube.com/channel/UCngBjKSLC8IhPNagQCnf2LQ", "https://www.twitch.tv/porcelainmaid", "wikilink", [], ],
-	[ 9018, "talent", "INDIES", "Heavenly Father", "https://www.youtube.com/channel/UCrx5cwSB4bl3fI34Boxvq2A", "https://www.twitch.tv/heavenlyfather", "wikilink", [], ],	
-	[ 9019, "talent", "INDIES", "pumpkinpotion", "https://www.youtube.com/pumpkinpotion", "https://www.twitch.tv/pumpkinpotion", "wikilink", [], ],
-	[ 9020, "talent", "INDIES", "missshadowlovely", "https://www.youtube.com/MissShadowLovely", "https://www.twitch.tv/missshadowlovely", "wikilink", [], ],
-	[ 9021, "talent", "INDIES", "CyYu", "https://www.youtube.com/c/@CyYuvods", "https://www.twitch.tv/cyyuvtuber", "wikilink", [], ],
+	[ 9001, "talent", "INDIES", "Bajiru", "https://www.youtube.com/c/bajiru_EN", "https://www.twitch.tv/bajiru_en", "https://virtualyoutuber.fandom.com/wiki/Bajiru", [], ],
+	[ 9002, "talent", "INDIES", "dooby3D", "https://www.youtube.com/@dooby3d", "https://www.twitch.tv/dooby3d", "https://virtualyoutuber.fandom.com/wiki/Dooby3D", [], ],
+	[ 9003, "talent", "INDIES", "FroggyLoch", "https://www.youtube.com/channel/UCyHiAEZfJmXO_cBRtgzcWZA/featured", "https://www.twitch.tv/froggyloch", "https://virtualyoutuber.fandom.com/wiki/FroggyLoch", [], ],
+	[ 9004, "talent", "INDIES", "Limealicious", "https://www.youtube.com/c/Limealicious", "https://www.twitch.tv/limealicious", "https://virtualyoutuber.fandom.com/wiki/Laimu", [], ],
+	[ 9005, "talent", "INDIES", "Sameko Saba", "https://www.youtube.com/@SamekoSaba", "", "https://virtualyoutuber.fandom.com/wiki/Sameko_Saba", [], ],
+	[ 9006, "talent", "INDIES", "Nimi Nightmare", "https://www.youtube.com/@niminightmare", "", "https://virtualyoutuber.fandom.com/wiki/Nimi_Nightmare", [], ],
+	[ 9007, "talent", "INDIES", "SixteenInMono", "https://www.youtube.com/@SixteenInMono", "https://www.twitch.tv/sixteeninmono", "", [], ],
+	[ 9008, "talent", "INDIES", "Cottontail_VA", "https://www.youtube.com/cottontailva", "https://www.twitch.tv/cottontailva", "https://virtualyoutuber.fandom.com/wiki/CottontailVA", [], ],
+	[ 9009, "talent", "INDIES", "Arielle_VT", "https://www.youtube.com/@Arielle-VT", "https://www.twitch.tv/arielle", "https://virtualyoutuber.fandom.com/wiki/Arielle", [], ],
+	[ 9010, "talent", "INDIES", "Starlight Daryl", "https://www.youtube.com/@StarlightDaryl", "https://www.twitch.tv/starlightdaryl", "https://virtualyoutuber.fandom.com/wiki/StarlightDaryl", [], ],
+	[ 9011, "talent", "INDIES", "Isaa Corva", "https://www.youtube.com/@isaacorva", "https://www.twitch.tv/isaa", "https://virtualyoutuber.fandom.com/wiki/Isaa_Corva", [], ],
+	[ 9013, "talent", "INDIES", "Lord Aethelstan", "https://www.youtube.com/channel/UCLI_XmsVZzOrOB1LaoV0BEQ", "https://www.twitch.tv/lordaethelstan", "https://virtualyoutuber.fandom.com/wiki/Lord_Aethelstan", [], ],
+	[ 9014, "talent", "INDIES", "Obkatiekat", "https://www.youtube.com/obkatiekat", "https://www.twitch.tv/obkatiekat", "https://virtualyoutuber.fandom.com/wiki/Obkatiekat", [], ],
+
+	[ 9015, "talent", "INDIES", "U-san", "https://www.youtube.com/@unnamednow00", "https://www.twitch.tv/unnamednow00", "https://virtualyoutuber.fandom.com/wiki/Unn%C3%A4med", [], ],
+	[ 9016, "talent", "INDIES", "Saiiren", "https://www.youtube.com/@saiiren", "https://www.twitch.tv/saiiren", "https://virtualyoutuber.fandom.com/wiki/Saiiren", [], ],
+	[ 9017, "talent", "INDIES", "Porcelain Maid", "https://www.youtube.com/channel/UCngBjKSLC8IhPNagQCnf2LQ", "https://www.twitch.tv/porcelainmaid", "https://virtualyoutuber.fandom.com/wiki/PorcelainMaid", [], ],
+	[ 9018, "talent", "INDIES", "Heavenly Father", "https://www.youtube.com/channel/UCrx5cwSB4bl3fI34Boxvq2A", "https://www.twitch.tv/heavenlyfather", "https://virtualyoutuber.fandom.com/wiki/Heavenly_Father", [], ],	
+	[ 9019, "talent", "INDIES", "Pumpkin Potion", "https://www.youtube.com/pumpkinpotion", "https://www.twitch.tv/pumpkinpotion", "https://virtualyoutuber.fandom.com/wiki/Pumpkin_Potion", [], ],
+	[ 9020, "talent", "INDIES", "missshadowlovely", "https://www.youtube.com/MissShadowLovely", "https://www.twitch.tv/missshadowlovely", "https://virtualyoutuber.fandom.com/wiki/MissShadowLovely", [], ],
+	[ 9021, "talent", "INDIES", "CyYu", "https://www.youtube.com/c/@CyYuvods", "https://www.twitch.tv/cyyuvtuber", "https://virtualyoutuber.fandom.com/wiki/CyYu", [], ],
 	[ 9022, "talent", "INDIES", "CROC", "https://www.youtube.com/@CROCvt", "https://www.twitch.tv/croc", "wikilink", [], ],
 	[ 9023, "talent", "INDIES", "ENVI", "youtube", "https://www.twitch.tv/envi", "wikilink", [], ],
-	[ 9024, "talent", "INDIES", "lucia", "https://www.youtube.com/@luciavt", "https://www.twitch.tv/lucia", "wikilink", [], ],
+	[ 9024, "talent", "INDIES", "Lucia Crabs", "https://www.youtube.com/@luciavt", "https://www.twitch.tv/lucia", "https://virtualyoutuber.fandom.com/wiki/Lucia_Crabs", [], ],
 	[ 9025, "talent", "INDIES", "KloeKroc", "https://www.youtube.com/@KloeKroc", "https://www.twitch.tv/kloekroc", "wikilink", [], ],
 	[ 9026, "talent", "INDIES", "Derivakat", "https://www.youtube.com/derivakat", "https://www.twitch.tv/derivakat", "wikilink", [], ],
-	[ 9027, "talent", "INDIES", "Fufu", "https://www.youtube.com/channel/UCNMHJ9WnMXabPn-iyQKAdcA", "https://www.twitch.tv/fufu", "wikilink", [], ],
-	[ 9028, "talent", "INDIES", "KokoNuts", "https://www.youtube.com/channel/UCk9qayCnFw51PIUZKVxH1UQ", "https://www.twitch.tv/kokonuts", "wikilink", [], ],
-	[ 9029, "talent", "INDIES", "crelly", "https://www.youtube.com/channel/UCwxaNWg74VccV65gr_L6JZg", "https://www.twitch.tv/crelly", "wikilink", [], ],
-	[ 9030, "talent", "INDIES", "Bluto", "youtube", "https://www.twitch.tv/bluto", "wikilink", [], ],
-	[ 9031, "talent", "INDIES", "chibidoki", "https://www.youtube.com/channel/UCoqNvjhUxJRYW4JsT5fBK6w", "https://www.twitch.tv/chibidoki", "wikilink", [], ],
+	[ 9027, "talent", "INDIES", "Fufu", "https://www.youtube.com/channel/UCNMHJ9WnMXabPn-iyQKAdcA", "https://www.twitch.tv/fufu", "https://virtualyoutuber.fandom.com/wiki/Fufu", [], ],
+	[ 9028, "talent", "INDIES", "KokoNuts", "https://www.youtube.com/channel/UCk9qayCnFw51PIUZKVxH1UQ", "https://www.twitch.tv/kokonuts", "https://virtualyoutuber.fandom.com/wiki/Koko_D._Nuts", [], ],
+
+	[ 9029, "talent", "INDIES", "Crelly", "https://www.youtube.com/channel/UCwxaNWg74VccV65gr_L6JZg", "https://www.twitch.tv/crelly", "https://virtualyoutuber.fandom.com/wiki/Crelly", [], ],
+	[ 9030, "talent", "INDIES", "Bluto", "youtube", "https://www.twitch.tv/bluto", "https://virtualyoutuber.fandom.com/wiki/Bluto", [], ],
+	[ 9031, "talent", "INDIES", "chibidoki", "https://www.youtube.com/channel/UCoqNvjhUxJRYW4JsT5fBK6w", "https://www.twitch.tv/chibidoki", "https://virtualyoutuber.fandom.com/wiki/Chibidoki", [], ],
 	[ 9032, "talent", "INDIES", "x3Dustco", "youtube", "https://www.twitch.tv/x3dustco", "wikilink", [], ],
-	[ 9033, "talent", "INDIES", "LaynaLazar", "https://www.youtube.com/@LaynaLazar", "https://www.twitch.tv/laynalazar", "wikilink", [], ],
-	[ 9034, "talent", "INDIES", "papamutt", "https://www.youtube.com/channel/UCbAadhjblnwYfQ0xypSH_sg", "https://www.twitch.tv/papamutt", "wikilink", [], ],
-	[ 9035, "talent", "INDIES", "FeFe", "https://www.youtube.com/c/fefevtuber", "https://www.twitch.tv/fefe", "wikilink", [], ],
-	[ 9036, "talent", "INDIES", "Vexoria the Suneater", "https://www.youtube.com/channel/UC9r8dNEoXdIpYTnoMVFwzhg", "https://www.twitch.tv/vexoria_the_suneater", "wikilink", [], ],
-	[ 9037, "talent", "INDIES", "Spite", "https://www.youtube.com/c/SpitemeVtuber", "https://www.twitch.tv/spite", "wikilink", [], ],
-	[ 9038, "talent", "INDIES", "Cha Cha Your Vmom", "https://youtube.com/@chachayourvmom", "https://www.twitch.tv/chachayourvmom", "wikilink", [], ],
-	[ 9039, "talent", "INDIES", "el_XoX", "https://www.youtube.com/@elXoX34", "https://www.twitch.tv/el_xox", "wikilink", [], ],
-	[ 9040, "talent", "INDIES", "MegladonVT", "https://www.youtube.com/channel/UCb5BJg1PJvzQ6kYk7eguzCQ", "https://www.twitch.tv/megalodonvt", "wikilink", [], ],
-	[ 9041, "talent", "INDIES", "cerberVT", "https://www.youtube.com/channel/UCBX-cil2Y9-_TOyFxsAdt1w", "https://www.twitch.tv/cerbervt", "wikilink", [], ],
+	[ 9033, "talent", "INDIES", "LaynaLazar", "https://www.youtube.com/@LaynaLazar", "https://www.twitch.tv/laynalazar", "https://virtualyoutuber.fandom.com/wiki/Layna_Lazar", [], ],
+	[ 9034, "talent", "INDIES", "Papamutt", "https://www.youtube.com/channel/UCbAadhjblnwYfQ0xypSH_sg", "https://www.twitch.tv/papamutt", "https://virtualyoutuber.fandom.com/wiki/Papamutt", [], ],
+	[ 9035, "talent", "INDIES", "FeFe", "https://www.youtube.com/c/fefevtuber", "https://www.twitch.tv/fefe", "https://virtualyoutuber.fandom.com/wiki/FeFe", [], ],
+	[ 9036, "talent", "INDIES", "Vexoria the Suneater", "https://www.youtube.com/channel/UC9r8dNEoXdIpYTnoMVFwzhg", "https://www.twitch.tv/vexoria_the_suneater", "https://virtualyoutuber.fandom.com/wiki/Vexoria_the_Sun_Eater", [], ],
+
+	[ 9037, "talent", "INDIES", "Spite", "https://www.youtube.com/c/SpitemeVtuber", "https://www.twitch.tv/spite", "https://virtualyoutuber.fandom.com/wiki/Spite", [], ],
+	[ 9038, "talent", "INDIES", "Cha Cha Your Vmom", "https://youtube.com/@chachayourvmom", "https://www.twitch.tv/chachayourvmom", "https://virtualyoutuber.fandom.com/wiki/Cha_Cha,_Your_Vmom", [], ],
+	[ 9039, "talent", "INDIES", "el XoX", "https://www.youtube.com/@elXoX34", "https://www.twitch.tv/el_xox", "https://virtualyoutuber.fandom.com/wiki/El_XoX", [], ],
+	[ 9040, "talent", "INDIES", "Megladon", "https://www.youtube.com/channel/UCb5BJg1PJvzQ6kYk7eguzCQ", "https://www.twitch.tv/megalodonvt", "https://virtualyoutuber.fandom.com/wiki/Megalodon", [], ],
+	[ 9041, "talent", "INDIES", "cerberVT", "https://www.youtube.com/channel/UCBX-cil2Y9-_TOyFxsAdt1w", "https://www.twitch.tv/cerbervt", "https://virtualyoutuber.fandom.com/wiki/CerberVT", [], ],
 	[ 9042, "talent", "INDIES", "tonkienator", "https://www.youtube.com/@tonkienatorr", "https://www.twitch.tv/tonkienator", "wikilink", [], ],
-	[ 9043, "talent", "INDIES", "Dokibird", "https://www.youtube.com/@Dokibird", "https://www.twitch.tv/dokibird", "wikilink", [], ],
-	[ 9044, "talent", "INDIES", "Shylilly", "https://www.youtube.com/@Shylily", "https://www.twitch.tv/shylily", "wikilink", [], ],
-	[ 9045, "talent", "INDIES", "Meicha", "https://www.youtube.com/channel/UCNbVN2AjnvY73GVS3NdJx4Q/", "https://www.twitch.tv/meicha", "wikilink", [], ],
-	[ 9046, "talent", "INDIES", "moniibagel", "https://www.youtube.com/channel/UCfTjT67uIy1hcAJFO7_AqOQ", "https://www.twitch.tv/moniibagel/about", "wikilink", [], ],
-	[ 9047, "talent", "INDIES", "InannaBell", "https://www.youtube.com/@inannabell", "https://www.twitch.tv/inannabell", "wikilink", [], ],
-	[ 9048, "talent", "INDIES", "Psydere", "https://www.youtube.com/@psydere", "https://www.twitch.tv/psydere", "wikilink", [], ],
-	[ 9049, "talent", "INDIES", "FREAM", "", "https://www.twitch.tv/fream", "wikilink", [], ],
-	[ 9050, "talent", "INDIES", "Momo", "http://www.youtube.com/themastermo", "https://www.twitch.tv/momo", "wikilink", [], ],
-	[ 9051, "talent", "INDIES", "girl_dm_", "https://www.youtube.com/channel/UC_WC6plpIdL_buebR9vSVkg", "https://www.twitch.tv/girl_dm_", "wikilink", [], ],
-	[ 9052, "talent", "INDIES", "SunnySplosion", "https://www.youtube.com/@OopsAllSunny", "https://www.twitch.tv/sunnysplosion", "wikilink", [], ],
-	[ 9053, "talent", "INDIES", "OniGiri", "https://www.youtube.com/c/OniGirien", "https://www.twitch.tv/onigiri", "wikilink", [], ],
+	[ 9043, "talent", "INDIES", "Dokibird", "https://www.youtube.com/@Dokibird", "https://www.twitch.tv/dokibird", "https://virtualyoutuber.fandom.com/wiki/Dokibird", [], ],
+	[ 9044, "talent", "INDIES", "Shylilly", "https://www.youtube.com/@Shylily", "https://www.twitch.tv/shylily", "https://virtualyoutuber.fandom.com/wiki/Shylily", [], ],
+
+	[ 9045, "talent", "INDIES", "Meicha", "https://www.youtube.com/channel/UCNbVN2AjnvY73GVS3NdJx4Q/", "https://www.twitch.tv/meicha", "https://virtualyoutuber.fandom.com/wiki/Meicha", [], ],
+	[ 9046, "talent", "INDIES", "moniibagel", "https://www.youtube.com/channel/UCfTjT67uIy1hcAJFO7_AqOQ", "https://www.twitch.tv/moniibagel/about", "https://virtualyoutuber.fandom.com/wiki/Monii", [], ],
+	[ 9047, "talent", "INDIES", "InannaBell", "https://www.youtube.com/@inannabell", "https://www.twitch.tv/inannabell", "", [], ],
+	[ 9048, "talent", "INDIES", "Psydere", "https://www.youtube.com/@psydere", "https://www.twitch.tv/psydere", "", [], ],
+	[ 9049, "talent", "INDIES", "FREAM", "", "https://www.twitch.tv/fream", "https://virtualyoutuber.fandom.com/wiki/Fream", [], ],
+	[ 9050, "talent", "INDIES", "Momo", "http://www.youtube.com/themastermo", "https://www.twitch.tv/momo", "https://virtualyoutuber.fandom.com/wiki/Momo", [], ],
+	[ 9051, "talent", "INDIES", "girl_dm_", "https://www.youtube.com/channel/UC_WC6plpIdL_buebR9vSVkg", "https://www.twitch.tv/girl_dm_", "https://virtualyoutuber.fandom.com/wiki/Girl_dm", [], ],
+	[ 9052, "talent", "INDIES", "SunnySplosion", "https://www.youtube.com/@OopsAllSunny", "https://www.twitch.tv/sunnysplosion", "https://virtualyoutuber.fandom.com/wiki/SunnySplosion", [], ],
+	[ 9053, "talent", "INDIES", "OniGiri", "https://www.youtube.com/c/OniGirien", "https://www.twitch.tv/onigiri", "https://virtualyoutuber.fandom.com/wiki/OniGiri", [], ],
 
 //aqua
 //baddaboom
 //kumi
-//RubinSargasm
+
 
 
 
 	//livestreamers and IRL folks aka Fleshtubers
 	[ 10001, "talent", "FLESHTUBERS", "Marcomeatball", "https://www.youtube.com/c/MarcoMeatball", "https://www.twitch.tv/marcomeatball", "wikilink", [], ],
-	[ 10002, "talent", "FLESHTUBERS", "lesagesinging", "https://www.youtube.com/channel/UCReU-IqthhUbR7N7EsTu6MQ", "https://www.twitch.tv/lesagesinging", "wikilink", [], ],
-	[ 10003, "talent", "FLESHTUBERS", "CDawgVA", "https://www.youtube.com/channel/UCPsZ_0SkFdi551iYTG04R2g", "https://www.twitch.tv/cdawg", "wikilink", [], ],
-	[ 10004, "talent", "FLESHTUBERS", "Emily Hopkins", "youtube", "twitch", "wikilink", [], ],
-	[ 10005, "talent", "FLESHTUBERS", "JessieCox", "https://youtube.com/JesseCox", "https://www.twitch.tv/jessecox", "wikilink", [], ],
-	[ 10006, "talent", "FLESHTUBERS", "Doger", "youtube", "twitch", "wikilink", [], ],
-	[ 10007, "talent", "FLESHTUBERS", "Nagzz", "https://www.youtube.com/nagzz", "https://www.twitch.tv/nagzz", "wikilink", [], ],
-	[ 10008, "talent", "FLESHTUBERS", "Ray", "http://youtube.com/@rayyylmao", "https://www.twitch.tv/ray", "wikilink", [], ],
-	[ 10009, "talent", "FLESHTUBERS", "Chris Broad", "youtube", "twitch", "wikilink", [], ],
+	[ 10002, "talent", "FLESHTUBERS", "lesagesinging", "https://www.youtube.com/channel/UCReU-IqthhUbR7N7EsTu6MQ", "https://www.twitch.tv/lesagesinging", "", [], ],
+	[ 10003, "talent", "FLESHTUBERS", "CDawgVA", "https://www.youtube.com/channel/UCPsZ_0SkFdi551iYTG04R2g", "https://www.twitch.tv/cdawg", "https://en.wikipedia.org/wiki/CDawgVA", [], ],
+	//[ 10004, "talent", "FLESHTUBERS", "Emily Hopkins", "youtube", "twitch", "wikilink", [], ],
+	[ 10005, "talent", "FLESHTUBERS", "JessieCox", "https://youtube.com/JesseCox", "https://www.twitch.tv/jessecox", "", [], ],
+	[ 10006, "talent", "FLESHTUBERS", "Doger", "https://www.youtube.com/@DexbonusVOD", "https://www.twitch.tv/dexbonus", "", [], ],
+	[ 10007, "talent", "FLESHTUBERS", "Nagzz", "https://www.youtube.com/nagzz", "https://www.twitch.tv/nagzz", "", [], ],
+	[ 10008, "talent", "FLESHTUBERS", "Ray Narvaez", "http://youtube.com/@rayyylmao", "https://www.twitch.tv/ray", "", [], ],
+	[ 10009, "talent", "FLESHTUBERS", "Chris Broad", "https://www.youtube.com/@AbroadinJapan", "", "https://en.wikipedia.org/wiki/Chris_Broad_(YouTuber)", [], ],
+	[ 10090, "talent", "FLESHTUBERS", "Rubin Sargasm", "youtube", "twitch", "", [], ],
+	//RubinSargasm
 
 	
 
 	//FORMAL GROUPS
 
 	//hololive
-	[ 11001, "talent", "HOLOLIVE", "Mori Calliope", "https://www.youtube.com/@MoriCalliope/featured", "https://www.twitch.tv/moricalliope/about", "wikilink", [], ],
-	[ 11014, "talent", "HOLOLIVE", "Takanashi Kiara", "https://t.co/mZsEcWct3I", "https://www.twitch.tv/kiara", "wikilink", [], ],
-	[ 11015, "talent", "HOLOLIVE", "Ninomae Ina’nis", "https://www.youtube.com/@NinomaeInanis", "", "wikilink", [], ],
+	[ 11001, "talent", "HOLOLIVE", "Mori Calliope", "https://www.youtube.com/@MoriCalliope/featured", "https://www.twitch.tv/moricalliope/about", "https://virtualyoutuber.fandom.com/wiki/Mori_Calliope", [], ],
+	[ 11014, "talent", "HOLOLIVE", "Takanashi Kiara", "https://t.co/mZsEcWct3I", "https://www.twitch.tv/kiara", "https://virtualyoutuber.fandom.com/wiki/Takanashi_Kiara", [], ],
+	[ 11015, "talent", "HOLOLIVE", "Ninomae Ina’nis", "https://www.youtube.com/@NinomaeInanis", "", "https://virtualyoutuber.fandom.com/wiki/Ninomae_Ina'nis", [], ],
 
 
-	[ 11002, "talent", "HOLOLIVE", "Nerissa Ravencroft", "https://www.youtube.com/@NerissaRavencroft", "https://www.twitch.tv/nerissaravencroft", "wikilink", [], ],
-	[ 11016, "talent", "HOLOLIVE", "Koseki Bijou", "https://www.youtube.com/@KosekiBijou", "", "wikilink", [], ],
-	[ 11017, "talent", "HOLOLIVE", "Shiori Novella", "https://www.youtube.com/@ShioriNovella", "", "wikilink", [], ],
-	[ 11018, "talent", "HOLOLIVE", "Fuwawa Abyssgard", "https://www.youtube.com/@FUWAMOCOch", "", "wikilink", [], ],
-	[ 11019, "talent", "HOLOLIVE", "Mococo Abyssgard", "https://www.youtube.com/@FUWAMOCOch", "", "wikilink", [], ],
+	[ 11002, "talent", "HOLOLIVE", "Nerissa Ravencroft", "https://www.youtube.com/@NerissaRavencroft", "https://www.twitch.tv/nerissaravencroft", "https://virtualyoutuber.fandom.com/wiki/Nerissa_Ravencroft", [], ],
+	[ 11016, "talent", "HOLOLIVE", "Koseki Bijou", "https://www.youtube.com/@KosekiBijou", "", "https://virtualyoutuber.fandom.com/wiki/Koseki_Bijou", [], ],
+	[ 11017, "talent", "HOLOLIVE", "Shiori Novella", "https://www.youtube.com/@ShioriNovella", "", "https://virtualyoutuber.fandom.com/wiki/Shiori_Novella", [], ],
+	[ 11018, "talent", "HOLOLIVE", "Fuwawa Abyssgard", "https://www.youtube.com/@FUWAMOCOch", "", "https://virtualyoutuber.fandom.com/wiki/Fuwawa_Abyssgard", [], ],
+	[ 11019, "talent", "HOLOLIVE", "Mococo Abyssgard", "https://www.youtube.com/@FUWAMOCOch", "", "https://virtualyoutuber.fandom.com/wiki/Mococo_Abyssgard", [], ],
 	
 	
-	[ 11003, "talent", "HOLOLIVE", "Elizabeth Rose Bloodflame", "youtube", "https://www.twitch.tv/elizabethrosebloodflame", "wikilink", [], ],
-	[ 11020, "talent", "HOLOLIVE", "Gigi Murin", "https://www.youtube.com/@holoen_gigimurin", "", "wikilink", [], ],
-	[ 11021, "talent", "HOLOLIVE", "Cecilia Immergreen", "https://www.youtube.com/@holoen_ceciliaimmergreen", "", "wikilink", [], ],
-	[ 11022, "talent", "HOLOLIVE", "Raora Panthera", "https://www.youtube.com/@holoen_raorapanthera", "", "wikilink", [], ],
+	[ 11003, "talent", "HOLOLIVE", "Elizabeth Rose Bloodflame", "youtube", "https://www.twitch.tv/elizabethrosebloodflame", "https://virtualyoutuber.fandom.com/wiki/Elizabeth_Rose_Bloodflame", [], ],
+	[ 11020, "talent", "HOLOLIVE", "Gigi Murin", "https://www.youtube.com/@holoen_gigimurin", "", "https://virtualyoutuber.fandom.com/wiki/Gigi_Murin", [], ],
+	[ 11021, "talent", "HOLOLIVE", "Cecilia Immergreen", "https://www.youtube.com/@holoen_ceciliaimmergreen", "", "https://virtualyoutuber.fandom.com/wiki/Cecilia_Immergreen", [], ],
+	[ 11022, "talent", "HOLOLIVE", "Raora Panthera", "https://www.youtube.com/@holoen_raorapanthera", "", "https://virtualyoutuber.fandom.com/wiki/Raora_Panthera", [], ],
 
 
-	[ 11004, "talent", "HOLOLIVE", "Kureiji Ollie", "https://www.youtube.com/@KureijiOllie", "https://www.twitch.tv/kureijiollie", "wikilink", [], ],
-	[ 11005, "talent", "HOLOLIVE", "Moona Hoshinova", "https://www.youtube.com/@MoonaHoshinova", "https://www.twitch.tv/moonahoshinova", "wikilink", [], ],
-	[ 11006, "talent", "HOLOLIVE", "Ayunda Risu", "https://www.youtube.com/@ayundarisu", "", "wikilink", [], ],
-	[ 11007, "talent", "HOLOLIVE", "Kaela Kovalskia", "https://www.youtube.com/@KaelaKovalskia", "", "wikilink", [], ],
-	[ 11008, "talent", "HOLOLIVE", "Kobo Kanaeru", "https://www.youtube.com/@KoboKanaeru", "", "wikilink", [], ], 
-	[ 11009, "talent", "HOLOLIVE", "Vestia Zeta", "https://www.youtube.com/@VestiaZeta", "https://www.twitch.tv/vestiazeta", "wikilink", [], ],
+	[ 11004, "talent", "HOLOLIVE", "Kureiji Ollie", "https://www.youtube.com/@KureijiOllie", "https://www.twitch.tv/kureijiollie", "https://virtualyoutuber.fandom.com/wiki/Kureiji_Ollie", [], ],
+	[ 11005, "talent", "HOLOLIVE", "Moona Hoshinova", "https://www.youtube.com/@MoonaHoshinova", "https://www.twitch.tv/moonahoshinova", "https://virtualyoutuber.fandom.com/wiki/Moona_Hoshinova", [], ],
+	[ 11006, "talent", "HOLOLIVE", "Ayunda Risu", "https://www.youtube.com/@ayundarisu", "", "https://virtualyoutuber.fandom.com/wiki/Ayunda_Risu", [], ],
+	[ 11007, "talent", "HOLOLIVE", "Kaela Kovalskia", "https://www.youtube.com/@KaelaKovalskia", "", "https://virtualyoutuber.fandom.com/wiki/Kaela_Kovalskia", [], ],
+	[ 11008, "talent", "HOLOLIVE", "Kobo Kanaeru", "https://www.youtube.com/@KoboKanaeru", "", "https://virtualyoutuber.fandom.com/wiki/Kobo_Kanaeru", [], ], 
+	[ 11009, "talent", "HOLOLIVE", "Vestia Zeta", "https://www.youtube.com/@VestiaZeta", "https://www.twitch.tv/vestiazeta", "https://virtualyoutuber.fandom.com/wiki/Vestia_Zeta", [], ],
 
-	[ 11013, "talent", "HOLOLIVE", "Banzoin Hakka", "https://www.youtube.com/@BanzoinHakka", "https://www.twitch.tv/banzoinhakka", "wikilink", [], ],
+	[ 11013, "talent", "HOLOLIVE", "Banzoin Hakka", "https://www.youtube.com/@BanzoinHakka", "https://www.twitch.tv/banzoinhakka", "https://virtualyoutuber.fandom.com/wiki/Banzoin_Hakka", [], ],
 
 
 	//first stage
-	[ 12001, "talent", "FIRST_STAGE", "Liron Lockheart", "https://www.youtube.com/@LironLockheart_FSP", "", "wikilink", [], ],
+	[ 12001, "talent", "FIRST_STAGE", "Liron Lockheart", "https://www.youtube.com/@LironLockheart_FSP", "", "https://virtualyoutuber.fandom.com/wiki/Liron_Lockheart", [], ],
 
 	//teri-yaki
-	[ 13001, "talent", "TERI-YAKI", "RaeLaviere", "https://youtube.com/c/Raelaveire", "https://www.twitch.tv/raelaveire", "wikilink", [], ],
+	[ 13001, "talent", "TERI-YAKI", "Rae Laveire", "https://youtube.com/c/Raelaveire", "https://www.twitch.tv/raelaveire", "https://virtualyoutuber.fandom.com/wiki/Rae_Laveire", [], ],
 
 	//lab brats
-	[ 5001, "talent", "LAB_BRATS", "chrchie", "https://www.youtube.com/@chrchieVT", "https://www.twitch.tv/chrchie", "wikilink", [], ],
-	[ 5002, "talent", "LAB_BRATS", "MinikoMew", "https://www.youtube.com/channel/UC9evPLoYqsHASjrahHekqMA", "https://www.twitch.tv/minikomew", "wikilink", [], ],
-	[ 5003, "talent", "LAB_BRATS", "Shoomimi", "https://www.youtube.com/@Shoomimi", "https://www.twitch.tv/shoomimi", "wikilink", [], ],
-	[ 5005, "talent", "LAB_BRATS", "Elle_Minibot", "https://www.youtube.com/channel/UCeZe82WbZ7VL9meqWli6qxg", "https://www.twitch.tv/ellie_minibot", "wikilink", [], ],
+	[ 5001, "talent", "LAB_BRATS", "Chrchie", "https://www.youtube.com/@chrchieVT", "https://www.twitch.tv/chrchie", "https://virtualyoutuber.fandom.com/wiki/Chrchie", [], ],
+	[ 5002, "talent", "LAB_BRATS", "MinikoMew", "https://www.youtube.com/channel/UC9evPLoYqsHASjrahHekqMA", "https://www.twitch.tv/minikomew", "https://virtualyoutuber.fandom.com/wiki/MinikoMew", [], ],
+	[ 5003, "talent", "LAB_BRATS", "Shoomimi", "https://www.youtube.com/@Shoomimi", "https://www.twitch.tv/shoomimi", "https://virtualyoutuber.fandom.com/wiki/Shoomimi", [], ],
+	[ 5005, "talent", "LAB_BRATS", "Ellie Minibot", "https://www.youtube.com/channel/UCeZe82WbZ7VL9meqWli6qxg", "https://www.twitch.tv/ellie_minibot", "https://virtualyoutuber.fandom.com/wiki/Ellie_Minibot", [], ],
 
 	// neuroverse
 	[ 8001, "talent", "NEUROVERSE", "Vedal", "https://www.youtube.com/channel/UCLHmLrj4pHHg3-iBJn_CqxA", "https://www.twitch.tv/vedal987", "wikilink", [], ],
-	[ 8002, "talent", "NEUROVERSE", "Neurosama", "youtube", "twitch", "wikilink", [], ],
-	[ 8003, "talent", "NEUROVERSE", "Evil Neuro", "youtube", "twitch", "wikilink", [], ],
+	[ 8002, "talent", "NEUROVERSE", "Neurosama", "https://www.youtube.com/channel/UCLHmLrj4pHHg3-iBJn_CqxA", "https://www.twitch.tv/vedal987", "https://virtualyoutuber.fandom.com/wiki/Neuro-sama", [], ],
+	[ 8003, "talent", "NEUROVERSE", "Evil Neuro", "https://www.youtube.com/channel/UCLHmLrj4pHHg3-iBJn_CqxA", "https://www.twitch.tv/vedal987", "https://virtualyoutuber.fandom.com/wiki/Evil_Neuro", [], ],
 
 	// VichiBan
-	[ 7001, "talent", "VICHIBAN", "Buffpup", "https://www.youtube.com/channel/UCM6Ld_dNSaUQ2uwjJ4Gq9FA", "https://www.twitch.tv/buffpup", "wikilink", [], ],
-	[ 7002, "talent", "VICHIBAN", "Ai Candii", "http://youtube.com/c/aicandii", "https://www.twitch.tv/aicandii", "wikilink", [], ],
-	[ 7003, "talent", "VICHIBAN", "Rosedoodle", "https://www.youtube.com/channel/UCihXhXRz8tj91hBptuSsQ0g", "https://www.twitch.tv/rosedoodle", "wikilink", [], ],
-	[ 7004, "talent", "VICHIBAN", "ShiaBun", "https://www.youtube.com/c/ShiaBun", "https://www.twitch.tv/shiabun", "wikilink", [], ],
+	[ 7001, "talent", "VICHIBAN", "Buffpup", "https://www.youtube.com/channel/UCM6Ld_dNSaUQ2uwjJ4Gq9FA", "https://www.twitch.tv/buffpup", "https://virtualyoutuber.fandom.com/wiki/Buffpup", [], ],
+	[ 7002, "talent", "VICHIBAN", "Ai Candii", "http://youtube.com/c/aicandii", "https://www.twitch.tv/aicandii", "https://virtualyoutuber.fandom.com/wiki/Ai_Candii", [], ],
+	[ 7003, "talent", "VICHIBAN", "Rosedoodle", "https://www.youtube.com/channel/UCihXhXRz8tj91hBptuSsQ0g", "https://www.twitch.tv/rosedoodle", "https://virtualyoutuber.fandom.com/wiki/Rosedoodle", [], ],
+	[ 7004, "talent", "VICHIBAN", "ShiaBun", "https://www.youtube.com/c/ShiaBun", "https://www.twitch.tv/shiabun", "https://virtualyoutuber.fandom.com/wiki/ShiaBun", [], ],
 
 	// dentsu.exe
-	[ 2001, "talent", "DENTSU", "Mint Fantome", "https://www.youtube.com/@mintfantome", "", "wikilink", [], ],
-	[ 2002, "talent", "DENTSU", "Victoria Roma", "https://www.youtube.com/@vickyroman_idol", "", "wikilink", [], ],
-	[ 2003, "talent", "DENTSU", "Phoebe Chan", "https://www.youtube.com/@feebeechanchibi", "", "wikilink", [], ],
+	[ 2001, "talent", "DENTSU", "Mint Fantôme", "https://www.youtube.com/@mintfantome", "", "https://virtualyoutuber.fandom.com/wiki/Mint_Fant%C3%B4me", [], ],
+	[ 2002, "talent", "DENTSU", "Victoria Roma", "https://www.youtube.com/@vickyroman_idol", "", "https://virtualyoutuber.fandom.com/wiki/Victoria_Roman", [], ],
+	[ 2003, "talent", "DENTSU", "Phoebe Chan", "https://www.youtube.com/@feebeechanchibi", "", "https://virtualyoutuber.fandom.com/wiki/Phoebe_Chan", [], ],
 
     // NOVA
-	[ 3001, "talent", "NOVA", "Akatsuki Hotaru", "https://www.youtube.com/@AkatsukiDHotaru", "https://www.twitch.tv/akatsukidhotaru", "wikilink", [], ],
-	[ 3002, "talent", "NOVA", "Hestia Happiness", "https://www.youtube.com/channel/UCyaxhmE-zyUIjMfCGQ75vlA", "https://www.twitch.tv/hestiahappiness", "wikilink", [], ],
-	[ 3003, "talent", "NOVA", "Yutori Peke", "https://www.youtube.com/@PekeIsPeak", "https://www.twitch.tv/pekeispeak", "wikilink", [], ],
-	[ 3004, "talent", "NOVA", "Okamoto Nagi", "https://www.youtube.com/@NagIsekaied", "https://www.twitch.tv/nagisekaied", "wikilink", [], ],
+	[ 3001, "talent", "NOVA", "Akatsuki Hotaru", "https://www.youtube.com/@AkatsukiDHotaru", "https://www.twitch.tv/akatsukidhotaru", "https://virtualyoutuber.fandom.com/wiki/Akatsuki_Hotaru", [], ],
+	[ 3002, "talent", "NOVA", "Hestia Happiness", "https://www.youtube.com/channel/UCyaxhmE-zyUIjMfCGQ75vlA", "https://www.twitch.tv/hestiahappiness", "https://virtualyoutuber.fandom.com/wiki/Hestia_Happiness", [], ],
+	[ 3003, "talent", "NOVA", "Yutori Peke", "https://www.youtube.com/@PekeIsPeak", "https://www.twitch.tv/pekeispeak", "https://virtualyoutuber.fandom.com/wiki/Yutori_Peke", [], ],
+	[ 3004, "talent", "NOVA", "Okamoto Nagi", "https://www.youtube.com/@NagIsekaied", "https://www.twitch.tv/nagisekaied", "https://virtualyoutuber.fandom.com/wiki/Okamoto_Nagi", [], ],
 
 	// Beastiez
-	[ 4001, "talent", "BEASTIEZ", "Tori Oriane", "https://www.youtube.com/@ToriOriane/featured", "https://www.twitch.tv/torioriane", "wikilink", [], ],
-	[ 4002, "talent", "BEASTIEZ", "PiaPiUFO", "https://www.youtube.com/c/PiaPIUFO", "https://www.twitch.tv/piapiufo", "wikilink", [], ],
-	[ 4003, "talent", "BEASTIEZ", "Beribug", "https://www.youtube.com/channel/UC8PMqEDpXcsooyDGiLvxs4w", "https://www.twitch.tv/beribug", "wikilink", [], ],
-	[ 4004, "talent", "BEASTIEZ", "Kairyu Crocodile", "https://www.youtube.com/@KairyuCrocodile", "https://www.twitch.tv/kairyucrocodile", "wikilink", [], ],
+	[ 4001, "talent", "BEASTIEZ", "Tori Oriane", "https://www.youtube.com/@ToriOriane/featured", "https://www.twitch.tv/torioriane", "https://virtualyoutuber.fandom.com/wiki/Tori_Oriane", [], ],
+	[ 4002, "talent", "BEASTIEZ", "PiaPiUFO", "https://www.youtube.com/c/PiaPIUFO", "https://www.twitch.tv/piapiufo", "https://virtualyoutuber.fandom.com/wiki/PiaPiUFO", [], ],
+	[ 4003, "talent", "BEASTIEZ", "Beribug", "https://www.youtube.com/channel/UC8PMqEDpXcsooyDGiLvxs4w", "https://www.twitch.tv/beribug", "https://virtualyoutuber.fandom.com/wiki/Beribug", [], ],
+	[ 4004, "talent", "BEASTIEZ", "Kairyu Crocodile", "https://www.youtube.com/@KairyuCrocodile", "https://www.twitch.tv/kairyucrocodile", "https://virtualyoutuber.fandom.com/wiki/Kairyu_Crocodile", [], ],
 
 
 
