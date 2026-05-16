@@ -113,7 +113,7 @@ const formalGroupNodes = [
 	[ 110, "group", "HOLOLIVE", "Hololive", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [111, 113, 114] ],
 
 
-	[ 111, "group", "HOLOLIVE", "Hololive EN", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [112, 116, 117, 120] ],
+	[ 111, "group", "HOLOLIVE", "Hololive EN", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [112, 116, 117, 120, 121] ],
 
 	[ 112, "group", "HOLOLIVE", "Myth", typeGroupNodeShape, typeSubgroupSize, typeGroupNodeLabelSize, [11001, 11014, 11015] ],
 
@@ -121,7 +121,9 @@ const formalGroupNodes = [
 
 	[ 117, "group", "HOLOLIVE", "Advent", typeGroupNodeShape, typeSubgroupSize, typeGroupNodeLabelSize, [11002, 11016, 11017, 11018, 11019] ],
 
-	[ 120, "group", "HOLOLIVE", "HOLOSTARS EN", typeGroupNodeShape, typeSubgroupSize, typeGroupNodeLabelSize, [11013] ],
+	[ 120, "group", "HOLOLIVE", "Holostars EN", typeGroupNodeShape, typeSubgroupSize, typeGroupNodeLabelSize, [11013] ],
+
+	[ 121, "group", "HOLOLIVE", "Promise", typeGroupNodeShape, typeSubgroupSize, typeGroupNodeLabelSize, [11023, 11024, 11025, ] ],
 
 
 	[ 113, "group", "HOLOLIVE", "Hololive Indo", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [11004, 11005, 11006, 11007, 11008, 11009] ],
@@ -138,7 +140,7 @@ const formalGroupNodes = [
 	//[ 119, "group", "NIJISANJI", "Nijisanji", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [] ],
 
 	//lab brats
-	[  202,  "group", "LAB_BRATS", "Lab Brats", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [5001, 5002, 5003, 5005] ],
+	[ 202,  "group", "LAB_BRATS", "Lab Brats", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [5001, 5002, 5003, 5005] ],
 
 	// neuroverse
 	[ 208, "group", "NEUROVERSE", "Neuroverse", typeGroupNodeShape, typeGroupNodeSize, typeGroupNodeLabelSize, [8001, 8002, 8003] ],
@@ -304,21 +306,26 @@ const talentNodes = [
 	//FORMAL GROUPS
 
 	//hololive
+
+	//myth
 	[ 11001, "talent", "HOLOLIVE", "Mori Calliope", "https://www.youtube.com/@MoriCalliope/featured", "https://www.twitch.tv/moricalliope/about", "https://virtualyoutuber.fandom.com/wiki/Mori_Calliope", [11014, 11015], ],
 	[ 11014, "talent", "HOLOLIVE", "Takanashi Kiara", "https://t.co/mZsEcWct3I", "https://www.twitch.tv/kiara", "https://virtualyoutuber.fandom.com/wiki/Takanashi_Kiara", [], ],
 	[ 11015, "talent", "HOLOLIVE", "Ninomae Ina’nis", "https://www.youtube.com/@NinomaeInanis", "", "https://virtualyoutuber.fandom.com/wiki/Ninomae_Ina'nis", [], ],
 
+	//advent
 	[ 11002, "talent", "HOLOLIVE", "Nerissa Ravencroft", "https://www.youtube.com/@NerissaRavencroft", "https://www.twitch.tv/nerissaravencroft", "https://virtualyoutuber.fandom.com/wiki/Nerissa_Ravencroft", [11016, 11017, 11018, 11019,  ], ],
 	[ 11016, "talent", "HOLOLIVE", "Koseki Bijou", "https://www.youtube.com/@KosekiBijou", "", "https://virtualyoutuber.fandom.com/wiki/Koseki_Bijou", [], ],
 	[ 11017, "talent", "HOLOLIVE", "Shiori Novella", "https://www.youtube.com/@ShioriNovella", "", "https://virtualyoutuber.fandom.com/wiki/Shiori_Novella", [], ],
 	[ 11018, "talent", "HOLOLIVE", "Fuwawa Abyssgard", "https://www.youtube.com/@FUWAMOCOch", "", "https://virtualyoutuber.fandom.com/wiki/Fuwawa_Abyssgard", [], ],
 	[ 11019, "talent", "HOLOLIVE", "Mococo Abyssgard", "https://www.youtube.com/@FUWAMOCOch", "", "https://virtualyoutuber.fandom.com/wiki/Mococo_Abyssgard", [], ],
-		
+
+	//justice
 	[ 11003, "talent", "HOLOLIVE", "Elizabeth Rose Bloodflame", "youtube", "https://www.twitch.tv/elizabethrosebloodflame", "https://virtualyoutuber.fandom.com/wiki/Elizabeth_Rose_Bloodflame", [11020, 11021, 11022 ], ],
 	[ 11020, "talent", "HOLOLIVE", "Gigi Murin", "https://www.youtube.com/@holoen_gigimurin", "", "https://virtualyoutuber.fandom.com/wiki/Gigi_Murin", [], ],
 	[ 11021, "talent", "HOLOLIVE", "Cecilia Immergreen", "https://www.youtube.com/@holoen_ceciliaimmergreen", "", "https://virtualyoutuber.fandom.com/wiki/Cecilia_Immergreen", [], ],
 	[ 11022, "talent", "HOLOLIVE", "Raora Panthera", "https://www.youtube.com/@holoen_raorapanthera", "", "https://virtualyoutuber.fandom.com/wiki/Raora_Panthera", [], ],
 
+	//indo
 	[ 11004, "talent", "HOLOLIVE", "Kureiji Ollie", "https://www.youtube.com/@KureijiOllie", "https://www.twitch.tv/kureijiollie", "https://virtualyoutuber.fandom.com/wiki/Kureiji_Ollie", [10005, 10006, ], ],
 	[ 11005, "talent", "HOLOLIVE", "Moona Hoshinova", "https://www.youtube.com/@MoonaHoshinova", "https://www.twitch.tv/moonahoshinova", "https://virtualyoutuber.fandom.com/wiki/Moona_Hoshinova", [], ],
 	[ 11006, "talent", "HOLOLIVE", "Ayunda Risu", "https://www.youtube.com/@ayundarisu", "", "https://virtualyoutuber.fandom.com/wiki/Ayunda_Risu", [], ],
@@ -326,6 +333,13 @@ const talentNodes = [
 	[ 11008, "talent", "HOLOLIVE", "Kobo Kanaeru", "https://www.youtube.com/@KoboKanaeru", "", "https://virtualyoutuber.fandom.com/wiki/Kobo_Kanaeru", [], ], 
 	[ 11009, "talent", "HOLOLIVE", "Vestia Zeta", "https://www.youtube.com/@VestiaZeta", "https://www.twitch.tv/vestiazeta", "https://virtualyoutuber.fandom.com/wiki/Vestia_Zeta", [], ],
 
+	//promise
+	[ 11023, "talent", "HOLOLIVE", "IRyS", "https://www.youtube.com/channel/UC8rcEBzJSleTkf_-agPM20g", "", "https://virtualyoutuber.fandom.com/wiki/IRyS", [11024, 11025,], ],
+	[ 11024, "talent", "HOLOLIVE", "Ouro Kronii", "https://www.youtube.com/channel/UCmbs8T6MWqUHP1tIQvSgKrg", "", "https://virtualyoutuber.fandom.com/wiki/Ouro_Kronii", [], ],
+	[ 11025, "talent", "HOLOLIVE", "Hakos Baelz", "https://www.youtube.com/channel/UCgmPnx-EEeOrZSg5Tiw7ZRQ", "", "https://virtualyoutuber.fandom.com/wiki/Hakos_Baelz", [], ],
+
+
+	//holostars
 	[ 11013, "talent", "HOLOLIVE", "Banzoin Hakka", "https://www.youtube.com/@BanzoinHakka", "https://www.twitch.tv/banzoinhakka", "https://virtualyoutuber.fandom.com/wiki/Banzoin_Hakka", [], ],
 
 	//first stage
