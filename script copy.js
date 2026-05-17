@@ -66,7 +66,7 @@ function startNetwork(data, randomSeed) {
 
 
 		edges: {
-			//color: { inherit: true },
+			color: { inherit: true },
 			width: 0.15,
 
 			//this option changes how the physics effects the network, compensate via adjusting mass?
@@ -150,13 +150,12 @@ function startNetwork(data, randomSeed) {
 				color: {background: "Turquoise"},
 			},
 			TERI_YAKI: {
-				color: {background: "SkyBlue "},
+				color: {background: "SkyBlue"},
 			},
+			VEIN_GANG: {color: {background: "Moccasin"}},
 
 		},
 
-
-		//not able to set custom properties in options sadly
 
 		physics: {
 			forceAtlas2Based: {

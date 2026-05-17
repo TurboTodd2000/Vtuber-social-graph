@@ -1,1090 +1,528 @@
-
-
-
-/**
- * In this example we do not mutate nodes or edges source data.
- */
-
-const nodes = new vis.DataSet([
-// vshojo
-	{ id: 0, label: "ex-Vshjo", type: "group", group: "Vshojo", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-
-
-      // dentsu.exe
-	{ id: 100, label: "dentsu.exe", type: "group", group: "dentsu", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, color: "black" } },
-	{ id: 101, label: "Mint Fantome", type: "talent", group: "dentsu" },
-	{ id: 102, label: "Victoria Roma", type: "talent", group: "dentsu" },
-	{ id: 103, label: "Phoebe Chan", type: "talent", group: "dentsu" },
-
-    // NOVA
-	{ id: 200, label: "Nova", type: "group", group: "NOVA", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 201, label: "Akatsuki Hotaru", type: "talent", group: "NOVA" },
-	{ id: 202, label: "Hestia Happiness", type: "talent", group: "NOVA" },
-	{ id: 203, label: "Yutori Peke", type: "talent", group: "NOVA" },
-	{ id: 204, label: "Okamoto Nagi", type: "talent", group: "NOVA" },
-
-    // Beastiez
-	{ id: 300, label: "Beastiez", type: "group", group: "Beastiez", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 301, label: "Tori Oriane", type: "talent", group: "Beastiez" },
-	{ id: 302, label: "PiaPiUFO", type: "talent",  group: "Beastiez" },
-	{ id: 303, label: "Beribug", type: "talent",  group: "Beastiez" },
-	{ id: 304, label: "Kairyu Crocodile", type: "talent", group: "Beastiez" },
-
-      // Vichi Bon
-	{ id: 400, label: "VchiBan", group: "Vichi_Bon", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-	{ id: 401, label: "Buffpup", type: "talent", group: "Vichi_Bon" },
-	{ id: 402, label: "Ai Candii", type: "talent", group: "Vichi_Bon" },
-	{ id: 403, label: "Rosedoodle", type: "talent", group: "Vichi_Bon" },
-	{ id: 404, label: "ShiaBun", type: "talent", group: "Vichi_Bon" },
-
-
-      // neuroverse
-	{ id: 600, label: "Neuroverse", group: "Neuroverse", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 601, label: "Vedal", type: "talent", group: "Neuroverse" },
-	{ id: 602, label: "Neurosama", type: "talent", group: "Neuroverse" },
-	{ id: 603, label: "Evil Neuro", type: "talent", group: "Neuroverse" },
-
-
-
-//first stage
-	{ id: 6000, label: "Liron Lockheart", type: "talent", group: "First Stage" },
-
-
-
-
-
-
-      // indie
-	{ id: 800, label: "Indies", group: "Indies", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, }  },
-
-
-	{ id: 1, label: "Ironmouse", type: "talent", group: "Indies", youtube: "https://www.youtube.com/@IronMouseParty", twitch: "https://www.twitch.tv/ironmouse" },
-
-
-	{ id: 2, label: "Michi Mochievee", type: "talent", group: "Indies" },
-	{ id: 3, label: "Geega", type: "talent", group: "Indies" },
-	{ id: 4, label: "Zentraya", type: "talent", group: "Indies" },
-	{ id: 5, label: "Silvervale", type: "talent", group: "Indies" },
-	{ id: 6, label: "K9Kuro", type: "talent", group: "Indies" },
-	{ id: 7, label: "Apricot (froot)", type: "talent", group: "Indies" },
-	{ id: 8, label: "Haruka Karibu", type: "talent", group: "Indies" },
-	{ id: 9, label: "AmaLee", type: "talent", group: "Indies" },
-	{ id: 10, label: "Henya the Genius", type: "talent", group: "Indies" },
-	{ id: 11, label: "Matara Kan", type: "talent", group: "Indies" },
-	{ id: 12, label: "Projket Melody", type: "talent", group: "Indies" },
-	{ id: 13, label: "Hajime", type: "talent", group: "Indies" },
-	{ id: 14, label: "nyanners", type: "talent", group: "Indies" },
-	{ id: 15, label: "Kson", type: "talent", group: "Indies" },
-	{ id: 16, label: "Veibae", type: "talent", group: "Indies" },
-
-	{ id: 501, label: "chrchie", type: "talent", group: "Indies" },
-	{ id: 502, label: "Minikomew", type: "talent", group: "Indies" },
-	{ id: 503, label: "Shoomimi", type: "talent", group: "Indies" },
-	{ id: 504, label: "Cerber", type: "talent", group: "Indies" },
-	{ id: 505, label: "Elle_Minibot", type: "talent", group: "Indies" },
-
-	{ id: 701, label: "Akuma Nihmune", type: "talent", group: "Indies" },
-	{ id: 702, label: "Bao the Whale", type: "talent", group: "Indies" },
-	{ id: 703, label: "Yuzu", type: "talent", group: "Indies" },
-	{ id: 704, label: "Camila", type: "talent", group: "Indies" },
-	{ id: 705, label: "tonkienator", type: "talent", group: "Indies" },
-	//lucy pyre
-
-	{ id: 801, label: "Bajiru", type: "talent", group: "Indies" },
-	{ id: 802, label: "dooby3D", type: "talent", group: "Indies" },
-	{ id: 803, label: "FroggyLoch", type: "talent", group: "Indies" },
-	{ id: 804, label: "Limealicious", type: "talent", group: "Indies" },
-	{ id: 805, label: "Sameko Saba", type: "talent", group: "Indies" },
-	{ id: 806, label: "Nimi Nightmare", type: "talent", group: "Indies" },
-	{ id: 807, label: "SixteenInMono", type: "talent", group: "Indies" },
-	{ id: 808, label: "Cottontail_VA", type: "talent", group: "Indies" },
-	{ id: 809, label: "Arielle_VT", type: "talent", group: "Indies" },
-	{ id: 810, label: "Starlight Daryl", type: "talent", group: "Indies" },
-	{ id: 811, label: "Issa Corva", type: "talent", group: "Indies" },
-	{ id: 813, label: "LordAethelstan", type: "talent", group: "Indies" },
-	{ id: 814, label: "obkatiekat", type: "talent", group: "Indies" },
-	{ id: 815, label: "U-san", type: "talent", group: "Indies" },
-	{ id: 816, label: "Saiiren", type: "talent", group: "Indies" },
-	{ id: 817, label: "Porcelain Maid", type: "talent", group: "Indies" },
-	{ id: 818, label: "Heavenly Father", type: "talent", group: "Indies" },	
-	{ id: 819, label: "pumpkinpotion", type: "talent", group: "Indies" },
-	{ id: 820, label: "missshadowlovely", type: "talent", group: "Indies" },
-	{ id: 821, label: "Cyyu", type: "talent", group: "Indies" },
-	{ id: 822, label: "Croc", type: "talent", group: "Indies" },
-	{ id: 823, label: "ENVI", type: "talent", group: "Indies" },
-	{ id: 824, label: "lucia", type: "talent", group: "Indies" },
-	{ id: 825, label: "KloeKroc", type: "talent", group: "Indies" },
-	{ id: 826, label: "Derivakat", type: "talent", group: "Indies" },
-	{ id: 827, label: "fufu", type: "talent", group: "Indies" },
-	{ id: 828, label: "KokoNuts", type: "talent", group: "Indies" },
-	{ id: 829, label: "crelly", type: "talent", group: "Indies" },
-	{ id: 830, label: "Bluto", type: "talent", group: "Indies" },
-	{ id: 831, label: "chibidoki", type: "talent", group: "Indies" },
-	{ id: 832, label: "x3Dustco", type: "talent", group: "Indies" },
-	{ id: 833, label: "LaynaLazar", type: "talent", group: "Indies" },
-	{ id: 834, label: "papamutt", type: "talent", group: "Indies" },
-	{ id: 835, label: "Fefe", type: "talent", group: "Indies" },
-	{ id: 836, label: "Vexoria the Suneater", type: "talent", group: "Indies" },
-	{ id: 837, label: "Spite", type: "talent", group: "Indies" },
-	{ id: 838, label: "Cha Cha your Vtuber Mom", type: "talent", group: "Indies" },
-	{ id: 839, label: "el_XoX", type: "talent", group: "Indies" },
-	{ id: 840, label: "megladonvt", type: "talent", group: "Indies" },
-
-	
-
-
-
-//aqua
-
-//Zen collab partners
-//baddaboom
-	//fream
-	//Mei
-	//megalodon
-
-
-
-	//ray collab
-	
-	//kumi
-	//RubinSargasm
-	
-
-
-
-    // fleshtubers
-	{ id: 900, label: "Fleshtubers", type: "group", group: "Fleshtubers", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 901, label: "Marcomeatball", type: "talent", group: "Fleshtubers" },
-	{ id: 902, label: "Lesange", type: "talent", group: "Fleshtubers" },
-	{ id: 903, label: "CDawgVA", type: "talent", group: "Fleshtubers" },
-	{ id: 904, label: "Emily Hopkins", type: "talent", group: "Fleshtubers" },
-	{ id: 905, label: "JessieCox", type: "talent", group: "Fleshtubers" },
-	{ id: 906, label: "Doger", type: "talent", group: "Fleshtubers" },
-	{ id: 907, label: "Nagzz", type: "talent", group: "Fleshtubers" },
-	{ id: 908, label: "Ray", type: "talent", group: "Fleshtubers" },
-	{ id: 909, label: "Chris Broad", type: "talent", group: "Fleshtubers" },
-
-
-    // INDO girlypops
-	{ id: 1000, label: "Indo Girlypops", group: "Indo_Girlypops", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-	{ id: 1001, label: "RaeLaviere", type: "talent", group: "Indo_Girlypops" },
-
-
-    // Hololive folks
-	{ id: 2000, label: "Hololive", group: "Hololive", type: "group", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize,color: "black" } },
-	
-	{ id: 2010, label: "Hololive EN", group: "Hololive", type: "group", shape: typeGroupShape, size: typeSubgroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 2001, label: "Mori Calliope", type: "talent", group: "Hololive" },
-	{ id: 2002, label: "Nerissa Ravencroft", type: "talent", group: "Hololive" },
-	{ id: 2003, label: "Elizabeth Rose Bloodflame", type: "talent", group: "Hololive" },
-
-	{ id: 2011, label: "Hololive Indo", group: "Hololive", type: "group", shape: typeGroupShape, size: typeSubgroupSize, font: { size: nodeLabelSize,color: "black" } },
-	{ id: 2004, label: "Kureiji Ollie", type: "talent", group: "Hololive" },
-	{ id: 2005, label: "Moona Hoshinova", type: "talent", group: "Hololive" },
-	{ id: 2006, label: "MAyunda Risu", type: "talent", group: "Hololive" },
-	{ id: 2007, label: "Kaela Kovalskia", type: "talent", group: "Hololive" },
-	{ id: 2008, label: "Kobo Kanaeru", type: "talent", group: "Hololive" }, 
-	{ id: 2009, label: "Vestia Zeta", type: "talent", group: "Hololive" },
-
-	{ id: 2013, label: "Banzoin Hakka", type: "talent", group: "Hololive" },
-	
-
-	{ id: 2012, label: "Hololive JP", group: "Hololive", type: "group", shape: typeGroupShape, size: typeSubgroupSize, font: { size: nodeLabelSize,color: "black" } },
-
-
-	
-
-    // vein gang
-	{ id: 4000, label: "Vein Gang",  type: "group", group: "Viein_Gang", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-
-	//balding with the boys
-	{ id: 500, label: "Lab Rats", type: "group", group: "LabRats",  shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-
-	// EN girlypops
-	{ id: 700, label: "EN Girlypops", type: "group", group: "EN Girlypops", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-
-	// crashout crew
-	{ id: 5000, label: "Crashout Crew", type: "group", group: "EN Girlypops", shape: typeGroupShape, size: typeGroupSize, font: { size: nodeLabelSize, } },
-
-
-
-    // interest groups
-	{ id: 3000, label: "Yapping", type: "interests", group: "interests",  },
-	{ id: 3001, label: "Gaming", type: "interests", group: "interests", },
-	{ id: 3002, label: "Music", type: "interests", group: "interests", },
-	{ id: 3003, label: "IRL", type: "interests", group: "interests", },
-	{ id: 3004, label: "Art", type: "interests", group: "interests", },
-	{ id: 3005, label: "STEM", type: "interests", group: "interests", },
-
-
-
-]);
-
-
-
-
-const edges = new vis.DataSet([
-
-// FORMAL GROUPS
-
-// vshojo
-
-	
-
-  //dentsu
-	{		from: 100, 		to: 800,		type: "group",	},
-	{		from: 100,		to: 0,			type: "group",		dashes: true	},
-	{		from: 100,		to: 101,		type: "group",	},
-	{		from: 100,		to: 102,		type: "group",	},
-	{		from: 100,		to: 103,		type: "group",	},
-
-
-  // NOVA
-	{		from: 200,		to: 800,		type: "group",	},
-	{		from: 200,		to: 0,			type: "group",		dashes: true	},
-
-	{		from: 200,		to: 201,		type: "group",	},
-	{		from: 200,		to: 202,		type: "group",	},
-	{		from: 200,		to: 203,		type: "group",	},
-	{		from: 200,		to: 204,		type: "group",	},
-
-
-// Beastiez
-	{		from: 300,		to: 800,		type: "group",	},
-	{		from: 300,		to: 0,			type: "group",		dashes: true,	},
-	{		from: 300,		to: 301,		type: "group",	},
-	{		from: 300,		to: 302,		type: "group",	},
-	{		from: 300,		to: 303,		type: "group",	},
-	{		from: 300,		to: 304,		type: "group",	},
-
-
-  // Hololive
-
-	{		from: 2000,		to: 2010,		type: "group",	},
-	{		from: 2000,		to: 2011,		type: "group",	},   
-	{		from: 2010,		to: 2003,		type: "group",	}, 
-	{		from: 2010,		to: 2002,		type: "group",	}, 
-	{		from: 2010,		to: 2001,		type: "group",	}, 
-	{		from: 2011,		to: 2004,		type: "group",	},            
-	{		from: 2011,		to: 2005,		type: "group",	},
-	{		from: 2011,		to: 2006,		type: "group",	},
-	{		from: 2011,		to: 2007,		type: "group",	},
-	{		from: 2011,		to: 2008,		type: "group",	},
-	{		from: 2011,		to: 2009,		type: "group",	},
-	{		from: 2012,		to: 2000,		type: "group",	},
-	{		from: 2010,		to: 2013,		type: "group",	},
-	
-
-
-// VchiBan
-	{		from: 400,		to: 800,		type: "group",	},  
-	{		from: 400,		to: 401,		type: "group",	},  
-	{		from: 400,		to: 402,		type: "group",	},  
-	{		from: 400,		to: 403,		type: "group",	},  
-	{		from: 400,		to: 404,		type: "group",	},  
-
-
-// neuroverse
-	{		from: 600,		to: 800,		type: "group",	},
-	{		from: 600,		to: 601,		type: "group",	},
-	{		from: 600,		to: 602,		type: "group",	},
-	{		from: 600,		to: 603,		type: "group", dashes: true	},
-
-
-
-
-
-// INFORMAL GROUPSS
-
-
-// Indo girlypops
-
-	{		from: 1000,		to: 1001,		type: "group",		dashes: true	}, 
-	{		from: 1000,		to: 2,		type: "group",		dashes: true	}, 
-	{		from: 1000,		to: 2004,		type: "group",		dashes: true	}, 
-	{		from: 1000,		to: 2005,		type: "group",		dashes: true	}, 
-
-	{		from: 1000,		to: 2006,		type: "group",		dashes: true	}, 
-	{		from: 1000,		to: 2007,		type: "group",		dashes: true	}, 	
-	{		from: 1000,		to: 2008,		type: "group",		dashes: true	}, 	
-	{		from: 1000,		to: 2009,		type: "group",		dashes: true	}, 
-
-
-
-// neuroverse affiliated
-	{  		from: 600,		to: 501,		type: "group",		dashes: true	},
-	{		from: 600,		to: 502,		type: "group",		dashes: true	},
-	{		from: 600,		to: 504,		type: "group",		dashes: true	},
-	{		from: 600,		to: 505,		type: "group",		dashes: true	},
-	{		from: 600,		to: 701,		type: "group",		dashes: true	},
-	{		from: 600,		to: 704,		type: "group",		dashes: true	},
-	
-
-
-
-// vein gang
-	{	from: 4000,		to: 1,		type: "group",		dashes: true	}, 
-	{	from: 4000,		to: 903,		type: "group",		dashes: true	}, 
-	{	from: 4000,		to: 813,		type: "group",		dashes: true	}, 
-	{	from: 4000,		to: 14,		type: "group",		dashes: true	}, 
-
-
-
-// fleshtubers
-	{		from: 900,		to: 901,		type: "group",	},
-	{	from: 900, to: 902, type: "group", },
-	{	from: 900, to: 903, type: "group", },
-	{	from: 900, to: 904, type: "group", },
-	{	from: 900, to: 905, type: "group", },
-	{	from: 900, to: 906, type: "group", },
-	{	from: 900, to: 907, type: "group", },
-	{	from: 900, to: 908, type: "group", },
-	{	from: 900, to: 909, type: "group", },
-
-
-// indy 
-	{	from: 800, to: 801, type: "group", },
-	{	from: 800, to: 802, type: "group", },
-	{	from: 800, to: 803, type: "group", },
-	{	from: 800, to: 804, type: "group", },
-	{	from: 800, to: 805, type: "group", },
-	{	from: 800, to: 806, type: "group", },
-	{	from: 800, to: 807, type: "group", },
-	{	from: 800, to: 808, type: "group", },
-	{	from: 800, to: 809, type: "group", },
-	{	from: 800, to: 810, type: "group", },
-	{	from: 800, to: 811, type: "group", },
-	{	from: 800, to: 812, type: "group", },
-	{	from: 800, to: 813, type: "group", },
-	{	from: 800, to: 814, type: "group", },
-
-	{	from: 800, to: 501, type: "group", },
-	{	from: 800, to: 502, type: "group", },
-	{	from: 800, to: 503, type: "group", },
-	{	from: 800, to: 504, type: "group", },
-	{	from: 800, to: 505, type: "group", },
-
-	{	from: 800, to: 701, type: "group", },
-	{	from: 800, to: 702, type: "group", },
-	{	from: 800, to: 703, type: "group", },
-	{	from: 800, to: 704, type: "group", },
-	{	from: 800, to: 705, type: "group", },
-
-	{	from: 800, to: 815, type: "group", },
-	{	from: 800, to: 816, type: "group", },
-	{	from: 800, to: 817, type: "group", },
-	{	from: 800, to: 818, type: "group", },
-	{	from: 800, to: 819, type: "group", },
-	{	from: 800, to: 820, type: "group", },
-	{	from: 800, to: 821, type: "group", },
-	{	from: 800, to: 1, type: "group", },
-	{	from: 800, to: 822, type: "group", },
-	{	from: 800, to: 823, type: "group", },
-	{	from: 800, to: 824, type: "group", },
-	{	from: 800, to: 825, type: "group", },
-	{	from: 800, to: 826, type: "group", },
-	{	from: 800, to: 827, type: "group", },
-	{	from: 800, to: 828, type: "group", },
-	{	from: 800, to: 829, type: "group", },
-	{	from: 800, to: 830, type: "group", },
-	{	from: 800, to: 831, type: "group", },
-	{	from: 800, to: 832, type: "group", },
-	{	from: 800, to: 833, type: "group", },
-	{	from: 800, to: 834, type: "group", },
-	{	from: 800, to: 835, type: "group", },
-	{	from: 800, to: 836, type: "group", },
-
-	{	from: 800, to: 837, type: "group", },
-	{	from: 800, to: 838, type: "group", },
-
-	{	from: 800, to: 2, type: "group", },
-	{	from: 800, to: 3, type: "group", },
-	{	from: 800, to: 4, type: "group", },
-	{	from: 800, to: 5, type: "group", },
-	{	from: 800, to: 6, type: "group", },
-	{	from: 800, to: 7, type: "group", },
-	{	from: 800, to: 8, type: "group", },
-	{	from: 800, to: 9, type: "group", },
-	{	from: 800, to: 10, type: "group", },
-	{	from: 800, to: 11, type: "group", },
-	{	from: 800, to: 12, type: "group", },
-	{	from: 800, to: 13, type: "group", },
-	{	from: 800, to: 14, type: "group", },
-	{	from: 800, to: 15, type: "group", },
-	{	from: 800, to: 16, type: "group", },
-	
-
-
-
-
-
-
-
-// balding
-	{	from: 500, to: 501, type: "group", 		dashes: true },
-	{	from: 500, to: 502, type: "group", 		dashes: true },	
-	{	from: 500, to: 503, type: "group",		dashes: true },	
-	{	from: 500, to: 504, type: "group",		dashes: true },	
-	{	from: 500, to: 505, type: "group",		dashes: true },	
-	{	from: 500, to: 801, type: "group",		dashes: true },
-	{	from: 500, to: 838, type: "group",		dashes: true },
-
-
-// EN girlypops
-
-	{	from: 700, to: 701, type: "group",		dashes: true },
-	{	from: 700, to: 702, type: "group",		dashes: true },
-	{	from: 700, to: 703, type: "group",		dashes: true },
-	{	from: 700, to: 704, type: "group",		dashes: true },
-	{	from: 700, to: 705, type: "group",		dashes: true },
-
-
-
-// crashout crew
-	{	from: 5000, to: 9, type: "group",		dashes: true },	
-	{	from: 5000, to: 820, type: "group",		dashes: true },	
-	{	from: 5000, to: 817, type: "group",		dashes: true },	
-	{	from: 5000, to: 821, type: "group",		dashes: true },	
-
-
-//ex Vshjo
-
-	{	from: 0, to: 1, type: "group",		dashes: true },
-	{	from: 0, to: 2, type: "group",		dashes: true },
-	{	from: 0, to: 3, type: "group",		dashes: true },
-	{	from: 0, to: 4, type: "group",		dashes: true },
-	{	from: 0, to: 5, type: "group",		dashes: true },
-	{	from: 0, to: 6, type: "group",		dashes: true },
-	{	from: 0, to: 7, type: "group",		dashes: true },
-	{	from: 0, to: 8, type: "group",		dashes: true },
-	{	from: 0, to: 9, type: "group",		dashes: true },
-	{	from: 0, to: 10, type: "group",		dashes: true },
-	{	from: 0, to: 11, type: "group",		dashes: true },
-	{	from: 0, to: 12, type: "group",		dashes: true },
-	{	from: 0, to: 13, type: "group",		dashes: true },
-	{	from: 0, to: 14, type: "group",		dashes: true },
-	{	from: 0, to: 15, type: "group",		dashes: true },
-	{	from: 0, to: 16, type: "group",		dashes: true },
-
-
-
-
-
-
-
-
-// INTERESTS
-
-// michi
-	{	from: 2, to: 3000, type: "interests", },
-	{	from: 2, to: 3001, type: "interests", },
-	{	from: 2, to: 3002, type: "interests", },
-
-// mouse
-	{	from: 1, to: 3000, type: "interests", },
-	{	from: 1, to: 3001, type: "interests", },
-	{	from: 1, to: 3002, type: "interests", },
-
-	// geega
-	{	from: 3, to: 3000, type: "interests", },
-	{	from: 3, to: 3001, type: "interests", },
-
-// zen
-	{	from: 4, to: 3001, type: "interests", },
-	{	from: 4, to: 3002, type: "interests", },
-
-
-// silvervale
-
-
-	// k9kuro
-	{	from: 6, to: 3001, type: "interests", },
-	{	from: 6, to: 3002, type: "interests", },
-
-	// apricot
-	{	from: 7, to: 3001, type: "interests", },
-	{	from: 7, to: 3002, type: "interests", },
-	{	from: 7, to: 3003, type: "interests", },
-
-	// haruka
-	{	from: 8, to: 3001, type: "interests", },
-
-	// amalee
-	{	from: 9, to: 3001, type: "interests", },
-	{	from: 9, to: 3002, type: "interests", },
-
-	// henya
-	{	from: 10, to: 3001, type: "interests", },
-	{	from: 10, to: 3000, type: "interests", },
-
-
-	// matara
-	{	from: 11, to: 3000, type: "interests", },
-	{	from: 11, to: 3001, type: "interests", },
-	{	from: 11, to: 3003, type: "interests", },
-
-	// melody
-	{	from: 12, to: 3000, type: "interests", },
-	{	from: 12, to: 3001, type: "interests", },
-
-	// hajime
-	{	from: 13, to: 3001, type: "interests", },
-
-	// nyanners
-	{	from: 14, to: 3001, type: "interests", },
-	{	from: 14, to: 3002, type: "interests", },
-
-//kson
-	{	from: 15, to: 3000, type: "interests", },
-	{	from: 15, to: 3001, type: "interests", },
-	{	from: 15, to: 3003, type: "interests", },
-
-	// veibae
-
-
-
-// mint
-	{	from: 101, to: 3002, type: "interests", },
-	{	from: 101, to: 3001, type: "interests", },
-
-// victoria
-	{	from: 102, to: 3002, type: "interests", },
-
-	// phoebe
-	{	from: 103, to: 3002, type: "interests", },
-
-// hotaru
-	{	from: 201, to: 3002, type: "interests", },
-	{	from: 201, to: 3001, type: "interests", },
-
-	// hestia
-	{	from: 202, to: 3001, type: "interests", },
-
-	// peke
-	{	from: 203, to: 3002, type: "interests", },
-	{	from: 203, to: 3001, type: "interests", },
-
-	// nagi
-	{	from: 204, to: 3002, type: "interests", },
-	{	from: 204, to: 3001, type: "interests", },
-
-
-
-
-// tori
-	{	from: 301, to: 3001, type: "interests", },
-
-	// Pia
-	{	from: 302, to: 3001, type: "interests", },
-	{	from: 302, to: 3002, type: "interests", },
-
-// beri
-	{	from: 303, to: 3001, type: "interests", },
-	{	from: 303, to: 3002, type: "interests", },
-
-	// kairyu
-	{	from: 304, to: 3001, type: "interests", },
-
-	// buff
-	{	from: 401, to: 3001, type: "interests", },
-
-	// candii
-	{	from: 402, to: 3001, type: "interests", },
-
-	// rosedoodle
-	{	from: 403, to: 3001, type: "interests", },
-	{	from: 403, to: 3004, type: "interests", },
-
-	//shibun
-	{	from: 404, to: 3001, type: "interests", },
-	{	from: 404, to: 3002, type: "interests", },
-
-// vedal
-	{	from: 601, to: 3001, type: "interests", },
-	{	from: 601, to: 3005, type: "interests", },
-
-	// chrchie
-	{	from: 501, to: 3001, type: "interests", },
-	{	from: 501, to: 3002, type: "interests", },
-
-	//minikomew
-	{	from: 502, to: 3002, type: "interests", },
-
-
-	// shoomimi
-	{	from: 503, to: 3001, type: "interests", },
-	{	from: 503, to: 3005, type: "interests", },
-
-	// cerber
-	{	from: 504, to: 3002, type: "interests", },
-	{	from: 504, to: 3001, type: "interests", },
-
-// elle
-	{	from: 505, to: 3002, type: "interests", },
-	{	from: 505, to: 3005, type: "interests", },
-	{	from: 505, to: 3004, type: "interests", },
-	{	from: 505, to: 3000, type: "interests", },
-
-//Numi
-	{	from: 701, to: 3000, type: "interests", },
-	{	from: 701, to: 3002, type: "interests", },
-	{	from: 701, to: 3001, type: "interests", },
-
-	//bao
-	{	from: 702, to: 3001, type: "interests", },
-	{	from: 702, to: 3002, type: "interests", },
-
-	//yuzu
-	{	from: 703, to: 3001, type: "interests", },
-	{	from: 703, to: 3002, type: "interests", },
-
-	//camila
-	{	from: 704, to: 3001, type: "interests", },
-	{	from: 704, to: 3000, type: "interests", },
-	{	from: 704, to: 3002, type: "interests", },
-
-	// tonkienator
-	{	from: 705, to: 3000, type: "interests", },
-	{	from: 705, to: 3001, type: "interests", },
-
-// bajiru
-	{	from: 801, to: 3002, type: "interests", },
-
-	// dooby
-	{	from: 802, to: 3001, type: "interests", },
-
-	// froggy
-	{	from: 803, to: 3000, type: "interests", },
-	{	from: 803, to: 3001, type: "interests", },
-	{	from: 803, to: 3002, type: "interests", },
-	{	from: 803, to: 3004, type: "interests", },
-
-	// lime
-	{	from: 804, to: 3001, type: "interests", },
-
-	// saba
-	{	from: 805, to: 3001, type: "interests", },
-	{	from: 805, to: 3002, type: "interests", },
-
-	// nimi
-	{	from: 806, to: 3001, type: "interests", },
-	{	from: 806, to: 3002, type: "interests", },
-
-	// mono
-	{	from: 807, to: 3001, type: "interests", },
-	{	from: 807, to: 3002, type: "interests", },
-
-// cottontail
-	{	from: 808, to: 3001, type: "interests", },
-	{	from: 808, to: 3001, type: "interests", },
-	{	from: 808, to: 3001, type: "interests", },
-
-	// arielle
-	{	from: 809, to: 3000, type: "interests", },
-	{	from: 809, to: 3001, type: "interests", },
-
-	// daryl
-	{	from: 810, to: 3002, type: "interests", },
-
-	// issa
-	{	from: 811, to: 3001, type: "interests", },
-	{	from: 811, to: 3002, type: "interests", },
-	
-	// aethel
-	{	from: 813, to: 3001, type: "interests", },
-	{	from: 813, to: 3001, type: "interests", },		
-
-	// katie
-	{	from: 814, to: 3001, type: "interests", },
-
-	// usan
-	{	from: 815, to: 3000, type: "interests", },
-	{	from: 815, to: 3001, type: "interests", },
-	{	from: 815, to: 3002, type: "interests", },
-
-	// saii
-	{	from: 816, to: 3000, type: "interests", },
-	{	from: 816, to: 3001, type: "interests", },
-	{	from: 816, to: 3003, type: "interests", },
-
-	// porcelian maid
-	{	from: 817, to: 3000, type: "interests", },
-	{	from: 817, to: 3001, type: "interests", },
-
-	// heavenly
-	{	from: 818, to: 3000, type: "interests", },
-	{	from: 818, to: 3001, type: "interests", },
-
-
-	// pumpkin
-	{	from: 819, to: 3000, type: "interests", },
-	{	from: 819, to: 3001, type: "interests", },
-	{	from: 819, to: 3002, type: "interests", },
-
-
-	// miss shadow lovely
-
-	// cyyu
-
-//marcomeatball
-	{	from: 901, to: 3001, type: "interests", },
-	{	from: 901, to: 3002, type: "interests", },
-	{	from: 901, to: 3003, type: "interests", },
-
-	//lesange
-	{	from: 902, to: 3002, type: "interests", },
-	{	from: 902, to: 3003, type: "interests", },
-
-	//CDawgVA
-	{	from: 903, to: 3000, type: "interests", },
-	{	from: 903, to: 3001, type: "interests", },
-	{	from: 903, to: 3003, type: "interests", },
-
-	//Emily Hopkins
-	{	from: 904, to: 3001, type: "interests", },
-	{	from: 904, to: 3002, type: "interests", },
-	{	from: 904, to: 3003, type: "interests", },
-
-	//Jessie
-	{	from: 905, to: 3000, type: "interests", },
-	{	from: 905, to: 3001, type: "interests", },
-	{	from: 905, to: 3003, type: "interests", },
-
-	//Dodger
-	{	from: 906, to: 3000, type: "interests", },
-	{	from: 906, to: 3001, type: "interests", },
-	{	from: 906, to: 3003, type: "interests", },
-
-	//Nagzz
-	{	from: 907, to: 3000, type: "interests", },
-	{	from: 907, to: 3001, type: "interests", },
-	{	from: 907, to: 3003, type: "interests", },
-
-	//Ray
-	{	from: 908, to: 3000, type: "interests", },
-	{	from: 908, to: 3001, type: "interests", },
-	{	from: 908, to: 3003, type: "interests", },
-
-//mori
-	{	from: 2001, to: 3000, type: "interests", },
-	{	from: 2001, to: 3001, type: "interests", },
-	{	from: 2001, to: 3002, type: "interests", },
-
-
-//nerissa
-	{	from: 2002, to: 3000, type: "interests", },
-	{	from: 2002, to: 3001, type: "interests", },
-	{	from: 2002, to: 3002, type: "interests", },
-
-
-//erb
-	{	from: 2003, to: 3000, type: "interests", },
-	{	from: 2003, to: 3001, type: "interests", },
-	{	from: 2003, to: 3002, type: "interests", },
-
-
-//ollie
-	{	from: 2004, to: 3000, type: "interests", },
-	{	from: 2004, to: 3001, type: "interests", },
-	{	from: 2004, to: 3002, type: "interests", },
-
-//moona
-	{	from: 2005, to: 3002, type: "interests", },
-
-//risu
-	{	from: 2006, to: 3002, type: "interests", },
-
-//kaela
-	{	from: 2007, to: 3002, type: "interests", },
-
-//kobo
-	{	from: 2008, to: 3002, type: "interests", },
-
-//zeta
-	{	from: 2009, to: 3002, type: "interests", },
-
-
-//kloe
-	{	from: 825, to: 3001, type: "interests", },
-
-//croc
-	{	from: 822, to: 3001, type: "interests", },
-
-	//ENVI
-	{	from: 823, to: 3001, type: "interests", },
-
-//lucia
-	{	from: 824, to: 3001, type: "interests", },
-	{	from: 824, to: 3000, type: "interests", },
-
-
-//chris broad
-	{	from: 909, to: 3000, type: "interests", },
-	{	from: 909, to: 3003, type: "interests", },
-
-
-//derivakat
-	{	from: 826, to: 3002, type: "interests", },
-
-
-	//x3dustco
-	{	from: 832, to: 3001, type: "interests", },
-	{	from: 832, to: 3004, type: "interests", },
-
-
-
-
-//COLLAB
-
-//ironmouse
-	{	from: 1, to: 201, type: "collab", },
-	{	from: 1, to: 202, type: "collab", },
-	{	from: 1, to: 203, type: "collab", },
-	{	from: 1, to: 204, type: "collab", },
-
-	{	from: 1, to: 401, type: "collab", },
-	{	from: 1, to: 402, type: "collab", },
-	{	from: 1, to: 403, type: "collab", },
-	{	from: 1, to: 404, type: "collab", },
-
-	{	from: 1, to: 301, type: "collab", },
-	{	from: 1, to: 302, type: "collab", },
-	{	from: 1, to: 303, type: "collab", },
-	{	from: 1, to: 304, type: "collab", },
-
-
-	{	from: 1, to: 8, type: "collab", },
-	{	from: 1, to: 14, type: "collab", },
-	{	from: 1, to: 10, type: "collab", },
-	{	from: 1, to: 13, type: "collab", },
-	{	from: 1, to: 15, type: "collab", },
-
-	{	from: 1, to: 803, type: "collab", },
-	{	from: 1, to: 809, type: "collab", },
-	{	from: 1, to: 813, type: "collab", },
-	{	from: 1, to: 817, type: "collab", },
-	{	from: 1, to: 823, type: "collab", },
-	{	from: 1, to: 822, type: "collab", },
-	{	from: 1, to: 818, type: "collab", },
-
-	{	from: 1, to: 901, type: "collab", },
-	{	from: 1, to: 903, type: "collab", },
-	{	from: 1, to: 909, type: "collab", },
-
-	{	from: 1, to: 4000, type: "collab", },
-
-	
-	{	from: 1, to: 2013, type: "collab", },
-
-	{	from: 1, to: 6000, type: "collab", },
-
-	{	from: 1, to: 2001, type: "collab", },
-	{	from: 1, to: 2002, type: "collab", },
-	{	from: 1, to: 2003, type: "collab", },
-
-
-
-//michi
-	{	from: 2, to: 701, type: "collab", },
-	{	from: 2, to: 807, type: "collab", },
-	{	from: 2, to: 902, type: "collab", },
-	{	from: 2, to: 819, type: "collab", },
-	{	from: 2, to: 816, type: "collab", },
-	{	from: 2, to: 815, type: "collab", },
-
-	{	from: 2, to: 2004, type: "collab", },
-	{	from: 2, to: 2005, type: "collab", },
-	{	from: 2, to: 2006, type: "collab", },
-	{	from: 2, to: 2007, type: "collab", },
-	{	from: 2, to: 2008, type: "collab", },
-	{	from: 2, to: 2009, type: "collab", },
-
-	{	from: 2, to: 907, type: "collab", },
-
-	{	from: 2, to: 6, type: "collab", },
-	{	from: 2, to: 704, type: "collab", },
-	{	from: 2, to: 818, type: "collab", },
-
-
-//lesange
-	{	from: 902, to: 810, type: "collab", },
-	{	from: 902, to: 807, type: "collab", },
-	{	from: 902, to: 801, type: "collab", },
-
-
-//elle
-	{	from: 505, to: 501, type: "collab", },
-	{	from: 505, to: 502, type: "collab", },
-	{	from: 505, to: 503, type: "collab", },
-	{	from: 505, to: 504, type: "collab", },
-	{	from: 505, to: 801, type: "collab", },
-	{	from: 505, to: 811, type: "collab", },
-
-
-//neuroverse
-	{	from: 601, to: 602, type: "collab", },
-	{	from: 601, to: 603, type: "collab", },
-
-
-//zentraya
-	{	from: 4, to: 11, type: "collab", },
-	{	from: 4, to: 3, type: "collab", },
-	{	from: 4, to: 816, type: "collab", },
-	{	from: 4, to: 9, type: "collab", },
-	{	from: 4, to: 808, type: "collab", },
-	{	from: 4, to: 7, type: "collab", },
-	{	from: 4, to: 704, type: "collab", },
-	{	from: 4, to: 824, type: "collab", },
-	{	from: 4, to: 814, type: "collab", },
-	{	from: 4, to: 819, type: "collab", },
-	{	from: 4, to: 818, type: "collab", },
-	{	from: 4, to: 834, type: "collab", },
-	{	from: 4, to: 830, type: "collab", },
-	{	from: 4, to: 837, type: "collab", },
-	
-
-
-//lime
-	{	from: 804, to: 805, type: "collab", },
-	{	from: 804, to: 802, type: "collab", },
-	{	from: 804, to: 806, type: "collab", },
-
-
-//henya
-	{	from: 10, to: 804, type: "collab", },
-	{	from: 10, to: 805, type: "collab", },
-	{	from: 10, to: 908, type: "collab", },
-	
-
-
-//amalee
-	{	from: 9, to: 821, type: "collab", },
-	{	from: 9, to: 820, type: "collab", },
-	{	from: 9, to: 817, type: "collab", },
-
-
-	//numi
-	{	from: 701, to: 702, type: "collab", },
-	{	from: 701, to: 703, type: "collab", },
-
-
-
-//arielle
-	{	from: 809, to: 8, type: "collab", },
-	{	from: 809, to: 803, type: "collab", },
-	{	from: 809, to: 908, type: "collab", },
-	{	from: 809, to: 6, type: "collab", },
-
-
-	//ray
-	{	from: 908, to: 824, type: "collab", },
-	{	from: 908, to: 8, type: "collab", },
-	{	from: 908, to: 907, type: "collab", },
-	{	from: 908, to: 3, type: "collab", },
-	{	from: 908, to: 818, type: "collab", },
-	{	from: 908, to: 4, type: "collab", },
-
-
-//haruka
-	{	from: 8, to: 825, type: "collab", },
-	{	from: 8, to: 907, type: "collab", },
-
-
-//beastiez
-	{	from: 301, to: 302, type: "collab", },
-	{	from: 302, to: 303, type: "collab", },
-	{	from: 303, to: 304, type: "collab", },
-	
-
-	//vichiban
-	{	from: 401, to: 402, type: "collab", },
-	{	from: 402, to: 403, type: "collab", },
-	{	from: 403, to: 404, type: "collab", },
-
-
-//dentsu
-	{	from: 101, to: 102, type: "collab", },
-	{	from: 102, to: 103, type: "collab", },
-	{	from: 103, to: 101, type: "collab", },
-
-
-//neuroverse
-	{	from: 601, to: 501, type: "collab", },
-	{	from: 601, to: 502, type: "collab", },
-	{	from: 601, to: 504, type: "collab", },
-	{	from: 601, to: 505, type: "collab", },
-	{	from: 601, to: 701, type: "collab", },
-	{	from: 601, to: 4, type: "collab", },
-	{	from: 601, to: 833, type: "collab", },
-	{	from: 601, to: 828, type: "collab", },
-
-
-//matara
-	{	from: 11, to: 101, type: "collab", },
-	{	from: 11, to: 908, type: "collab", },
-
-
-	//holo en
-	{	from: 2001, to: 2002, type: "collab", },
-	{	from: 2002, to: 2003, type: "collab", },
-
-
-//melody
-	{	from: 12, to: 907, type: "collab", },
-	{	from: 12, to: 301, type: "collab", },
-	{	from: 12, to: 302, type: "collab", },
-	{	from: 12, to: 303, type: "collab", },
-	{	from: 12, to: 304, type: "collab", },
-	{	from: 12, to: 832, type: "collab", },
-	{	from: 12, to: 836, type: "collab", },
-	{	from: 12, to: 839, type: "collab", },
-	{	from: 12, to: 840, type: "collab", },
-
-
-
-//jessie and dodger
-	{	from: 905, to: 2004, type: "collab", },
-	{	from: 905, to: 401, type: "collab", },
-	{	from: 905, to: 402, type: "collab", },
-	{	from: 905, to: 403, type: "collab", },
-	{	from: 905, to: 404, type: "collab", },
-
-	{	from: 906, to: 2004, type: "collab", },
-
-
-
-
-//froggy
-	{	from: 803, to: 6, type: "collab", },
-
-
-//henya
-	{	from: 10, to: 802, type: "collab", },
-
-
-//issa
-	{	from: 811, to: 826, type: "collab", },
-
-
-	//obiekatiekat
-	{	from: 814, to: 827, type: "collab", },
-
-	//naggz
-	{	from: 907, to: 831, type: "collab", },
-	{	from: 907, to: 814, type: "collab", },
-	{	from: 907, to: 827, type: "collab", },
-	{	from: 907, to: 835, type: "collab", },
-	{	from: 907, to: 836, type: "collab", },
-	{	from: 907, to: 837, type: "collab", },
-
-
-
-
-
-
-]);
-
-
-
-
-
+export nodes = new vis.DataSet([{ id: 0, type: "interests", group: "INTERESTS", label: "Yapping", fixed: false },{ id: 1, type: "interests", group: "INTERESTS", label: "Gaming", fixed: false },{ id: 2, type: "interests", group: "INTERESTS", label: "Music", fixed: true },{ id: 3, type: "interests", group: "INTERESTS", label: "IRL", fixed: false },{ id: 4, type: "interests", group: "INTERESTS", label: "Art", fixed: false },{ id: 5, type: "interests", group: "INTERESTS", label: "STEM", fixed: false },{ id: 6, type: "interests", group: "INTERESTS", label: "Sexuality", fixed: false },{ id: 7, type: "interests", group: "INTERESTS", label: "N/A", fixed: false },{ id: 8, type: "interests", group: "INTERESTS", label: "Educational", fixed: false },{ id: 9, type: "interests", group: "INTERESTS", label: "Media/React", fixed: false },{ id: 10, type: "interests", group: "INTERESTS", label: "ASMR", fixed: false },{ id: 102, type: "group", group: "DENTSU", label: "dentsu.exe", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 103, type: "group", group: "NOVA", label: "Nova", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 104, type: "group", group: "BEASTIEZ", label: "Beastiez", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 105, type: "group", group: "VICHIBAN", label: "VchiBan", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 110, type: "group", group: "HOLOLIVE", label: "Hololive", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 111, type: "group", group: "HOLOLIVE", label: "Hololive EN", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 112, type: "group", group: "HOLOLIVE", label: "Myth", shape: "dot", size: 17, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 116, type: "group", group: "HOLOLIVE", label: "Justice", shape: "dot", size: 17, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 117, type: "group", group: "HOLOLIVE", label: "Advent", shape: "dot", size: 17, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 120, type: "group", group: "HOLOLIVE", label: "Holostars EN", shape: "dot", size: 17, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 121, type: "group", group: "HOLOLIVE", label: "Promise", shape: "dot", size: 17, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 113, type: "group", group: "HOLOLIVE", label: "Hololive Indo", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 118, type: "group", group: "TERI-YAKI", label: "TERI-yaki", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 202, type: "group", group: "LAB_BRATS", label: "Lab Brats", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 208, type: "group", group: "NEUROVERSE", label: "Neuroverse", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 201, type: "group", group: "VEIN_GANG", label: "Vein Gang", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 203, type: "group", group: "EN_GIRLYPOPS", label: "EN Girlypops", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 204, type: "group", group: "CRASHOUT_CREW", label: "Crashout Crew", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 205, type: "group", group: "VSHOJO", label: "ex-Vshjo", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 206, type: "group", group: "FLESHTUBERS", label: "Fleshtubers", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 207, type: "group", group: "INDIES", label: "Indies", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 209, type: "group", group: "INDO_GIRLYPOPS", label: "Indo Girlypops", shape: "dot", size: 30, font: { size: 25, color: "black", strokeWidth: 6, strokeColor: "#ffffff", } },{ id: 1000, type: "talent", group: "INDIES", label: "Ironmouse", youtube: "https://www.youtube.com/@IronMouseParty", twitch: "https://www.twitch.tv/ironmouse", wiki: "https://en.wikipedia.org/wiki/Ironmouse" },{ id: 1001, type: "talent", group: "INDIES", label: "Zentraya", youtube: "http://youtube.com/c/Zentreya", twitch: "https://www.twitch.tv/zentreya", wiki: "https://virtualyoutuber.fandom.com/wiki/Zentreya" },{ id: 1002, type: "talent", group: "INDIES", label: "Michi Mochievee", youtube: "https://www.youtube.com/channel/UCnS5IYNyGKOti9cFlK5SefQ", twitch: "https://www.twitch.tv/michimochievee", wiki: "https://virtualyoutuber.fandom.com/wiki/Michi_Mochievee" },{ id: 1003, type: "talent", group: "INDIES", label: "Geega", youtube: "https://www.youtube.com/@GEEGA/", twitch: "https://www.twitch.tv/geega", wiki: "https://virtualyoutuber.fandom.com/wiki/GEEGA" },{ id: 1005, type: "talent", group: "INDIES", label: "Silvervale", youtube: "https://www.youtube.com/channel/UCm8Dj7dQ0oRHXNUXF31kjEw", twitch: "https://www.twitch.tv/silvervale", wiki: "https://virtualyoutuber.fandom.com/wiki/Silvervale" },{ id: 1006, type: "talent", group: "INDIES", label: "K9 Kuro", youtube: "https://www.youtube.com/channel/UCN5J_HKNGFCPtqAnSjBekcA", twitch: "https://www.twitch.tv/k9kuro", wiki: "https://virtualyoutuber.fandom.com/wiki/Kuro_Kurenai" },{ id: 1007, type: "talent", group: "INDIES", label: "Apricot (froot)", youtube: "https://www.youtube.com/c/ApricottheLichVS", twitch: "https://www.twitch.tv/apricot", wiki: "https://virtualyoutuber.fandom.com/wiki/Apricot" },{ id: 1008, type: "talent", group: "INDIES", label: "Haruka Karibu", youtube: "https://www.youtube.com/c/HarukaKaribu", twitch: "https://www.twitch.tv/harukakaribu", wiki: "https://virtualyoutuber.fandom.com/wiki/Haruka_Karibu" },{ id: 1009, type: "talent", group: "INDIES", label: "AmaLee", youtube: "https://youtube.com/leeandlie", twitch: "https://www.twitch.tv/amalee", wiki: "https://virtualyoutuber.fandom.com/wiki/AmaLee" },{ id: 1010, type: "talent", group: "INDIES", label: "Henya the Genius", youtube: "https://www.youtube.com/channel/UCVhRMzNWYcg8XDTgB9NFRTw", twitch: "https://www.twitch.tv/henyathegenius", wiki: "https://virtualyoutuber.fandom.com/wiki/Henya_the_Genius" },{ id: 1011, type: "talent", group: "INDIES", label: "Matara Kan", youtube: "https://www.youtube.com/channel/UCxx2uRmAwkhb3QJMfLssgsw", twitch: "https://www.twitch.tv/matarakan", wiki: "https://virtualyoutuber.fandom.com/wiki/Matara_Kan" },{ id: 1012, type: "talent", group: "INDIES", label: "Projket Melody", youtube: "https://www.youtube.com/c/ProjektMelodyOfficial", twitch: "https://www.twitch.tv/projektmelody", wiki: "https://virtualyoutuber.fandom.com/wiki/Projekt_Melody" },{ id: 1014, type: "talent", group: "INDIES", label: "Nyatasha Nyanners", youtube: "https://youtube.com/nyanners", twitch: "https://www.twitch.tv/nyanners", wiki: "https://virtualyoutuber.fandom.com/wiki/Nyatasha_Nyanners" },{ id: 1015, type: "talent", group: "INDIES", label: "Kson", youtube: "https://www.youtube.com/channel/UC9ruVYPv7yJmV0Rh0NKA-Lw", twitch: "https://www.twitch.tv/ksonsouchou", wiki: "https://virtualyoutuber.fandom.com/wiki/Kson" },{ id: 6001, type: "talent", group: "INDIES", label: "Akuma Nihmune", youtube: "https://www.youtube.com/c/AkumaNihmuneCh", twitch: "https://www.twitch.tv/nihmune", wiki: "https://virtualyoutuber.fandom.com/wiki/Akuma_Nihmune" },{ id: 6002, type: "talent", group: "INDIES", label: "Bao the Whale", youtube: "https://www.youtube.com/@baovtuber", twitch: "https://www.twitch.tv/bao", wiki: "https://virtualyoutuber.fandom.com/wiki/Bao" },{ id: 6003, type: "talent", group: "INDIES", label: "Yuzu", youtube: "https://www.youtube.com/channel/UCKvij44VV9TWt-EM3evoRWg", twitch: "https://www.twitch.tv/yuzu", wiki: "https://virtualyoutuber.fandom.com/wiki/Sanagi_Yuzu" },{ id: 6004, type: "talent", group: "INDIES", label: "Camila", youtube: "https://www.youtube.com/channel/UCdjLJvro7Q3V0M2V2pwWfZA", twitch: "https://www.twitch.tv/camila", wiki: "https://virtualyoutuber.fandom.com/wiki/Camila" },{ id: 6005, type: "talent", group: "INDIES", label: "Lucy Pyre", youtube: "https://www.youtube.com/channel/UC5VWF53rrEiuYvO5e5Ecn9Q", twitch: "https://www.twitch.tv/lucypyre", wiki: "https://virtualyoutuber.fandom.com/wiki/Lucy_Pyre" },{ id: 6006, type: "talent", group: "INDIES", label: "Trickywi", youtube: "https://www.youtube.com/@Trickywi", twitch: "https://www.twitch.tv/trickywi", wiki: "https://virtualyoutuber.fandom.com/wiki/Trickywi" },{ id: 9001, type: "talent", group: "INDIES", label: "Bajiru", youtube: "https://www.youtube.com/c/bajiru_EN", twitch: "https://www.twitch.tv/bajiru_en", wiki: "https://virtualyoutuber.fandom.com/wiki/Bajiru" },{ id: 9002, type: "talent", group: "INDIES", label: "dooby3D", youtube: "https://www.youtube.com/@dooby3d", twitch: "https://www.twitch.tv/dooby3d", wiki: "https://virtualyoutuber.fandom.com/wiki/Dooby3D" },{ id: 9003, type: "talent", group: "INDIES", label: "FroggyLoch", youtube: "https://www.youtube.com/channel/UCyHiAEZfJmXO_cBRtgzcWZA/featured", twitch: "https://www.twitch.tv/froggyloch", wiki: "https://virtualyoutuber.fandom.com/wiki/FroggyLoch" },{ id: 9004, type: "talent", group: "INDIES", label: "Limealicious", youtube: "https://www.youtube.com/c/Limealicious", twitch: "https://www.twitch.tv/limealicious", wiki: "https://virtualyoutuber.fandom.com/wiki/Laimu" },{ id: 9005, type: "talent", group: "INDIES", label: "Sameko Saba", youtube: "https://www.youtube.com/@SamekoSaba", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Sameko_Saba" },{ id: 9006, type: "talent", group: "INDIES", label: "Nimi Nightmare", youtube: "https://www.youtube.com/@niminightmare", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Nimi_Nightmare" },{ id: 9007, type: "talent", group: "INDIES", label: "SixteenInMono", youtube: "https://www.youtube.com/@SixteenInMono", twitch: "https://www.twitch.tv/sixteeninmono", wiki: "" },{ id: 9008, type: "talent", group: "INDIES", label: "Cottontail_VA", youtube: "https://www.youtube.com/cottontailva", twitch: "https://www.twitch.tv/cottontailva", wiki: "https://virtualyoutuber.fandom.com/wiki/CottontailVA" },{ id: 9009, type: "talent", group: "INDIES", label: "Arielle_VT", youtube: "https://www.youtube.com/@Arielle-VT", twitch: "https://www.twitch.tv/arielle", wiki: "https://virtualyoutuber.fandom.com/wiki/Arielle" },{ id: 9010, type: "talent", group: "INDIES", label: "Starlight Daryl", youtube: "https://www.youtube.com/@StarlightDaryl", twitch: "https://www.twitch.tv/starlightdaryl", wiki: "https://virtualyoutuber.fandom.com/wiki/StarlightDaryl" },{ id: 9011, type: "talent", group: "INDIES", label: "Isaa Corva", youtube: "https://www.youtube.com/@isaacorva", twitch: "https://www.twitch.tv/isaa", wiki: "https://virtualyoutuber.fandom.com/wiki/Isaa_Corva" },{ id: 9013, type: "talent", group: "INDIES", label: "Lord Aethelstan", youtube: "https://www.youtube.com/channel/UCLI_XmsVZzOrOB1LaoV0BEQ", twitch: "https://www.twitch.tv/lordaethelstan", wiki: "https://virtualyoutuber.fandom.com/wiki/Lord_Aethelstan" },{ id: 9014, type: "talent", group: "INDIES", label: "Obkatiekat", youtube: "https://www.youtube.com/obkatiekat", twitch: "https://www.twitch.tv/obkatiekat", wiki: "https://virtualyoutuber.fandom.com/wiki/Obkatiekat" },{ id: 9015, type: "talent", group: "INDIES", label: "U-san", youtube: "https://www.youtube.com/@unnamednow00", twitch: "https://www.twitch.tv/unnamednow00", wiki: "https://virtualyoutuber.fandom.com/wiki/Unn%C3%A4med" },{ id: 9016, type: "talent", group: "INDIES", label: "Saiiren", youtube: "https://www.youtube.com/@saiiren", twitch: "https://www.twitch.tv/saiiren", wiki: "https://virtualyoutuber.fandom.com/wiki/Saiiren" },{ id: 9017, type: "talent", group: "INDIES", label: "Porcelain Maid", youtube: "https://www.youtube.com/channel/UCngBjKSLC8IhPNagQCnf2LQ", twitch: "https://www.twitch.tv/porcelainmaid", wiki: "https://virtualyoutuber.fandom.com/wiki/PorcelainMaid" },{ id: 9018, type: "talent", group: "INDIES", label: "Heavenly Father", youtube: "https://www.youtube.com/channel/UCrx5cwSB4bl3fI34Boxvq2A", twitch: "https://www.twitch.tv/heavenlyfather", wiki: "https://virtualyoutuber.fandom.com/wiki/Heavenly_Father" },{ id: 9021, type: "talent", group: "INDIES", label: "CyYu", youtube: "https://www.youtube.com/c/@CyYuvods", twitch: "https://www.twitch.tv/cyyuvtuber", wiki: "https://virtualyoutuber.fandom.com/wiki/CyYu" },{ id: 9027, type: "talent", group: "INDIES", label: "Fufu", youtube: "https://www.youtube.com/channel/UCNMHJ9WnMXabPn-iyQKAdcA", twitch: "https://www.twitch.tv/fufu", wiki: "https://virtualyoutuber.fandom.com/wiki/Fufu" },{ id: 9028, type: "talent", group: "INDIES", label: "KokoNuts", youtube: "https://www.youtube.com/channel/UCk9qayCnFw51PIUZKVxH1UQ", twitch: "https://www.twitch.tv/kokonuts", wiki: "https://virtualyoutuber.fandom.com/wiki/Koko_D._Nuts" },{ id: 9034, type: "talent", group: "INDIES", label: "Papamutt", youtube: "https://www.youtube.com/channel/UCbAadhjblnwYfQ0xypSH_sg", twitch: "https://www.twitch.tv/papamutt", wiki: "https://virtualyoutuber.fandom.com/wiki/Papamutt" },{ id: 9041, type: "talent", group: "INDIES", label: "cerberVT", youtube: "https://www.youtube.com/channel/UCBX-cil2Y9-_TOyFxsAdt1w", twitch: "https://www.twitch.tv/cerbervt", wiki: "https://virtualyoutuber.fandom.com/wiki/CerberVT" },{ id: 9042, type: "talent", group: "INDIES", label: "tonkienator", youtube: "https://www.youtube.com/@tonkienatorr", twitch: "https://www.twitch.tv/tonkienator", wiki: "wikilink" },{ id: 9043, type: "talent", group: "INDIES", label: "Dokibird", youtube: "https://www.youtube.com/@Dokibird", twitch: "https://www.twitch.tv/dokibird", wiki: "https://virtualyoutuber.fandom.com/wiki/Dokibird" },{ id: 9044, type: "talent", group: "INDIES", label: "Shylilly", youtube: "https://www.youtube.com/@Shylily", twitch: "https://www.twitch.tv/shylily", wiki: "https://virtualyoutuber.fandom.com/wiki/Shylily" },{ id: 9045, type: "talent", group: "INDIES", label: "Meicha", youtube: "https://www.youtube.com/channel/UCNbVN2AjnvY73GVS3NdJx4Q/", twitch: "https://www.twitch.tv/meicha", wiki: "https://virtualyoutuber.fandom.com/wiki/Meicha" },{ id: 9046, type: "talent", group: "INDIES", label: "moniibagel", youtube: "https://www.youtube.com/channel/UCfTjT67uIy1hcAJFO7_AqOQ", twitch: "https://www.twitch.tv/moniibagel/about", wiki: "https://virtualyoutuber.fandom.com/wiki/Monii" },{ id: 9053, type: "talent", group: "INDIES", label: "OniGiri", youtube: "https://www.youtube.com/c/OniGirien", twitch: "https://www.twitch.tv/onigiri", wiki: "https://virtualyoutuber.fandom.com/wiki/OniGiri" },{ id: 10001, type: "talent", group: "FLESHTUBERS", label: "Marcomeatball", youtube: "https://www.youtube.com/c/MarcoMeatball", twitch: "https://www.twitch.tv/marcomeatball", wiki: "wikilink" },{ id: 10002, type: "talent", group: "FLESHTUBERS", label: "lesagesinging", youtube: "https://www.youtube.com/channel/UCReU-IqthhUbR7N7EsTu6MQ", twitch: "https://www.twitch.tv/lesagesinging", wiki: "" },{ id: 10003, type: "talent", group: "FLESHTUBERS", label: "CDawgVA", youtube: "https://www.youtube.com/channel/UCPsZ_0SkFdi551iYTG04R2g", twitch: "https://www.twitch.tv/cdawg", wiki: "https://en.wikipedia.org/wiki/CDawgVA" },{ id: 10007, type: "talent", group: "FLESHTUBERS", label: "Nagzz", youtube: "https://www.youtube.com/nagzz", twitch: "https://www.twitch.tv/nagzz", wiki: "" },{ id: 10008, type: "talent", group: "FLESHTUBERS", label: "Ray Narvaez", youtube: "http://youtube.com/@rayyylmao", twitch: "https://www.twitch.tv/ray", wiki: "" },{ id: 11001, type: "talent", group: "HOLOLIVE", label: "Mori Calliope", youtube: "https://www.youtube.com/@MoriCalliope/featured", twitch: "https://www.twitch.tv/moricalliope/about", wiki: "https://virtualyoutuber.fandom.com/wiki/Mori_Calliope" },{ id: 11014, type: "talent", group: "HOLOLIVE", label: "Takanashi Kiara", youtube: "https://t.co/mZsEcWct3I", twitch: "https://www.twitch.tv/kiara", wiki: "https://virtualyoutuber.fandom.com/wiki/Takanashi_Kiara" },{ id: 11015, type: "talent", group: "HOLOLIVE", label: "Ninomae Ina’nis", youtube: "https://www.youtube.com/@NinomaeInanis", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Ninomae_Ina'nis" },{ id: 11002, type: "talent", group: "HOLOLIVE", label: "Nerissa Ravencroft", youtube: "https://www.youtube.com/@NerissaRavencroft", twitch: "https://www.twitch.tv/nerissaravencroft", wiki: "https://virtualyoutuber.fandom.com/wiki/Nerissa_Ravencroft" },{ id: 11016, type: "talent", group: "HOLOLIVE", label: "Koseki Bijou", youtube: "https://www.youtube.com/@KosekiBijou", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Koseki_Bijou" },{ id: 11017, type: "talent", group: "HOLOLIVE", label: "Shiori Novella", youtube: "https://www.youtube.com/@ShioriNovella", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Shiori_Novella" },{ id: 11018, type: "talent", group: "HOLOLIVE", label: "Fuwawa Abyssgard", youtube: "https://www.youtube.com/@FUWAMOCOch", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Fuwawa_Abyssgard" },{ id: 11019, type: "talent", group: "HOLOLIVE", label: "Mococo Abyssgard", youtube: "https://www.youtube.com/@FUWAMOCOch", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Mococo_Abyssgard" },{ id: 11003, type: "talent", group: "HOLOLIVE", label: "Elizabeth Rose Bloodflame", youtube: "youtube", twitch: "https://www.twitch.tv/elizabethrosebloodflame", wiki: "https://virtualyoutuber.fandom.com/wiki/Elizabeth_Rose_Bloodflame" },{ id: 11020, type: "talent", group: "HOLOLIVE", label: "Gigi Murin", youtube: "https://www.youtube.com/@holoen_gigimurin", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Gigi_Murin" },{ id: 11021, type: "talent", group: "HOLOLIVE", label: "Cecilia Immergreen", youtube: "https://www.youtube.com/@holoen_ceciliaimmergreen", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Cecilia_Immergreen" },{ id: 11022, type: "talent", group: "HOLOLIVE", label: "Raora Panthera", youtube: "https://www.youtube.com/@holoen_raorapanthera", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Raora_Panthera" },{ id: 11004, type: "talent", group: "HOLOLIVE", label: "Kureiji Ollie", youtube: "https://www.youtube.com/@KureijiOllie", twitch: "https://www.twitch.tv/kureijiollie", wiki: "https://virtualyoutuber.fandom.com/wiki/Kureiji_Ollie" },{ id: 11005, type: "talent", group: "HOLOLIVE", label: "Moona Hoshinova", youtube: "https://www.youtube.com/@MoonaHoshinova", twitch: "https://www.twitch.tv/moonahoshinova", wiki: "https://virtualyoutuber.fandom.com/wiki/Moona_Hoshinova" },{ id: 11006, type: "talent", group: "HOLOLIVE", label: "Ayunda Risu", youtube: "https://www.youtube.com/@ayundarisu", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Ayunda_Risu" },{ id: 11007, type: "talent", group: "HOLOLIVE", label: "Kaela Kovalskia", youtube: "https://www.youtube.com/@KaelaKovalskia", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Kaela_Kovalskia" },{ id: 11008, type: "talent", group: "HOLOLIVE", label: "Kobo Kanaeru", youtube: "https://www.youtube.com/@KoboKanaeru", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Kobo_Kanaeru" },{ id: 11009, type: "talent", group: "HOLOLIVE", label: "Vestia Zeta", youtube: "https://www.youtube.com/@VestiaZeta", twitch: "https://www.twitch.tv/vestiazeta", wiki: "https://virtualyoutuber.fandom.com/wiki/Vestia_Zeta" },{ id: 11023, type: "talent", group: "HOLOLIVE", label: "IRyS", youtube: "https://www.youtube.com/channel/UC8rcEBzJSleTkf_-agPM20g", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/IRyS" },{ id: 11024, type: "talent", group: "HOLOLIVE", label: "Ouro Kronii", youtube: "https://www.youtube.com/channel/UCmbs8T6MWqUHP1tIQvSgKrg", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Ouro_Kronii" },{ id: 11025, type: "talent", group: "HOLOLIVE", label: "Hakos Baelz", youtube: "https://www.youtube.com/channel/UCgmPnx-EEeOrZSg5Tiw7ZRQ", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Hakos_Baelz" },{ id: 11013, type: "talent", group: "HOLOLIVE", label: "Banzoin Hakka", youtube: "https://www.youtube.com/@BanzoinHakka", twitch: "https://www.twitch.tv/banzoinhakka", wiki: "https://virtualyoutuber.fandom.com/wiki/Banzoin_Hakka" },{ id: 13001, type: "talent", group: "TERI_YAKI", label: "Rae Laveire", youtube: "https://youtube.com/c/Raelaveire", twitch: "https://www.twitch.tv/raelaveire", wiki: "https://virtualyoutuber.fandom.com/wiki/Rae_Laveire" },{ id: 5001, type: "talent", group: "LAB_BRATS", label: "Chrchie", youtube: "https://www.youtube.com/@chrchieVT", twitch: "https://www.twitch.tv/chrchie", wiki: "https://virtualyoutuber.fandom.com/wiki/Chrchie" },{ id: 5002, type: "talent", group: "LAB_BRATS", label: "MinikoMew", youtube: "https://www.youtube.com/channel/UC9evPLoYqsHASjrahHekqMA", twitch: "https://www.twitch.tv/minikomew", wiki: "https://virtualyoutuber.fandom.com/wiki/MinikoMew" },{ id: 5003, type: "talent", group: "LAB_BRATS", label: "Shoomimi", youtube: "https://www.youtube.com/@Shoomimi", twitch: "https://www.twitch.tv/shoomimi", wiki: "https://virtualyoutuber.fandom.com/wiki/Shoomimi" },{ id: 5005, type: "talent", group: "LAB_BRATS", label: "Ellie Minibot", youtube: "https://www.youtube.com/channel/UCeZe82WbZ7VL9meqWli6qxg", twitch: "https://www.twitch.tv/ellie_minibot", wiki: "https://virtualyoutuber.fandom.com/wiki/Ellie_Minibot" },{ id: 8001, type: "talent", group: "NEUROVERSE", label: "Vedal", youtube: "https://www.youtube.com/channel/UCLHmLrj4pHHg3-iBJn_CqxA", twitch: "https://www.twitch.tv/vedal987", wiki: "wikilink" },{ id: 8002, type: "talent", group: "NEUROVERSE", label: "Neurosama", youtube: "https://www.youtube.com/channel/UCLHmLrj4pHHg3-iBJn_CqxA", twitch: "https://www.twitch.tv/vedal987", wiki: "https://virtualyoutuber.fandom.com/wiki/Neuro-sama" },{ id: 8003, type: "talent", group: "NEUROVERSE", label: "Evil Neuro", youtube: "https://www.youtube.com/channel/UCLHmLrj4pHHg3-iBJn_CqxA", twitch: "https://www.twitch.tv/vedal987", wiki: "https://virtualyoutuber.fandom.com/wiki/Evil_Neuro" },{ id: 7001, type: "talent", group: "VICHIBAN", label: "Buffpup", youtube: "https://www.youtube.com/channel/UCM6Ld_dNSaUQ2uwjJ4Gq9FA", twitch: "https://www.twitch.tv/buffpup", wiki: "https://virtualyoutuber.fandom.com/wiki/Buffpup" },{ id: 7002, type: "talent", group: "VICHIBAN", label: "Ai Candii", youtube: "http://youtube.com/c/aicandii", twitch: "https://www.twitch.tv/aicandii", wiki: "https://virtualyoutuber.fandom.com/wiki/Ai_Candii" },{ id: 7003, type: "talent", group: "VICHIBAN", label: "Rosedoodle", youtube: "https://www.youtube.com/channel/UCihXhXRz8tj91hBptuSsQ0g", twitch: "https://www.twitch.tv/rosedoodle", wiki: "https://virtualyoutuber.fandom.com/wiki/Rosedoodle" },{ id: 7004, type: "talent", group: "VICHIBAN", label: "ShiaBun", youtube: "https://www.youtube.com/c/ShiaBun", twitch: "https://www.twitch.tv/shiabun", wiki: "https://virtualyoutuber.fandom.com/wiki/ShiaBun" },{ id: 2001, type: "talent", group: "DENTSU", label: "Mint Fantôme", youtube: "https://www.youtube.com/@mintfantome", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Mint_Fant%C3%B4me" },{ id: 2002, type: "talent", group: "DENTSU", label: "Victoria Roma", youtube: "https://www.youtube.com/@vickyroman_idol", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Victoria_Roman" },{ id: 2003, type: "talent", group: "DENTSU", label: "Phoebe Chan", youtube: "https://www.youtube.com/@feebeechanchibi", twitch: "", wiki: "https://virtualyoutuber.fandom.com/wiki/Phoebe_Chan" },{ id: 3001, type: "talent", group: "NOVA", label: "Akatsuki Hotaru", youtube: "https://www.youtube.com/@AkatsukiDHotaru", twitch: "https://www.twitch.tv/akatsukidhotaru", wiki: "https://virtualyoutuber.fandom.com/wiki/Akatsuki_Hotaru" },{ id: 3002, type: "talent", group: "NOVA", label: "Hestia Happiness", youtube: "https://www.youtube.com/channel/UCyaxhmE-zyUIjMfCGQ75vlA", twitch: "https://www.twitch.tv/hestiahappiness", wiki: "https://virtualyoutuber.fandom.com/wiki/Hestia_Happiness" },{ id: 3003, type: "talent", group: "NOVA", label: "Yutori Peke", youtube: "https://www.youtube.com/@PekeIsPeak", twitch: "https://www.twitch.tv/pekeispeak", wiki: "https://virtualyoutuber.fandom.com/wiki/Yutori_Peke" },{ id: 3004, type: "talent", group: "NOVA", label: "Okamoto Nagi", youtube: "https://www.youtube.com/@NagIsekaied", twitch: "https://www.twitch.tv/nagisekaied", wiki: "https://virtualyoutuber.fandom.com/wiki/Okamoto_Nagi" },{ id: 4001, type: "talent", group: "BEASTIEZ", label: "Tori Oriane", youtube: "https://www.youtube.com/@ToriOriane/featured", twitch: "https://www.twitch.tv/torioriane", wiki: "https://virtualyoutuber.fandom.com/wiki/Tori_Oriane" },{ id: 4002, type: "talent", group: "BEASTIEZ", label: "PiaPiUFO", youtube: "https://www.youtube.com/c/PiaPIUFO", twitch: "https://www.twitch.tv/piapiufo", wiki: "https://virtualyoutuber.fandom.com/wiki/PiaPiUFO" },{ id: 4003, type: "talent", group: "BEASTIEZ", label: "Beribug", youtube: "https://www.youtube.com/channel/UC8PMqEDpXcsooyDGiLvxs4w", twitch: "https://www.twitch.tv/beribug", wiki: "https://virtualyoutuber.fandom.com/wiki/Beribug" },{ id: 4004, type: "talent", group: "BEASTIEZ", label: "Kairyu Crocodile", youtube: "https://www.youtube.com/@KairyuCrocodile", twitch: "https://www.twitch.tv/kairyucrocodile", wiki: "https://virtualyoutuber.fandom.com/wiki/Kairyu_Crocodile" }]);
+const edges = new vis.DataSet([{ from: 0, to: 9034, type: "interests" },
+{ from: 0, to: 9028, type: "interests" },
+{ from: 0, to: 1000, type: "interests" },
+{ from: 0, to: 1001, type: "interests" },
+{ from: 0, to: 1003, type: "interests" },
+{ from: 0, to: 9042, type: "interests" },
+{ from: 0, to: 9024, type: "interests" },
+{ from: 0, to: 9038, type: "interests" },
+{ from: 0, to: 1012, type: "interests" },
+{ from: 0, to: 9039, type: "interests" },
+{ from: 0, to: 9019, type: "interests" },
+{ from: 0, to: 9032, type: "interests" },
+{ from: 0, to: 9003, type: "interests" },
+{ from: 0, to: 7003, type: "interests" },
+{ from: 0, to: 1002, type: "interests" },
+{ from: 0, to: 11001, type: "interests" },
+{ from: 0, to: 5001, type: "interests" },
+{ from: 0, to: 6004, type: "interests" },
+{ from: 0, to: 9004, type: "interests" },
+{ from: 0, to: 9016, type: "interests" },
+{ from: 0, to: 5005, type: "interests" },
+{ from: 0, to: 1008, type: "interests" },
+{ from: 0, to: 1010, type: "interests" },
+{ from: 0, to: 9009, type: "interests" },
+{ from: 0, to: 9029, type: "interests" },
+{ from: 0, to: 1011, type: "interests" },
+{ from: 0, to: 10007, type: "interests" },
+{ from: 0, to: 10003, type: "interests" },
+{ from: 0, to: 10002, type: "interests" },
+{ from: 0, to: 9036, type: "interests" },
+{ from: 0, to: 9040, type: "interests" },
+{ from: 0, to: 6001, type: "interests" },
+{ from: 0, to: 1015, type: "interests" },
+{ from: 0, to: 9052, type: "interests" },
+{ from: 0, to: 9053, type: "interests" },
+{ from: 1, to: 10005, type: "interests" },
+{ from: 1, to: 10006, type: "interests" },
+{ from: 1, to: 10007, type: "interests" },
+{ from: 1, to: 10008, type: "interests" },
+{ from: 1, to: 10001, type: "interests" },
+{ from: 1, to: 10003, type: "interests" },
+{ from: 1, to: 10004, type: "interests" },
+{ from: 1, to: 9004, type: "interests" },
+{ from: 1, to: 1001, type: "interests" },
+{ from: 1, to: 9033, type: "interests" },
+{ from: 1, to: 9018, type: "interests" },
+{ from: 1, to: 9009, type: "interests" },
+{ from: 1, to: 1008, type: "interests" },
+{ from: 1, to: 1010, type: "interests" },
+{ from: 1, to: 1013, type: "interests" },
+{ from: 1, to: 1003, type: "interests" },
+{ from: 1, to: 9017, type: "interests" },
+{ from: 1, to: 9016, type: "interests" },
+{ from: 1, to: 7002, type: "interests" },
+{ from: 1, to: 9043, type: "interests" },
+{ from: 1, to: 1000, type: "interests" },
+{ from: 1, to: 1009, type: "interests" },
+{ from: 1, to: 1011, type: "interests" },
+{ from: 1, to: 1012, type: "interests" },
+{ from: 1, to: 1014, type: "interests" },
+{ from: 1, to: 1007, type: "interests" },
+{ from: 1, to: 9025, type: "interests" },
+{ from: 1, to: 9021, type: "interests" },
+{ from: 1, to: 9024, type: "interests" },
+{ from: 1, to: 9020, type: "interests" },
+{ from: 1, to: 9019, type: "interests" },
+{ from: 1, to: 9002, type: "interests" },
+{ from: 1, to: 9006, type: "interests" },
+{ from: 1, to: 9007, type: "interests" },
+{ from: 1, to: 9013, type: "interests" },
+{ from: 1, to: 3001, type: "interests" },
+{ from: 1, to: 3002, type: "interests" },
+{ from: 1, to: 3003, type: "interests" },
+{ from: 1, to: 3004, type: "interests" },
+{ from: 1, to: 2001, type: "interests" },
+{ from: 1, to: 2002, type: "interests" },
+{ from: 1, to: 4001, type: "interests" },
+{ from: 1, to: 4002, type: "interests" },
+{ from: 1, to: 4003, type: "interests" },
+{ from: 1, to: 4004, type: "interests" },
+{ from: 1, to: 6003, type: "interests" },
+{ from: 1, to: 1002, type: "interests" },
+{ from: 1, to: 9031, type: "interests" },
+{ from: 1, to: 7004, type: "interests" },
+{ from: 1, to: 9022, type: "interests" },
+{ from: 1, to: 13001, type: "interests" },
+{ from: 1, to: 9045, type: "interests" },
+{ from: 1, to: 6006, type: "interests" },
+{ from: 1, to: 9051, type: "interests" },
+{ from: 1, to: 6002, type: "interests" },
+{ from: 1, to: 9030, type: "interests" },
+{ from: 1, to: 9050, type: "interests" },
+{ from: 1, to: 9044, type: "interests" },
+{ from: 1, to: 9049, type: "interests" },
+{ from: 1, to: 9035, type: "interests" },
+{ from: 1, to: 9027, type: "interests" },
+{ from: 1, to: 11003, type: "interests" },
+{ from: 1, to: 11001, type: "interests" },
+{ from: 1, to: 9036, type: "interests" },
+{ from: 1, to: 1015, type: "interests" },
+{ from: 1, to: 9034, type: "interests" },
+{ from: 1, to: 9052, type: "interests" },
+{ from: 1, to: 12001, type: "interests" },
+{ from: 1, to: 9023, type: "interests" },
+{ from: 1, to: 10090, type: "interests" },
+{ from: 2, to: 1000, type: "interests" },
+{ from: 2, to: 1002, type: "interests" },
+{ from: 2, to: 1005, type: "interests" },
+{ from: 2, to: 1006, type: "interests" },
+{ from: 2, to: 1007, type: "interests" },
+{ from: 2, to: 1009, type: "interests" },
+{ from: 2, to: 1011, type: "interests" },
+{ from: 2, to: 1014, type: "interests" },
+{ from: 2, to: 1015, type: "interests" },
+{ from: 2, to: 2001, type: "interests" },
+{ from: 2, to: 2002, type: "interests" },
+{ from: 2, to: 2003, type: "interests" },
+{ from: 2, to: 3001, type: "interests" },
+{ from: 2, to: 3002, type: "interests" },
+{ from: 2, to: 3003, type: "interests" },
+{ from: 2, to: 3004, type: "interests" },
+{ from: 2, to: 4001, type: "interests" },
+{ from: 2, to: 4002, type: "interests" },
+{ from: 2, to: 4003, type: "interests" },
+{ from: 2, to: 4004, type: "interests" },
+{ from: 2, to: 6001, type: "interests" },
+{ from: 2, to: 6002, type: "interests" },
+{ from: 2, to: 6003, type: "interests" },
+{ from: 2, to: 6004, type: "interests" },
+{ from: 2, to: 9001, type: "interests" },
+{ from: 2, to: 9002, type: "interests" },
+{ from: 2, to: 9003, type: "interests" },
+{ from: 2, to: 9005, type: "interests" },
+{ from: 2, to: 9006, type: "interests" },
+{ from: 2, to: 9007, type: "interests" },
+{ from: 2, to: 9008, type: "interests" },
+{ from: 2, to: 9010, type: "interests" },
+{ from: 2, to: 9011, type: "interests" },
+{ from: 2, to: 9013, type: "interests" },
+{ from: 2, to: 9014, type: "interests" },
+{ from: 2, to: 9015, type: "interests" },
+{ from: 2, to: 9019, type: "interests" },
+{ from: 2, to: 9026, type: "interests" },
+{ from: 2, to: 9031, type: "interests" },
+{ from: 2, to: 9037, type: "interests" },
+{ from: 2, to: 9041, type: "interests" },
+{ from: 2, to: 9043, type: "interests" },
+{ from: 2, to: 5002, type: "interests" },
+{ from: 2, to: 11001, type: "interests" },
+{ from: 2, to: 11014, type: "interests" },
+{ from: 2, to: 11015, type: "interests" },
+{ from: 2, to: 11002, type: "interests" },
+{ from: 2, to: 11016, type: "interests" },
+{ from: 2, to: 11017, type: "interests" },
+{ from: 2, to: 11018, type: "interests" },
+{ from: 2, to: 11019, type: "interests" },
+{ from: 2, to: 11003, type: "interests" },
+{ from: 2, to: 11020, type: "interests" },
+{ from: 2, to: 11021, type: "interests" },
+{ from: 2, to: 11022, type: "interests" },
+{ from: 2, to: 11004, type: "interests" },
+{ from: 2, to: 11005, type: "interests" },
+{ from: 2, to: 11006, type: "interests" },
+{ from: 2, to: 11007, type: "interests" },
+{ from: 2, to: 11008, type: "interests" },
+{ from: 2, to: 11009, type: "interests" },
+{ from: 2, to: 5005, type: "interests" },
+{ from: 2, to: 7001, type: "interests" },
+{ from: 2, to: 7004, type: "interests" },
+{ from: 2, to: 5001, type: "interests" },
+{ from: 2, to: 6005, type: "interests" },
+{ from: 2, to: 10004, type: "interests" },
+{ from: 2, to: 10002, type: "interests" },
+{ from: 2, to: 10001, type: "interests" },
+{ from: 2, to: 11013, type: "interests" },
+{ from: 2, to: 13001, type: "interests" },
+{ from: 2, to: 9046, type: "interests" },
+{ from: 2, to: 9047, type: "interests" },
+{ from: 3, to: 10001, type: "interests" },
+{ from: 3, to: 10002, type: "interests" },
+{ from: 3, to: 10003, type: "interests" },
+{ from: 3, to: 10004, type: "interests" },
+{ from: 3, to: 10005, type: "interests" },
+{ from: 3, to: 10006, type: "interests" },
+{ from: 3, to: 10007, type: "interests" },
+{ from: 3, to: 10008, type: "interests" },
+{ from: 3, to: 10009, type: "interests" },
+{ from: 3, to: 9016, type: "interests" },
+{ from: 3, to: 9008, type: "interests" },
+{ from: 3, to: 9033, type: "interests" },
+{ from: 3, to: 9053, type: "interests" },
+{ from: 3, to: 10090, type: "interests" },
+{ from: 4, to: 9032, type: "interests" },
+{ from: 4, to: 9003, type: "interests" },
+{ from: 4, to: 7003, type: "interests" },
+{ from: 4, to: 13001, type: "interests" },
+{ from: 5, to: 5005, type: "interests" },
+{ from: 5, to: 8001, type: "interests" },
+{ from: 5, to: 5003, type: "interests" },
+{ from: 5, to: 7002, type: "interests" },
+{ from: 5, to: 9048, type: "interests" },
+{ from: 6, to: 1012, type: "interests" },
+{ from: 6, to: 9039, type: "interests" },
+{ from: 6, to: 9036, type: "interests" },
+{ from: 6, to: 9040, type: "interests" },
+{ from: 6, to: 9024, type: "interests" },
+{ from: 6, to: 9035, type: "interests" },
+{ from: 7, to: 8002, type: "interests" },
+{ from: 7, to: 8003, type: "interests" },
+{ from: 8, to: 10002, type: "interests" },
+{ from: 8, to: 1012, type: "interests" },
+{ from: 8, to: 9048, type: "interests" },
+{ from: 9, to: 9034, type: "interests" },
+{ from: 9, to: 9052, type: "interests" },
+{ from: 10, to: 12001, type: "interests" },
+{ from: 10, to: 9008, type: "interests" },
+{ from: 10, to: 5005, type: "interests" },
+{ from: 10, to: 9038, type: "interests" },
+{ from: 102, to: 2001, type: "group" },
+{ from: 102, to: 2002, type: "group" },
+{ from: 102, to: 2003, type: "group" },
+{ from: 103, to: 3001, type: "group" },
+{ from: 103, to: 3002, type: "group" },
+{ from: 103, to: 3003, type: "group" },
+{ from: 103, to: 3004, type: "group" },
+{ from: 104, to: 4001, type: "group" },
+{ from: 104, to: 4002, type: "group" },
+{ from: 104, to: 4003, type: "group" },
+{ from: 104, to: 4004, type: "group" },
+{ from: 105, to: 7001, type: "group" },
+{ from: 105, to: 7002, type: "group" },
+{ from: 105, to: 7003, type: "group" },
+{ from: 105, to: 7004, type: "group" },
+{ from: 110, to: 111, type: "group" },
+{ from: 110, to: 113, type: "group" },
+{ from: 110, to: 114, type: "group" },
+{ from: 111, to: 112, type: "group" },
+{ from: 111, to: 116, type: "group" },
+{ from: 111, to: 117, type: "group" },
+{ from: 111, to: 120, type: "group" },
+{ from: 111, to: 121, type: "group" },
+{ from: 112, to: 11001, type: "group" },
+{ from: 112, to: 11014, type: "group" },
+{ from: 112, to: 11015, type: "group" },
+{ from: 116, to: 11003, type: "group" },
+{ from: 116, to: 11020, type: "group" },
+{ from: 116, to: 11021, type: "group" },
+{ from: 116, to: 11022, type: "group" },
+{ from: 117, to: 11002, type: "group" },
+{ from: 117, to: 11016, type: "group" },
+{ from: 117, to: 11017, type: "group" },
+{ from: 117, to: 11018, type: "group" },
+{ from: 117, to: 11019, type: "group" },
+{ from: 120, to: 11013, type: "group" },
+{ from: 121, to: 11023, type: "group" },
+{ from: 121, to: 11024, type: "group" },
+{ from: 121, to: 11025, type: "group" },
+{ from: 113, to: 11004, type: "group" },
+{ from: 113, to: 11005, type: "group" },
+{ from: 113, to: 11006, type: "group" },
+{ from: 113, to: 11007, type: "group" },
+{ from: 113, to: 11008, type: "group" },
+{ from: 113, to: 11009, type: "group" },
+{ from: 118, to: 13001, type: "group" },
+{ from: 202, to: 5001, type: "group" },
+{ from: 202, to: 5002, type: "group" },
+{ from: 202, to: 5003, type: "group" },
+{ from: 202, to: 5005, type: "group" },
+{ from: 208, to: 8001, type: "group" },
+{ from: 208, to: 8002, type: "group" },
+{ from: 208, to: 8003, type: "group" },
+{ from: 201, to: 1000, type: "group", dashes: true},
+{ from: 201, to: 1014, type: "group", dashes: true},
+{ from: 201, to: 9013, type: "group", dashes: true},
+{ from: 201, to: 10003, type: "group", dashes: true},
+{ from: 203, to: 6001, type: "group", dashes: true},
+{ from: 203, to: 6002, type: "group", dashes: true},
+{ from: 203, to: 6003, type: "group", dashes: true},
+{ from: 203, to: 6004, type: "group", dashes: true},
+{ from: 203, to: 6005, type: "group", dashes: true},
+{ from: 203, to: 6006, type: "group", dashes: true},
+{ from: 204, to: 1009, type: "group", dashes: true},
+{ from: 204, to: 9021, type: "group", dashes: true},
+{ from: 204, to: 9017, type: "group", dashes: true},
+{ from: 204, to: 9020, type: "group", dashes: true},
+{ from: 205, to: 1000, type: "group", dashes: true},
+{ from: 205, to: 1001, type: "group", dashes: true},
+{ from: 205, to: 1002, type: "group", dashes: true},
+{ from: 205, to: 1003, type: "group", dashes: true},
+{ from: 205, to: 1004, type: "group", dashes: true},
+{ from: 205, to: 1005, type: "group", dashes: true},
+{ from: 205, to: 1006, type: "group", dashes: true},
+{ from: 205, to: 1007, type: "group", dashes: true},
+{ from: 205, to: 1008, type: "group", dashes: true},
+{ from: 205, to: 1009, type: "group", dashes: true},
+{ from: 205, to: 1010, type: "group", dashes: true},
+{ from: 205, to: 1011, type: "group", dashes: true},
+{ from: 205, to: 1012, type: "group", dashes: true},
+{ from: 205, to: 1013, type: "group", dashes: true},
+{ from: 205, to: 1014, type: "group", dashes: true},
+{ from: 205, to: 1015, type: "group", dashes: true},
+{ from: 205, to: 1016, type: "group", dashes: true},
+{ from: 205, to: 102, type: "group", dashes: true},
+{ from: 205, to: 103, type: "group", dashes: true},
+{ from: 205, to: 104, type: "group", dashes: true},
+{ from: 206, to: 10001, type: "group", dashes: true},
+{ from: 206, to: 10002, type: "group", dashes: true},
+{ from: 206, to: 10003, type: "group", dashes: true},
+{ from: 206, to: 10004, type: "group", dashes: true},
+{ from: 206, to: 10005, type: "group", dashes: true},
+{ from: 206, to: 10006, type: "group", dashes: true},
+{ from: 206, to: 10007, type: "group", dashes: true},
+{ from: 206, to: 10008, type: "group", dashes: true},
+{ from: 206, to: 10009, type: "group", dashes: true},
+{ from: 206, to: 10090, type: "group", dashes: true},
+{ from: 207, to: 5001, type: "group", dashes: true},
+{ from: 207, to: 5002, type: "group", dashes: true},
+{ from: 207, to: 5003, type: "group", dashes: true},
+{ from: 207, to: 5005, type: "group", dashes: true},
+{ from: 207, to: 6001, type: "group", dashes: true},
+{ from: 207, to: 6002, type: "group", dashes: true},
+{ from: 207, to: 6003, type: "group", dashes: true},
+{ from: 207, to: 6004, type: "group", dashes: true},
+{ from: 207, to: 7001, type: "group", dashes: true},
+{ from: 207, to: 7002, type: "group", dashes: true},
+{ from: 207, to: 7003, type: "group", dashes: true},
+{ from: 207, to: 7004, type: "group", dashes: true},
+{ from: 207, to: 8001, type: "group", dashes: true},
+{ from: 207, to: 8002, type: "group", dashes: true},
+{ from: 207, to: 8003, type: "group", dashes: true},
+{ from: 207, to: 9001, type: "group", dashes: true},
+{ from: 207, to: 9002, type: "group", dashes: true},
+{ from: 207, to: 9003, type: "group", dashes: true},
+{ from: 207, to: 9004, type: "group", dashes: true},
+{ from: 207, to: 9005, type: "group", dashes: true},
+{ from: 207, to: 9006, type: "group", dashes: true},
+{ from: 207, to: 9007, type: "group", dashes: true},
+{ from: 207, to: 9008, type: "group", dashes: true},
+{ from: 207, to: 9009, type: "group", dashes: true},
+{ from: 207, to: 9010, type: "group", dashes: true},
+{ from: 207, to: 9011, type: "group", dashes: true},
+{ from: 207, to: 9012, type: "group", dashes: true},
+{ from: 207, to: 9013, type: "group", dashes: true},
+{ from: 207, to: 9014, type: "group", dashes: true},
+{ from: 207, to: 9015, type: "group", dashes: true},
+{ from: 207, to: 9016, type: "group", dashes: true},
+{ from: 207, to: 9017, type: "group", dashes: true},
+{ from: 207, to: 9018, type: "group", dashes: true},
+{ from: 207, to: 9019, type: "group", dashes: true},
+{ from: 207, to: 9020, type: "group", dashes: true},
+{ from: 207, to: 9021, type: "group", dashes: true},
+{ from: 207, to: 9022, type: "group", dashes: true},
+{ from: 207, to: 9023, type: "group", dashes: true},
+{ from: 207, to: 9024, type: "group", dashes: true},
+{ from: 207, to: 9025, type: "group", dashes: true},
+{ from: 207, to: 9026, type: "group", dashes: true},
+{ from: 207, to: 9027, type: "group", dashes: true},
+{ from: 207, to: 9028, type: "group", dashes: true},
+{ from: 207, to: 9029, type: "group", dashes: true},
+{ from: 207, to: 9030, type: "group", dashes: true},
+{ from: 207, to: 9031, type: "group", dashes: true},
+{ from: 207, to: 9032, type: "group", dashes: true},
+{ from: 207, to: 9033, type: "group", dashes: true},
+{ from: 207, to: 9034, type: "group", dashes: true},
+{ from: 207, to: 9035, type: "group", dashes: true},
+{ from: 207, to: 9036, type: "group", dashes: true},
+{ from: 207, to: 9037, type: "group", dashes: true},
+{ from: 207, to: 9038, type: "group", dashes: true},
+{ from: 207, to: 9039, type: "group", dashes: true},
+{ from: 207, to: 9040, type: "group", dashes: true},
+{ from: 207, to: 9041, type: "group", dashes: true},
+{ from: 207, to: 9042, type: "group", dashes: true},
+{ from: 207, to: 1000, type: "group", dashes: true},
+{ from: 207, to: 1001, type: "group", dashes: true},
+{ from: 207, to: 1002, type: "group", dashes: true},
+{ from: 207, to: 1003, type: "group", dashes: true},
+{ from: 207, to: 1004, type: "group", dashes: true},
+{ from: 207, to: 1005, type: "group", dashes: true},
+{ from: 207, to: 1006, type: "group", dashes: true},
+{ from: 207, to: 1007, type: "group", dashes: true},
+{ from: 207, to: 1008, type: "group", dashes: true},
+{ from: 207, to: 1009, type: "group", dashes: true},
+{ from: 207, to: 1010, type: "group", dashes: true},
+{ from: 207, to: 1011, type: "group", dashes: true},
+{ from: 207, to: 1012, type: "group", dashes: true},
+{ from: 207, to: 1013, type: "group", dashes: true},
+{ from: 207, to: 1014, type: "group", dashes: true},
+{ from: 207, to: 1015, type: "group", dashes: true},
+{ from: 207, to: 1016, type: "group", dashes: true},
+{ from: 207, to: 2001, type: "group", dashes: true},
+{ from: 207, to: 2002, type: "group", dashes: true},
+{ from: 207, to: 2003, type: "group", dashes: true},
+{ from: 207, to: 4001, type: "group", dashes: true},
+{ from: 207, to: 4002, type: "group", dashes: true},
+{ from: 207, to: 4003, type: "group", dashes: true},
+{ from: 207, to: 4004, type: "group", dashes: true},
+{ from: 207, to: 6005, type: "group", dashes: true},
+{ from: 207, to: 9043, type: "group", dashes: true},
+{ from: 207, to: 3001, type: "group", dashes: true},
+{ from: 207, to: 3002, type: "group", dashes: true},
+{ from: 207, to: 3003, type: "group", dashes: true},
+{ from: 207, to: 3004, type: "group", dashes: true},
+{ from: 207, to: 9044, type: "group", dashes: true},
+{ from: 207, to: 6006, type: "group", dashes: true},
+{ from: 207, to: 9045, type: "group", dashes: true},
+{ from: 207, to: 9046, type: "group", dashes: true},
+{ from: 207, to: 9047, type: "group", dashes: true},
+{ from: 207, to: 9048, type: "group", dashes: true},
+{ from: 207, to: 9049, type: "group", dashes: true},
+{ from: 207, to: 9050, type: "group", dashes: true},
+{ from: 207, to: 9051, type: "group", dashes: true},
+{ from: 207, to: 9052, type: "group", dashes: true},
+{ from: 207, to: 9053, type: "group", dashes: true},
+{ from: 209, to: 11004, type: "group", dashes: true},
+{ from: 209, to: 11005, type: "group", dashes: true},
+{ from: 209, to: 11006, type: "group", dashes: true},
+{ from: 209, to: 11007, type: "group", dashes: true},
+{ from: 209, to: 11008, type: "group", dashes: true},
+{ from: 209, to: 11009, type: "group", dashes: true},
+{ from: 209, to: 13001, type: "group", dashes: true},
+{ from: 209, to: 1002, type: "group", dashes: true},
+{ from: 1000, to: 1014, type: "collab" },
+{ from: 1000, to: 9013, type: "collab" },
+{ from: 1000, to: 10003, type: "collab" },
+{ from: 1000, to: 7001, type: "collab" },
+{ from: 1000, to: 7002, type: "collab" },
+{ from: 1000, to: 7003, type: "collab" },
+{ from: 1000, to: 7004, type: "collab" },
+{ from: 1000, to: 11001, type: "collab" },
+{ from: 1000, to: 11002, type: "collab" },
+{ from: 1000, to: 11003, type: "collab" },
+{ from: 1000, to: 10001, type: "collab" },
+{ from: 1000, to: 10001, type: "collab" },
+{ from: 1001, to: 10090, type: "collab" },
+{ from: 1001, to: 1005, type: "collab" },
+{ from: 1002, to: 1000, type: "collab" },
+{ from: 1002, to: 1001, type: "collab" },
+{ from: 1002, to: 1003, type: "collab" },
+{ from: 1002, to: 1006, type: "collab" },
+{ from: 1002, to: 1007, type: "collab" },
+{ from: 1002, to: 1008, type: "collab" },
+{ from: 1002, to: 1009, type: "collab" },
+{ from: 1002, to: 1010, type: "collab" },
+{ from: 1002, to: 1011, type: "collab" },
+{ from: 1002, to: 1012, type: "collab" },
+{ from: 1002, to: 6001, type: "collab" },
+{ from: 1002, to: 6004, type: "collab" },
+{ from: 1002, to: 9007, type: "collab" },
+{ from: 1002, to: 9009, type: "collab" },
+{ from: 1002, to: 9015, type: "collab" },
+{ from: 1002, to: 9016, type: "collab" },
+{ from: 1002, to: 9017, type: "collab" },
+{ from: 1002, to: 9018, type: "collab" },
+{ from: 1002, to: 9034, type: "collab" },
+{ from: 1002, to: 9042, type: "collab" },
+{ from: 1002, to: 9045, type: "collab" },
+{ from: 1002, to: 9053, type: "collab" },
+{ from: 1002, to: 10002, type: "collab" },
+{ from: 1002, to: 10007, type: "collab" },
+{ from: 1002, to: 11004, type: "collab" },
+{ from: 1002, to: 11005, type: "collab" },
+{ from: 1002, to: 11006, type: "collab" },
+{ from: 1002, to: 11007, type: "collab" },
+{ from: 1002, to: 11009, type: "collab" },
+{ from: 1002, to: 11013, type: "collab" },
+{ from: 1002, to: 13001, type: "collab" },
+{ from: 1002, to: 1015, type: "collab" },
+{ from: 1002, to: 9014, type: "collab" },
+{ from: 1002, to: 11008, type: "collab" },
+{ from: 1002, to: 9028, type: "collab" },
+{ from: 1002, to: 3001, type: "collab" },
+{ from: 1002, to: 3002, type: "collab" },
+{ from: 1002, to: 3003, type: "collab" },
+{ from: 1002, to: 3004, type: "collab" },
+{ from: 1008, to: 9025, type: "collab" },
+{ from: 1009, to: 9021, type: "collab" },
+{ from: 1010, to: 9002, type: "collab" },
+{ from: 1011, to: 2001, type: "collab" },
+{ from: 1011, to: 9004, type: "collab" },
+{ from: 1012, to: 9039, type: "collab" },
+{ from: 6001, to: 6002, type: "collab" },
+{ from: 6001, to: 6003, type: "collab" },
+{ from: 6001, to: 6005, type: "collab" },
+{ from: 6001, to: 6006, type: "collab" },
+{ from: 6001, to: 9044, type: "collab" },
+{ from: 6001, to: 9046, type: "collab" },
+{ from: 6004, to: 8001, type: "collab" },
+{ from: 9004, to: 9006, type: "collab" },
+{ from: 9006, to: 9005, type: "collab" },
+{ from: 9007, to: 9008, type: "collab" },
+{ from: 9009, to: 9003, type: "collab" },
+{ from: 9009, to: 10008, type: "collab" },
+{ from: 9014, to: 9027, type: "collab" },
+{ from: 9028, to: 9029, type: "collab" },
+{ from: 9053, to: 9051, type: "collab" },
+{ from: 10002, to: 9010, type: "collab" },
+{ from: 10002, to: 9001, type: "collab" },
+{ from: 10003, to: 10009, type: "collab" },
+{ from: 10007, to: 9031, type: "collab" },
+{ from: 11001, to: 11014, type: "collab" },
+{ from: 11001, to: 11015, type: "collab" },
+{ from: 11002, to: 11016, type: "collab" },
+{ from: 11002, to: 11017, type: "collab" },
+{ from: 11002, to: 11018, type: "collab" },
+{ from: 11002, to: 11019, type: "collab" },
+{ from: 11003, to: 11020, type: "collab" },
+{ from: 11003, to: 11021, type: "collab" },
+{ from: 11003, to: 11022, type: "collab" },
+{ from: 11004, to: 10005, type: "collab" },
+{ from: 11004, to: 10006, type: "collab" },
+{ from: 11023, to: 11024, type: "collab" },
+{ from: 11023, to: 11025, type: "collab" },
+{ from: 5005, to: 9048, type: "collab" },
+{ from: 5005, to: 5003, type: "collab" },
+{ from: 5005, to: 5002, type: "collab" },
+{ from: 5005, to: 5001, type: "collab" },
+{ from: 5005, to: 9038, type: "collab" },
+{ from: 5005, to: 9041, type: "collab" },
+{ from: 5005, to: 9011, type: "collab" },
+{ from: 8001, to: 8002, type: "collab" },
+{ from: 8001, to: 8003, type: "collab" },
+{ from: 2001, to: 2002, type: "collab" },
+{ from: 2001, to: 2003, type: "collab" },
+{ from: 2001, to: 9043, type: "collab" },
+{ from: 4004, to: 4003, type: "collab" },
+{ from: 4004, to: 4002, type: "collab" },
+{ from: 4004, to: 4001, type: "collab" }]);

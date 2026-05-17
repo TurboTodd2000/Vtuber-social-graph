@@ -46,7 +46,7 @@ var typeSubgroupSize = 17;
 
 //output array containers
 var outputNodeAcc = [];
-var outputedgeAcc = [];
+var outputEdgeAcc = [];
 
 
 
@@ -402,7 +402,7 @@ CREATE NODES/EDGES
 //for nodes
 const idText = `{ id: `;
 const typeText = `, type: "`;
-const groupText = `",  group: "`;
+const groupText = `", group: "`;
 const labelText = `", label: "`;
 
 const collabText = `collab`;
@@ -444,8 +444,6 @@ for (var a = 0; a < interestNode.length; a++) {
 
 	var nodeHTMLoutput = idText + currentInterestNode[0] + typeText + currentInterestNode[1] + groupText + currentInterestNode[2] + labelText + currentInterestNode[3] + physicsText + currentInterestNode[5] + physicsEndText;
 
-/*	var nodeHTMLoutput = idText + currentInterestNode[0] + typeText + currentInterestNode[1] + groupText + currentInterestNode[2] + labelText + currentInterestNode[3] + endText;
-*/
 	outputNodeAcc.push(nodeHTMLoutput);
 
 
@@ -456,7 +454,7 @@ for (var a = 0; a < interestNode.length; a++) {
 
 			var edgeHTMLoutput = fromText + currentInterestNode[0] + toText + currentInterestNode[4][ee] + typeText + currentInterestNode[1] + endText;
 
-			outputedgeAcc.push(edgeHTMLoutput)
+			outputEdgeAcc.push(edgeHTMLoutput)
 
 		}
 
@@ -464,7 +462,6 @@ for (var a = 0; a < interestNode.length; a++) {
 
 
 };
-
 
 
 
@@ -479,6 +476,7 @@ for (var a = 0; a < formalGroupNodes.length; a++) {
 
 	outputNodeAcc.push(nodeHTMLoutput);
 
+
 	if (currentFormalGroupNodes[7].length > 0) {
 
    //edge elements
@@ -486,7 +484,7 @@ for (var a = 0; a < formalGroupNodes.length; a++) {
 
 			var edgeHTMLoutput = fromText + currentFormalGroupNodes[0] + toText + currentFormalGroupNodes[7][ee] + typeText + currentFormalGroupNodes[1] + endText;
 
-			outputedgeAcc.push(edgeHTMLoutput)
+			outputEdgeAcc.push(edgeHTMLoutput)
 
 		}
 
@@ -494,8 +492,6 @@ for (var a = 0; a < formalGroupNodes.length; a++) {
 
 
 };
-
-
 
 
 
@@ -518,7 +514,7 @@ for (var a = 0; a < informalGroupNodes.length; a++) {
 
 			var edgeHTMLoutput = fromText + currentInformalGroupNodes[0] + toText + currentInformalGroupNodes[7][ee] + typeText + currentInformalGroupNodes[1] + dashesText + true + dashesEndText;
 
-			outputedgeAcc.push(edgeHTMLoutput)
+			outputEdgeAcc.push(edgeHTMLoutput)
 
 		}
 
@@ -527,8 +523,6 @@ for (var a = 0; a < informalGroupNodes.length; a++) {
 
 
 };
-
-
 
 
 
@@ -551,7 +545,7 @@ for (var a = 0; a < talentNodes.length; a++) {
 
 			var edgeHTMLoutput = fromText + currentTalentNode[0] + toText + currentTalentNode[7][ee] + typeText + collabText + endText;
 
-			outputedgeAcc.push(edgeHTMLoutput)
+			outputEdgeAcc.push(edgeHTMLoutput)
 
 		}
 
@@ -564,28 +558,21 @@ for (var a = 0; a < talentNodes.length; a++) {
 
 
 
+//write to JS (requires node) - this won't be enabled until I have a version of this script that can work with the google sheet data
+
+/*nodeWrite(outputNodeAcc, outputEdgeAcc);*/
 
 
 
+
+
+//for dev, much faster to copy paste from the html file when making local changes as you can't load modules on a local file system
+
+//write to HTML
 
 //function to push the node accumliation array to the file
 
-testHTMLNodeOutput(outputNodeAcc);
-
-
-
-testHTMLEdgeOutput(outputedgeAcc);
-
-
-
-
-
-
-
-//EDGES
-
-
-
+testHTMLNodeOutput(outputNodeAcc, outputEdgeAcc);
 
 
 
@@ -602,30 +589,49 @@ FUNCTIONS
 
 
 
-function testHTMLNodeOutput(nodeHTMLoutput) {
+function testHTMLNodeOutput(nodeHTMLoutput, edgeHTMLoutput) {
 
-//more chatgpt code, needed the assist to get this working
+	//more chatgpt code, based on the code to the talent links on the webpage
 	const talentName = document.getElementById("nodeOutput");
 
-// set name
+	// replace the target text "#node" with the contents of nodeHTMLoutput
 	talentName.textContent = nodeHTMLoutput || "#node";
 
-};
 
-
-
-
-
-function testHTMLEdgeOutput(nodeHTMLoutput) {
-
-
-//more chatgpt code, needed the assist to get this working
+	//more chatgpt code, based on the code to the talent links on the webpage
 	const edgeContainer = document.getElementById("edgeOutput");
 
-
-// set name
-	edgeContainer.textContent = nodeHTMLoutput || "#edge" + "\n";
-
-
+	// set name
+	edgeContainer.textContent = edgeHTMLoutput || "#edge";
 
 };
+
+
+
+
+function nodeWrite(outputNodeAcc, outputEdgeAcc) {
+	const fs = require('fs');
+	
+	//set so text has line breaks
+	const nodeData = outputNodeAcc.join(',\n');
+	const edgeData = outputEdgeAcc.join(',\n');
+
+	//combine the info into one string for output
+	const outputNodeEdge = "export nodes = new vis.DataSet([" + outputNodeAcc + "]);" + "\n" + "const edges = new vis.DataSet([" + edgeData + "]);";
+
+
+	try {
+
+		fs.writeFileSync('/Volumes/Data\ World\ 2/Documents/\ GitHub/Vtuber-social-graph/data/Data.js', outputNodeEdge);
+
+		console.log('Files written successfully.');
+
+	} catch (err) {
+		console.log("Sorry couldn't write to file.")
+		console.error(err)
+	};
+};
+
+
+
+
