@@ -84,10 +84,6 @@
       pointer-events: none;
     }
 
-    /*    #legendOverlay:last-child {
-      margin-right: 0;
-    }*/
-
 
     .legendRows {
       display: flex;
@@ -114,9 +110,20 @@
       margin-right: 10px;
     }
 
-    #urlContainer:last-child {
+
+    #urlContainer a {
+      margin-right: 5px;
+    }
+
+    #urlContainer a:last-child {
       margin-right: 0;
     }
+
+#talentName,
+#youtubeLink,
+#twitchLink {
+  text-decoration: none;
+}
 
 
     .talentButton {
@@ -128,9 +135,7 @@
       text-align: center;
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      text-decoration: none;
-      margin-right: 5px;
+      align-items: center;
     }
 
     .talentButton span {
@@ -150,10 +155,6 @@
       align-self: center;
     }
 
-
-    #youtubeLink .talentButton {
-      padding: 2px 0;
-    }
 
 
     /* legend containers */

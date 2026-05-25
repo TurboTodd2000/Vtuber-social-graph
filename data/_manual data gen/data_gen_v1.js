@@ -1,4 +1,13 @@
 /*
+SHORTHAND NOTATION FOR VIZ.JS GRAPHS
+-----------------------------------------------
+*/
+
+//this as the prototype I used to get the graph up and running to start, I then switched to having a more general google sheet based backend to make editing the graph data simplier
+//leaving this in as it couild be a useful example for manually building data sets
+
+
+/*
 CONSTANTS
 -----------------------------------------------
 */
@@ -52,11 +61,8 @@ var outputEdgeAcc = [];
 
 
 
-
-
-
 /*
-DATA GOES HERE
+DATA
 -----------------------------------------------
 */
 
@@ -189,11 +195,8 @@ const talentNodes = [
 
 	//ex vshjo and vshojo affliated
 	[ 1000, "talent", "INDIES", "Ironmouse", "https://www.youtube.com/@IronMouseParty", "https://www.twitch.tv/ironmouse", "https://en.wikipedia.org/wiki/Ironmouse", [1014, 9013, 10003, 7001, 7002, 7003, 7004, 11001, 11002, 11003, 10001, 10001, ], ],
-
 	[ 1001, "talent", "INDIES", "Zentraya", "http://youtube.com/c/Zentreya", "https://www.twitch.tv/zentreya", "https://virtualyoutuber.fandom.com/wiki/Zentreya", [10090, 1005, ],  ],
-	
 	[ 1002, "talent", "INDIES", "Michi Mochievee", "https://www.youtube.com/channel/UCnS5IYNyGKOti9cFlK5SefQ", "https://www.twitch.tv/michimochievee", "https://virtualyoutuber.fandom.com/wiki/Michi_Mochievee", [1000, 1001, 1003, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 6001, 6004, 9007, 9009, 9015, 9016, 9017, 9018, 9034, 9042, 9045, 9053, 10002, 10007, 11004, 11005, 11006, 11007, 11009, 11013, 13001, 1015, 9014, 11008, 9028, 3001, 3002, 3003, 3004, ], ],
-
 	[ 1003, "talent", "INDIES", "Geega", "https://www.youtube.com/@GEEGA/", "https://www.twitch.tv/geega", "https://virtualyoutuber.fandom.com/wiki/GEEGA", [], ],
 	[ 1005, "talent", "INDIES", "Silvervale", "https://www.youtube.com/channel/UCm8Dj7dQ0oRHXNUXF31kjEw", "https://www.twitch.tv/silvervale", "https://virtualyoutuber.fandom.com/wiki/Silvervale", [], ],
 	[ 1006, "talent", "INDIES", "K9 Kuro", "https://www.youtube.com/channel/UCN5J_HKNGFCPtqAnSjBekcA", "https://www.twitch.tv/k9kuro", "https://virtualyoutuber.fandom.com/wiki/Kuro_Kurenai", [], ],
@@ -201,9 +204,7 @@ const talentNodes = [
 	[ 1008, "talent", "INDIES", "Haruka Karibu", "https://www.youtube.com/c/HarukaKaribu", "https://www.twitch.tv/harukakaribu", "https://virtualyoutuber.fandom.com/wiki/Haruka_Karibu", [9025, ], ],
 	[ 1009, "talent", "INDIES", "AmaLee", "https://youtube.com/leeandlie", "https://www.twitch.tv/amalee", "https://virtualyoutuber.fandom.com/wiki/AmaLee", [9021,], ],
 	[ 1010, "talent", "INDIES", "Henya the Genius", "https://www.youtube.com/channel/UCVhRMzNWYcg8XDTgB9NFRTw", "https://www.twitch.tv/henyathegenius", "https://virtualyoutuber.fandom.com/wiki/Henya_the_Genius", [9002, ], ],
-	
 	[ 1011, "talent", "INDIES", "Matara Kan", "https://www.youtube.com/channel/UCxx2uRmAwkhb3QJMfLssgsw", "https://www.twitch.tv/matarakan", "https://virtualyoutuber.fandom.com/wiki/Matara_Kan", [2001, 9004, ], ],
-	
 	[ 1012, "talent", "INDIES", "Projket Melody", "https://www.youtube.com/c/ProjektMelodyOfficial", "https://www.twitch.tv/projektmelody", "https://virtualyoutuber.fandom.com/wiki/Projekt_Melody", [9039, ], ],
 	//[ 1013, "talent", "INDIES", "Hime Hajime", "https://www.youtube.com/@himehajime1570", "https://www.twitch.tv/hajime", "https://virtualyoutuber.fandom.com/wiki/Hime_Hajime", [], ],
 	[ 1014, "talent", "INDIES", "Nyatasha Nyanners", "https://youtube.com/nyanners", "https://www.twitch.tv/nyanners", "https://virtualyoutuber.fandom.com/wiki/Nyatasha_Nyanners", [], ],
@@ -225,9 +226,7 @@ const talentNodes = [
 	[ 9001, "talent", "INDIES", "Bajiru", "https://www.youtube.com/c/bajiru_EN", "https://www.twitch.tv/bajiru_en", "https://virtualyoutuber.fandom.com/wiki/Bajiru", [], ],
 	[ 9002, "talent", "INDIES", "dooby3D", "https://www.youtube.com/@dooby3d", "https://www.twitch.tv/dooby3d", "https://virtualyoutuber.fandom.com/wiki/Dooby3D", [], ],
 	[ 9003, "talent", "INDIES", "FroggyLoch", "https://www.youtube.com/channel/UCyHiAEZfJmXO_cBRtgzcWZA/featured", "https://www.twitch.tv/froggyloch", "https://virtualyoutuber.fandom.com/wiki/FroggyLoch", [], ],
-	
 	[ 9004, "talent", "INDIES", "Limealicious", "https://www.youtube.com/c/Limealicious", "https://www.twitch.tv/limealicious", "https://virtualyoutuber.fandom.com/wiki/Laimu", [9006, ], ],
-	
 	[ 9005, "talent", "INDIES", "Sameko Saba", "https://www.youtube.com/@SamekoSaba", "", "https://virtualyoutuber.fandom.com/wiki/Sameko_Saba", [], ],
 	[ 9006, "talent", "INDIES", "Nimi Nightmare", "https://www.youtube.com/@niminightmare", "", "https://virtualyoutuber.fandom.com/wiki/Nimi_Nightmare", [9005], ],
 	[ 9007, "talent", "INDIES", "SixteenInMono", "https://www.youtube.com/@SixteenInMono", "https://www.twitch.tv/sixteeninmono", "", [9008, ], ],
@@ -237,7 +236,6 @@ const talentNodes = [
 	[ 9011, "talent", "INDIES", "Isaa Corva", "https://www.youtube.com/@isaacorva", "https://www.twitch.tv/isaa", "https://virtualyoutuber.fandom.com/wiki/Isaa_Corva", [], ],
 	[ 9013, "talent", "INDIES", "Lord Aethelstan", "https://www.youtube.com/channel/UCLI_XmsVZzOrOB1LaoV0BEQ", "https://www.twitch.tv/lordaethelstan", "https://virtualyoutuber.fandom.com/wiki/Lord_Aethelstan", [], ],
 	[ 9014, "talent", "INDIES", "Obkatiekat", "https://www.youtube.com/obkatiekat", "https://www.twitch.tv/obkatiekat", "https://virtualyoutuber.fandom.com/wiki/Obkatiekat", [9027, ], ],
-
 	[ 9015, "talent", "INDIES", "U-san", "https://www.youtube.com/@unnamednow00", "https://www.twitch.tv/unnamednow00", "https://virtualyoutuber.fandom.com/wiki/Unn%C3%A4med", [], ],
 	[ 9016, "talent", "INDIES", "Saiiren", "https://www.youtube.com/@saiiren", "https://www.twitch.tv/saiiren", "https://virtualyoutuber.fandom.com/wiki/Saiiren", [], ],
 	[ 9017, "talent", "INDIES", "Porcelain Maid", "https://www.youtube.com/channel/UCngBjKSLC8IhPNagQCnf2LQ", "https://www.twitch.tv/porcelainmaid", "https://virtualyoutuber.fandom.com/wiki/PorcelainMaid", [], ],
@@ -252,7 +250,6 @@ const talentNodes = [
 	//[ 9026, "talent", "INDIES", "Derivakat", "https://www.youtube.com/derivakat", "https://www.twitch.tv/derivakat", "wikilink", [], ],
 	[ 9027, "talent", "INDIES", "Fufu", "https://www.youtube.com/channel/UCNMHJ9WnMXabPn-iyQKAdcA", "https://www.twitch.tv/fufu", "https://virtualyoutuber.fandom.com/wiki/Fufu", [], ],
 	[ 9028, "talent", "INDIES", "KokoNuts", "https://www.youtube.com/channel/UCk9qayCnFw51PIUZKVxH1UQ", "https://www.twitch.tv/kokonuts", "https://virtualyoutuber.fandom.com/wiki/Koko_D._Nuts", [9029], ],
-
 	//[ 9029, "talent", "INDIES", "Crelly", "https://www.youtube.com/channel/UCwxaNWg74VccV65gr_L6JZg", "https://www.twitch.tv/crelly", "https://virtualyoutuber.fandom.com/wiki/Crelly", [], ],
 	//[ 9030, "talent", "INDIES", "Bluto", "youtube", "https://www.twitch.tv/bluto", "https://virtualyoutuber.fandom.com/wiki/Bluto", [], ],
 	//[ 9031, "talent", "INDIES", "chibidoki", "https://www.youtube.com/channel/UCoqNvjhUxJRYW4JsT5fBK6w", "https://www.twitch.tv/chibidoki", "https://virtualyoutuber.fandom.com/wiki/Chibidoki", [], ],
@@ -261,7 +258,6 @@ const talentNodes = [
 	[ 9034, "talent", "INDIES", "Papamutt", "https://www.youtube.com/channel/UCbAadhjblnwYfQ0xypSH_sg", "https://www.twitch.tv/papamutt", "https://virtualyoutuber.fandom.com/wiki/Papamutt", [], ],
 	//[ 9035, "talent", "INDIES", "FeFe", "https://www.youtube.com/c/fefevtuber", "https://www.twitch.tv/fefe", "https://virtualyoutuber.fandom.com/wiki/FeFe", [], ],
 	//[ 9036, "talent", "INDIES", "Vexoria the Suneater", "https://www.youtube.com/channel/UC9r8dNEoXdIpYTnoMVFwzhg", "https://www.twitch.tv/vexoria_the_suneater", "https://virtualyoutuber.fandom.com/wiki/Vexoria_the_Sun_Eater", [], ],
-
 	//[ 9037, "talent", "INDIES", "Spite", "https://www.youtube.com/c/SpitemeVtuber", "https://www.twitch.tv/spite", "https://virtualyoutuber.fandom.com/wiki/Spite", [], ],
 	//[ 9038, "talent", "INDIES", "Cha Cha Your Vmom", "https://youtube.com/@chachayourvmom", "https://www.twitch.tv/chachayourvmom", "https://virtualyoutuber.fandom.com/wiki/Cha_Cha,_Your_Vmom", [], ],
 	//[ 9039, "talent", "INDIES", "el XoX", "https://www.youtube.com/@elXoX34", "https://www.twitch.tv/el_xox", "https://virtualyoutuber.fandom.com/wiki/El_XoX", [], ],
@@ -270,12 +266,12 @@ const talentNodes = [
 	[ 9042, "talent", "INDIES", "tonkienator", "https://www.youtube.com/@tonkienatorr", "https://www.twitch.tv/tonkienator", "wikilink", [], ],
 	[ 9043, "talent", "INDIES", "Dokibird", "https://www.youtube.com/@Dokibird", "https://www.twitch.tv/dokibird", "https://virtualyoutuber.fandom.com/wiki/Dokibird", [], ],
 	[ 9044, "talent", "INDIES", "Shylilly", "https://www.youtube.com/@Shylily", "https://www.twitch.tv/shylily", "https://virtualyoutuber.fandom.com/wiki/Shylily", [], ],
-
 	[ 9045, "talent", "INDIES", "Meicha", "https://www.youtube.com/channel/UCNbVN2AjnvY73GVS3NdJx4Q/", "https://www.twitch.tv/meicha", "https://virtualyoutuber.fandom.com/wiki/Meicha", [], ],
 	[ 9046, "talent", "INDIES", "moniibagel", "https://www.youtube.com/channel/UCfTjT67uIy1hcAJFO7_AqOQ", "https://www.twitch.tv/moniibagel/about", "https://virtualyoutuber.fandom.com/wiki/Monii", [], ],
 	//[ 9047, "talent", "INDIES", "InannaBell", "https://www.youtube.com/@inannabell", "https://www.twitch.tv/inannabell", "", [], ],
 	//[ 9048, "talent", "INDIES", "Psydere", "https://www.youtube.com/@psydere", "https://www.twitch.tv/psydere", "", [], ],
 	//[ 9049, "talent", "INDIES", "FREAM", "", "https://www.twitch.tv/fream", "https://virtualyoutuber.fandom.com/wiki/Fream", [], ],
+
 	//[ 9050, "talent", "INDIES", "Momo", "http://www.youtube.com/themastermo", "https://www.twitch.tv/momo", "https://virtualyoutuber.fandom.com/wiki/Momo", [], ],
 	//[ 9051, "talent", "INDIES", "girl_dm_", "https://www.youtube.com/channel/UC_WC6plpIdL_buebR9vSVkg", "https://www.twitch.tv/girl_dm_", "https://virtualyoutuber.fandom.com/wiki/Girl_dm", [], ],
 	//[ 9052, "talent", "INDIES", "SunnySplosion", "https://www.youtube.com/@OopsAllSunny", "https://www.twitch.tv/sunnysplosion", "https://virtualyoutuber.fandom.com/wiki/SunnySplosion", [], ],
@@ -347,6 +343,7 @@ const talentNodes = [
 
 	//teri-yaki
 	[ 13001, "talent", "TERI_YAKI", "Rae Laveire", "https://youtube.com/c/Raelaveire", "https://www.twitch.tv/raelaveire", "https://virtualyoutuber.fandom.com/wiki/Rae_Laveire", [], ],
+
 
 	//lab brats
 	[ 5001, "talent", "LAB_BRATS", "Chrchie", "https://www.youtube.com/@chrchieVT", "https://www.twitch.tv/chrchie", "https://virtualyoutuber.fandom.com/wiki/Chrchie", [], ],
@@ -558,14 +555,6 @@ for (var a = 0; a < talentNodes.length; a++) {
 
 
 
-//write to JS (requires node) - this won't be enabled until I have a version of this script that can work with the google sheet data
-
-/*nodeWrite(outputNodeAcc, outputEdgeAcc);*/
-
-
-
-
-
 //for dev, much faster to copy paste from the html file when making local changes as you can't load modules on a local file system
 
 //write to HTML
@@ -577,16 +566,10 @@ testHTMLNodeOutput(outputNodeAcc, outputEdgeAcc);
 
 
 
-
-
-
-
-
 /*
 FUNCTIONS
 -----------------------------------------------
 */
-
 
 
 function testHTMLNodeOutput(nodeHTMLoutput, edgeHTMLoutput) {
@@ -604,32 +587,6 @@ function testHTMLNodeOutput(nodeHTMLoutput, edgeHTMLoutput) {
 	// set name
 	edgeContainer.textContent = edgeHTMLoutput || "#edge";
 
-};
-
-
-
-
-function nodeWrite(outputNodeAcc, outputEdgeAcc) {
-	const fs = require('fs');
-	
-	//set so text has line breaks
-	const nodeData = outputNodeAcc.join(',\n');
-	const edgeData = outputEdgeAcc.join(',\n');
-
-	//combine the info into one string for output
-	const outputNodeEdge = "export nodes = new vis.DataSet([" + outputNodeAcc + "]);" + "\n" + "const edges = new vis.DataSet([" + edgeData + "]);";
-
-
-	try {
-
-		fs.writeFileSync('/Volumes/Data\ World\ 2/Documents/\ GitHub/Vtuber-social-graph/data/Data.js', outputNodeEdge);
-
-		console.log('Files written successfully.');
-
-	} catch (err) {
-		console.log("Sorry couldn't write to file.")
-		console.error(err)
-	};
 };
 
 

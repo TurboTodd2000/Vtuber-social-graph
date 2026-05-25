@@ -9,6 +9,7 @@
 	<title>Vtuber social network</title>
 
 	<link rel="stylesheet" href="./style.css">
+	<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
 </head>
 
 
@@ -66,16 +67,16 @@
 		<!-- container for talent info -->
 		<div id="urlContainer" class="talentContainer">
 
-			<a href="#" target="_blank" id="talentName" class="name talentButton">
-				<span >Name</span>
+			<a href="#" target="_blank" id="talentName">
+				<span class="talentButton name" >Name</span>
 			</a>
 
-			<a  href="#" id="youtubeLink" class="talentButton" target="_blank">
-				<span >YouTube</span>
+			<a  href="#" id="youtubeLink" target="_blank">
+				<span class="talentButton" >YouTube</span>
 			</a>
 
-			<a  href="#" id="twitchLink" class="talentButton" target="_blank">
-				<span >Twitch</span>
+			<a  href="#" id="twitchLink" target="_blank">
+				<span class="talentButton" >Twitch</span>
 			</a>	
 
 		</div>
@@ -208,9 +209,6 @@
 
 
 
-<script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
-
-<script  src="./script copy.js"></script>
 
 <script>
 	//on click function to swap display attr. goes here
@@ -223,7 +221,7 @@
 			const legend = document.getElementById("legend");
 
 			if (this.value === "group") {
-				legend.style.display = "flex";
+				legend.style.display = "none";
 			} else {
 				legend.style.display = "flex";
 			}
@@ -251,7 +249,12 @@
 </script>
 
 
+<script src="./data/Data.js"></script>
+<script src="script.js"></script>
+
+
 </body>
+
 
 </html>
 
